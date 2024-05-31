@@ -8,4 +8,5 @@
 !*.ac
 
 !.gitignore
+!autogen.sh
 config.h
