@@ -5,6 +5,7 @@ AC_PREREQ([2.69])
 AC_CONFIG_MACRO_DIRS([m4 /usr/share/aclocal])
 AC_INIT([Dynamic Array], [1.0], [https://github.com/JekasObps])
 AC_CONFIG_AUX_DIR([build-aux])
+AC_CONFIG_SUBDIRS(vector)
 
 # valgrind
 AX_VALGRIND_DFLT([memcheck], [on])
@@ -46,7 +47,5 @@ AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([Makefile
                  src/Makefile
                  tests/Makefile])
-
-AC_CONFIG_SUBDIRS(vector)
 
 AC_OUTPUT
