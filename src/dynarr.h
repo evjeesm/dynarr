@@ -17,7 +17,8 @@ typedef struct vector_t dynarr_t;
 
 typedef struct dynarr_opts_t
 {
-    size_t element_size; /* size of the element */
+    size_t data_offset;  /* size of extended header */
+    size_t element_size; /* size of the element     */
     size_t initial_cap;
     float grow_factor;
     float grow_threshold;
@@ -52,6 +53,12 @@ dynarr_opts_t;
 * In case of allocation fail null pointer will be returned.
 */
 void dynarr_create_(dynarr_t **const dynarr, const dynarr_opts_t *const opts);
+
+
+/*
+* Returns a pointer to reserved header space for extension.
+*/
+void* dynarr_get_ext_header(const dynarr_t *const dynarr);
 
 
 /*
@@ -172,8 +179,13 @@ bool dynarr_spread_insert(dynarr_t **const dynarr, const size_t index, const siz
 * that contained in the vector are ordered in same way.
 * (Allocation may fail, so returning operation status)
 */
-bool dynarr_binary_insert(dynarr_t **const dynarr, const void *value, const compare_t cmp, void *param, size_t *const index);
+bool dynarr_binary_insert(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *const param, size_t *const index);
 
+
+/*
+* Similar to insert except it stores no data, leaving slot in undefined state.
+*/
+bool dynarr_binary_reserve(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *const param, size_t *const index);
 
 
 #if 0

@@ -2,16 +2,16 @@
 #include <stdlib.h>
 #include "../src/dynarr.h"
 
-static ssize_t cmp(const void *a, const void *b, void *param)
-{
-    (void)param;
-    return (ssize_t) *(int*)a - *(int*)b;
-}
-
-static bool pred(const void *a, const void *b, void *param)
-{
-    return *(int*)a == *(int*)b;
-}
+// static ssize_t cmp(const void *a, const void *b, void *param)
+// {
+//     (void)param;
+//     return (ssize_t) *(int*)a - *(int*)b;
+// }
+//
+// static bool pred(const void *a, const void *b, void *param)
+// {
+//     return *(int*)a == *(int*)b;
+// }
 
 static dynarr_t *array;
 

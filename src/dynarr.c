@@ -42,7 +42,7 @@ void dynarr_create_(dynarr_t **const dynarr, const dynarr_opts_t *const opts)
     assert(next_shrink_at <= grow_at);
 
     vector_create(*dynarr,
-        .data_offset = sizeof(dynarr_header_t),
+        .data_offset = sizeof(dynarr_header_t) + opts->data_offset,
         .element_size = opts->element_size,
         .initial_cap = opts->initial_cap
     );
@@ -54,6 +54,15 @@ void dynarr_create_(dynarr_t **const dynarr, const dynarr_opts_t *const opts)
         opts->grow_threshold,
         opts->shrink_threshold
     };
+}
+
+
+void* dynarr_get_ext_header(const dynarr_t *const dynarr)
+{
+    assert(dynarr);
+    assert((vector_data_offset(dynarr) > sizeof(dynarr_header_t)) && "extension header was not alloc'd.");
+
+    return (char*) vector_get_ext_header(dynarr) + sizeof(dynarr_header_t);
 }
 
 
@@ -202,7 +211,7 @@ bool dynarr_spread_insert(dynarr_t **const dynarr, const size_t index, const siz
 }
 
 
-bool dynarr_binary_insert(dynarr_t **const dynarr, const void *value, const compare_t cmp, void *param, size_t *const index)
+bool dynarr_binary_insert(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *param, size_t *const index)
 {
     assert(dynarr && *dynarr);
     assert(value);
@@ -215,6 +224,25 @@ bool dynarr_binary_insert(dynarr_t **const dynarr, const void *value, const comp
     }
 
     if (index) *index = place;
+    return true;
+}
+
+
+bool dynarr_binary_reserve(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *const param, size_t *const index)
+{
+    assert(dynarr && *dynarr);
+    assert(value);
+    assert(cmp);
+
+    size_t place = vector_binary_find_insert_place(*dynarr, value, dynarr_size(*dynarr), cmp, param);
+    const size_t times_to_grow = has_to_grow(*dynarr, 1);
+    if (!grow(dynarr, times_to_grow))
+    {
+        return false;
+    }
+
+    make_space_at(*dynarr, place, 1);
+    *index = place;
     return true;
 }
 
