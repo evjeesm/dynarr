@@ -273,7 +273,7 @@ void dynarr_remove_range(dynarr_t **const dynarr, const size_t index, const size
 
     free_space_at(*dynarr, index, amount);
 
-    assert(shrink(dynarr, amount));
+    assert(shrink(dynarr, amount)); /* might never happen */
 }
 
 
@@ -402,6 +402,7 @@ static void default_error_callback(const vector_t *const *const dynarr, const ve
             fprintf(stderr, "Dynarr [ %p ] :: Grow error occured! abort()\n", (void*)*dynarr);
             abort();
 
+        /* demonstrating an error case that can be handled without right away crashing: */
         case DYNARR_SHRINK_ERROR:
             fprintf(stderr, "Dynarr [ %p ] :: Shrink error occured, keep going...\n", (void*)*dynarr);
             break;
