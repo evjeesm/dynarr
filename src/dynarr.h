@@ -7,13 +7,17 @@
 
 #include "vector.h"
 
+typedef struct vector_t dynarr_t;
+
 typedef enum dynarr_error_t
 {
-    ERR
+    DYNARR_ALLOC_ERROR = VECTOR_ALLOC_ERROR,
+    DYNARR_GROW_ERROR = VECTOR_ERROR_LAST,
+    DYNARR_SHRINK_ERROR,
+    DYNARR_ERROR_LAST
 }
 dynarr_error_t;
 
-typedef struct vector_t dynarr_t;
 
 typedef struct dynarr_opts_t
 {
@@ -23,6 +27,7 @@ typedef struct dynarr_opts_t
     float grow_factor;
     float grow_threshold;
     float shrink_threshold;
+    vector_error_handler_t error_handler;
 }
 dynarr_opts_t;
 
@@ -189,28 +194,6 @@ bool dynarr_binary_reserve(dynarr_t **const dynarr, const void *const value, con
 
 
 #if 0
-/*
-* Checks whenever the vector contains a value via byte to byte comparison.
-*/
-bool vector_contains(const vector_t *vector, const void *value);
-
-
-/*
-* Linear search for a value in the vector with parametrized predicate.
-* If no matching element found returns null pointer,
-* otherwise pointer to a legit location in vector's memory span.
-*/
-void *vector_find(const vector_t *vector, const void *value, predicate_t predicate, void *param);
-
-
-/*
-* Binary search for a value in the vector with parametrized compare function.
-* If no matching element found returns null pointer,
-* otherwise pointer to a legit location in vector's memory span.
-*/
-void *vector_binary_find(const vector_t *vector, compare_t cmp, const void *value, void *param);
-
-
 
 /*
 * Reverse order of elements in the vector 

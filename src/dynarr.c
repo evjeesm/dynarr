@@ -2,8 +2,9 @@
 
 #include <assert.h> /* assert */
 #include <string.h> /* memcpy, memset */
-#include <math.h>   /* powf, ceil, floor */
-
+#include <math.h>   /* ceil, floor */
+#include <stdio.h>  /* fprintf */
+#include <stdlib.h> /* abort */
 
 typedef struct dynarr_header_t
 {
@@ -20,12 +21,11 @@ dynarr_header_t;
 **                            */
 
 static dynarr_header_t *get_dynarr_header(const dynarr_t *const dynarr);
-static size_t has_to_grow(const dynarr_t *const dynarr, const size_t amount_to_add);
 static bool grow(dynarr_t **const dynarr, const size_t times);
-static size_t has_to_shrink(const dynarr_t *const dynarr, const size_t amount_to_remove);
 static bool shrink(dynarr_t **const dynarr, const size_t times);
 static void free_space_at(dynarr_t *const dynarr, const size_t index, const size_t amount);
 static void make_space_at(dynarr_t *const dynarr, const size_t index, size_t amount);
+static void default_error_callback(const vector_t *const *const dynarr, const vector_error_t error, void *const param);
 
 
 /**                          ***
@@ -41,10 +41,15 @@ void dynarr_create_(dynarr_t **const dynarr, const dynarr_opts_t *const opts)
     const size_t next_shrink_at = floor(grow_at * opts->shrink_threshold);
     assert(next_shrink_at <= grow_at);
 
+    vector_error_callback_t error_callback = opts->error_handler.callback
+        ? opts->error_handler.callback
+        : default_error_callback;
+
     vector_create(*dynarr,
         .data_offset = sizeof(dynarr_header_t) + opts->data_offset,
         .element_size = opts->element_size,
-        .initial_cap = opts->initial_cap
+        .initial_cap = opts->initial_cap,
+        .error_handler = { .callback = error_callback }, /* custom error handling procedure */
     );
 
     dynarr_header_t *header = get_dynarr_header(*dynarr);
@@ -182,8 +187,7 @@ bool dynarr_insert(dynarr_t **const dynarr, const size_t index, const void *valu
     assert(index <= dynarr_size(*dynarr));
     assert(value);
 
-    const size_t times_to_grow = has_to_grow(*dynarr, 1);
-    if (!grow(dynarr, times_to_grow))
+    if (!grow(dynarr, 1))
     {
         return false;
     }
@@ -197,8 +201,11 @@ bool dynarr_insert(dynarr_t **const dynarr, const size_t index, const void *valu
 
 bool dynarr_spread_insert(dynarr_t **const dynarr, const size_t index, const size_t amount, const void *const value)
 {
-    const size_t times_to_grow = has_to_grow(*dynarr, amount);
-    if (!grow(dynarr, times_to_grow))
+    assert(dynarr && *dynarr);
+    assert(index <= dynarr_size(*dynarr));
+    assert(value);
+
+    if (!grow(dynarr, amount))
     {
         return false;
     }
@@ -235,8 +242,7 @@ bool dynarr_binary_reserve(dynarr_t **const dynarr, const void *const value, con
     assert(cmp);
 
     size_t place = vector_binary_find_insert_place(*dynarr, value, dynarr_size(*dynarr), cmp, param);
-    const size_t times_to_grow = has_to_grow(*dynarr, 1);
-    if (!grow(dynarr, times_to_grow))
+    if (!grow(dynarr, 1))
     {
         return false;
     }
@@ -267,8 +273,7 @@ void dynarr_remove_range(dynarr_t **const dynarr, const size_t index, const size
 
     free_space_at(*dynarr, index, amount);
 
-    const size_t times_to_shrink = has_to_shrink(*dynarr, amount);
-    assert(shrink(dynarr, times_to_shrink));
+    assert(shrink(dynarr, amount));
 }
 
 
@@ -282,66 +287,52 @@ static dynarr_header_t *get_dynarr_header(const dynarr_t *const dynarr)
 }
 
 
-static size_t has_to_grow(const dynarr_t *const dynarr, const size_t amount_to_add)
+static bool grow(dynarr_t **const dynarr, const size_t amount_to_add)
 {
-    const dynarr_header_t *const header = get_dynarr_header(dynarr);
-    const size_t size = dynarr_size(dynarr) + amount_to_add;
-    size_t times = 0;
-    double capacity = dynarr_capacity(dynarr);
+    const dynarr_header_t *const header = get_dynarr_header(*dynarr);
+    const size_t size = dynarr_size(*dynarr) + amount_to_add;
+    double capacity = dynarr_capacity(*dynarr);
     size_t grow_at = capacity * header->grow_threshold;
 
     while (size >= grow_at)
     {
-        ++times;
         capacity *= header->grow_factor;
         grow_at = capacity * header->grow_threshold;
     }
 
-    return times;
+    const size_t new_cap = ceil(capacity);
+    if (new_cap == dynarr_capacity(*dynarr))
+    {
+        return true;
+    }
+
+    return vector_truncate(dynarr, new_cap, (vector_error_t)DYNARR_GROW_ERROR);
 }
 
 
-static size_t has_to_shrink(const dynarr_t *const dynarr, const size_t amount_to_remove)
+static bool shrink(dynarr_t **const dynarr, const size_t amount_to_remove)
 {
-    const dynarr_header_t *const header = get_dynarr_header(dynarr);
-    const size_t size = dynarr_size(dynarr) - amount_to_remove;
-    size_t times = 0;
-    double capacity = dynarr_capacity(dynarr);
+    const dynarr_header_t *const header = get_dynarr_header(*dynarr);
+    const size_t size = dynarr_size(*dynarr) - amount_to_remove;
+    double capacity = dynarr_capacity(*dynarr);
     size_t shrink_at = capacity * header->shrink_threshold;
 
     while (size < shrink_at)
     {
-        ++times;
         capacity /= header->grow_factor;
         shrink_at = capacity * header->shrink_threshold;
     }
 
-    return times;
-}
+    const size_t initial_cap = vector_initial_capacity(*dynarr);
+    size_t new_cap = floor(capacity);
+    new_cap = new_cap < initial_cap ? initial_cap : new_cap;
 
+    if (dynarr_capacity(*dynarr) == new_cap)
+    {
+        return true;
+    }
 
-static bool grow(dynarr_t **const dynarr, const size_t times)
-{
-    if (times == 0) return true;
-
-    const dynarr_header_t *header = get_dynarr_header(*dynarr);
-    const size_t old_cap = dynarr_capacity(*dynarr);
-    const size_t new_cap = ceil(old_cap * powf(header->grow_factor, times));
-
-    return vector_truncate(dynarr, new_cap);
-}
-
-
-static bool shrink(dynarr_t **const dynarr, const size_t times)
-{
-    if (times == 0) return true;
-
-    const dynarr_header_t *header = get_dynarr_header(*dynarr);
-    const size_t init_cap = vector_initial_capacity(*dynarr);
-    const size_t old_cap = dynarr_capacity(*dynarr);
-    const size_t new_cap = floor(old_cap / powf(header->grow_factor, times));
-
-    return vector_truncate(dynarr, new_cap < init_cap ? init_cap : new_cap);
+    return vector_truncate(dynarr, new_cap, (vector_error_t)DYNARR_SHRINK_ERROR);
 }
 
 
@@ -396,3 +387,27 @@ static void make_space_at(dynarr_t *const dynarr, const size_t index, size_t amo
     header->size += amount;
 }
 
+
+static void default_error_callback(const vector_t *const *const dynarr, const vector_error_t error, void *const param)
+{
+    (void) param;
+
+    switch ((dynarr_error_t)error)
+    {
+        case DYNARR_ALLOC_ERROR:
+            fprintf(stderr, "Dynarr :: Alloc error occured! abort()\n");
+            abort();
+
+        case DYNARR_GROW_ERROR:
+            fprintf(stderr, "Dynarr [ %p ] :: Grow error occured! abort()\n", (void*)*dynarr);
+            abort();
+
+        case DYNARR_SHRINK_ERROR:
+            fprintf(stderr, "Dynarr [ %p ] :: Shrink error occured, keep going...\n", (void*)*dynarr);
+            break;
+
+        default:
+            fprintf(stderr, "Dynarr [ %p ] :: Unexpected error occured! abort()\n", (void*)*dynarr);
+            abort();
+    }
+}
