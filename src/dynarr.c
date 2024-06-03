@@ -25,7 +25,6 @@ static bool grow(dynarr_t **const dynarr, const size_t times);
 static bool shrink(dynarr_t **const dynarr, const size_t times);
 static void free_space_at(dynarr_t *const dynarr, const size_t index, const size_t amount);
 static void make_space_at(dynarr_t *const dynarr, const size_t index, size_t amount);
-static void default_error_callback(const vector_t *const *const dynarr, const vector_error_t error, void *const param);
 
 
 /**                          ***
@@ -36,21 +35,20 @@ void dynarr_create_(dynarr_t **const dynarr, const dynarr_opts_t *const opts)
 {
     assert(dynarr);
     assert(opts);
+    assert(opts->element_size);
 
     const size_t grow_at = ceil(opts->initial_cap * opts->grow_threshold);
     const size_t next_shrink_at = floor(grow_at * opts->shrink_threshold);
     assert(next_shrink_at <= grow_at);
 
-    vector_error_callback_t error_callback = opts->error_handler.callback
-        ? opts->error_handler.callback
-        : default_error_callback;
-
     vector_create(*dynarr,
         .data_offset = sizeof(dynarr_header_t) + opts->data_offset,
         .element_size = opts->element_size,
         .initial_cap = opts->initial_cap,
-        .error_handler = { .callback = error_callback }, /* custom error handling procedure */
+        .error_handler = opts->error_handler, /* custom error handling procedure */
     );
+
+    if (NULL == *dynarr) return;
 
     dynarr_header_t *header = get_dynarr_header(*dynarr);
     *header = (dynarr_header_t){
@@ -95,8 +93,7 @@ void dynarr_clear(dynarr_t *const dynarr)
 size_t dynarr_size(const dynarr_t *const dynarr)
 {
     assert(dynarr);
-    dynarr_header_t *header = get_dynarr_header(dynarr);
-    return header->size;
+    return get_dynarr_header(dynarr)->size;
 }
 
 
@@ -277,6 +274,29 @@ void dynarr_remove_range(dynarr_t **const dynarr, const size_t index, const size
 }
 
 
+void dynarr_default_error_callback(const vector_error_t error, void *const param)
+{
+    (void) param;
+    const char *pretty_error;
+    switch ((dynarr_error_t)error)
+    {
+        case DYNARR_ALLOC_ERROR:  pretty_error = "DYNARR_ALLOC_ERROR";  break;
+        case DYNARR_GROW_ERROR:   pretty_error = "DYNARR_GROW_ERROR";   break;
+        case DYNARR_SHRINK_ERROR: pretty_error = "DYNARR_SHRINK_ERROR"; break;
+        default: pretty_error = "UNEXPECTED";
+    }
+
+    fprintf(stderr, "Dynarr :: %s error occured! abort()\n", pretty_error);
+    abort();
+}
+
+
+void dynarr_manual_error_callback(const vector_error_t error, void *const param)
+{
+    vector_manual_error_callback(error, param);
+}
+
+
 /**                       ***
 * === Static Functions  === *
 **                         */
@@ -387,28 +407,3 @@ static void make_space_at(dynarr_t *const dynarr, const size_t index, size_t amo
     header->size += amount;
 }
 
-
-static void default_error_callback(const vector_t *const *const dynarr, const vector_error_t error, void *const param)
-{
-    (void) param;
-
-    switch ((dynarr_error_t)error)
-    {
-        case DYNARR_ALLOC_ERROR:
-            fprintf(stderr, "Dynarr :: Alloc error occured! abort()\n");
-            abort();
-
-        case DYNARR_GROW_ERROR:
-            fprintf(stderr, "Dynarr [ %p ] :: Grow error occured! abort()\n", (void*)*dynarr);
-            abort();
-
-        /* demonstrating an error case that can be handled without right away crashing: */
-        case DYNARR_SHRINK_ERROR:
-            fprintf(stderr, "Dynarr [ %p ] :: Shrink error occured, keep going...\n", (void*)*dynarr);
-            break;
-
-        default:
-            fprintf(stderr, "Dynarr [ %p ] :: Unexpected error occured! abort()\n", (void*)*dynarr);
-            abort();
-    }
-}
