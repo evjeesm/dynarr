@@ -13,6 +13,13 @@
 #define DYNARR_MANUAL_ERROR_HANDLER(error_out) \
     { .callback = dynarr_manual_error_callback, .param = error_out }
 
+#define DYNARR_DEFAULT_ARGS \
+    .initial_cap = 10, \
+    .shrink_threshold = 0.25f, \
+    .grow_threshold = 0.75f, \
+    .grow_factor = 1.5f, \
+    .error_handler = DYNARR_DEFAULT_ERROR_HANDLER
+
 typedef struct vector_t dynarr_t;
 
 typedef enum dynarr_error_t
@@ -46,11 +53,7 @@ dynarr_opts_t;
     _Pragma("GCC diagnostic push") \
     _Pragma("GCC diagnostic ignored \"-Woverride-init\"") \
     dynarr_create_(&dynarr_p, &(dynarr_opts_t){ \
-        .initial_cap = 10, \
-        .shrink_threshold = 0.25f, \
-        .grow_threshold = 0.75f, \
-        .grow_factor = 1.5f, \
-        .error_handler = DYNARR_DEFAULT_ERROR_HANDLER, \
+        DYNARR_DEFAULT_ARGS, \
         __VA_ARGS__ \
     }); \
     _Pragma("GCC diagnostic pop") \
