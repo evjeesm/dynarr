@@ -46,7 +46,7 @@ void vector_free(void *ptr)
 START_TEST (test_dynarr_manual_success)
 {
     dynarr_t *dynarr;
-    dynarr_error_t error = DYNARR_NO_ERROR;
+    dynarr_error_t error;
 
     dynarr_create_manual_errhdl(dynarr, &error,
         .element_size = sizeof(int),
@@ -63,7 +63,7 @@ END_TEST
 START_TEST (test_dynarr_manual_fail)
 {
     dynarr_t *dynarr;
-    dynarr_error_t error = DYNARR_NO_ERROR;
+    dynarr_error_t error;
 
     dynarr_create_manual_errhdl(dynarr, &error,
         .element_size = sizeof(int),

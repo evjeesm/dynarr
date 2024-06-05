@@ -54,12 +54,13 @@ dynarr_opts_t;
 }
 
 
-#define dynarr_create_manual_errhdl(dynarr_p, error_ptr, ...) \
+#define dynarr_create_manual_errhdl(dynarr_p, error_ptr, ...) do{\
+    *error_ptr = DYNARR_NO_ERROR; \
     dynarr_create(dynarr_p, \
         .error_callback = dynarr_manual_error_callback, \
         .error_out = (vector_error_t *)error_ptr, \
         __VA_ARGS__ \
-    )
+    )} while(0)
 
 
 /*
