@@ -50,7 +50,7 @@ START_TEST (test_dynarr_append)
     ck_assert_int_eq(*(int*)dynarr_get(array, 0), expected_value);
     ck_assert_uint_eq(dynarr_size(array), expected_size);
 
-    const size_t append_count = 7;
+    const int append_count = 7;
     const size_t expected_capacity = 10 * 1.5;
 
     for (int i = 0; i < append_count; ++i)
@@ -78,7 +78,7 @@ START_TEST (test_dynarr_prepend)
     ck_assert_int_eq(*(int*)dynarr_get(array, 0), expected_value);
     ck_assert_uint_eq(dynarr_size(array), expected_size);
 
-    const size_t append_count = 7;
+    const int append_count = 7;
     const size_t expected_capacity = 10 * 1.5;
 
     for (int i = 0; i < append_count; ++i)
@@ -115,7 +115,7 @@ START_TEST (test_dynarr_pop_back)
 {
     dynarr_pop_back(&array);
 
-    size_t expected_size = 8;
+    int expected_size = 8;
     size_t expected_cap = 15;
 
     for (int i = 0; i < expected_size; ++i)
@@ -126,7 +126,7 @@ START_TEST (test_dynarr_pop_back)
     ck_assert_uint_eq(dynarr_size(array), expected_size);
     ck_assert_uint_eq(dynarr_capacity(array), expected_cap);
 
-    const size_t pop_num = 5;
+    const int pop_num = 5;
     expected_size -= pop_num;
     expected_cap = 10;
 
@@ -150,7 +150,7 @@ START_TEST (test_dynarr_pop_front)
 {
     dynarr_pop_back(&array);
 
-    size_t expected_size = 14;
+    int expected_size = 14;
     size_t expected_cap = 23;
 
     for (int i = 0; i < expected_size; ++i)
@@ -161,7 +161,7 @@ START_TEST (test_dynarr_pop_front)
     ck_assert_uint_eq(dynarr_size(array), expected_size);
     ck_assert_uint_eq(dynarr_capacity(array), expected_cap);
 
-    const size_t pop_num = 7;
+    const int pop_num = 7;
     expected_size -= pop_num;
     expected_cap = 15;
 
@@ -213,7 +213,7 @@ START_TEST (test_dynarr_spread_insert)
     size_t size = dynarr_size(array);
     ck_assert_uint_eq(size, 10);
 
-    for (int i = 0; i < size; ++i)
+    for (size_t i = 0; i < size; ++i)
     {
         ck_assert_mem_eq(dynarr_get(array, i), TMP_REF(int, 999), sizeof(int));
     }

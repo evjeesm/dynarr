@@ -7,19 +7,6 @@
 
 #include "vector.h"
 
-#define DYNARR_DEFAULT_ERROR_HANDLER \
-    { .callback = dynarr_default_error_callback }
-
-#define DYNARR_MANUAL_ERROR_HANDLER(error_out) \
-    { .callback = dynarr_manual_error_callback, .param = error_out }
-
-#define DYNARR_DEFAULT_ARGS \
-    .initial_cap = 10, \
-    .shrink_threshold = 0.25f, \
-    .grow_threshold = 0.75f, \
-    .grow_factor = 1.5f, \
-    .error_handler = DYNARR_DEFAULT_ERROR_HANDLER
-
 typedef struct vector_t dynarr_t;
 
 typedef enum dynarr_error_t
@@ -41,10 +28,17 @@ typedef struct dynarr_opts_t
     float grow_factor;
     float grow_threshold;
     float shrink_threshold;
-    vector_error_handler_t error_handler;
+    vector_error_callback_t error_callback;
+    vector_error_t *error_out;
 }
 dynarr_opts_t;
 
+#define DYNARR_DEFAULT_ARGS \
+    .initial_cap = 10, \
+    .shrink_threshold = 0.25f, \
+    .grow_threshold = 0.75f, \
+    .grow_factor = 1.5f, \
+    .error_callback = dynarr_default_error_callback
 
 /*
 * The wrapper for `dynarr_create_` function that provides default values.
@@ -60,9 +54,10 @@ dynarr_opts_t;
 }
 
 
-#define dynarr_create_manual_errhdl(dynarr_p, error_out, ...) \
+#define dynarr_create_manual_errhdl(dynarr_p, error_ptr, ...) \
     dynarr_create(dynarr_p, \
-        .error_handler = DYNARR_MANUAL_ERROR_HANDLER(error_out), \
+        .error_callback = dynarr_manual_error_callback, \
+        .error_out = (vector_error_t *)error_ptr, \
         __VA_ARGS__ \
     )
 
@@ -86,7 +81,7 @@ void* dynarr_get_ext_header(const dynarr_t *const dynarr);
 /*
 * Makes a copy of the whole array.
 */
-dynarr_t *dynarr_clone(const dynarr_t *const dynarr);
+dynarr_t *dynarr_clone(dynarr_t *const dynarr);
 
 
 /*

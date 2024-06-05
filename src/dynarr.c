@@ -21,10 +21,10 @@ dynarr_header_t;
 **                            */
 
 static dynarr_header_t *get_dynarr_header(const dynarr_t *const dynarr);
-static bool grow(dynarr_t **const dynarr, const size_t times);
-static bool shrink(dynarr_t **const dynarr, const size_t times);
+static bool grow(dynarr_t **const dynarr, const size_t amount_to_add);
+static bool shrink(dynarr_t **const dynarr, const size_t amount_to_remove);
 static void free_space_at(dynarr_t *const dynarr, const size_t index, const size_t amount);
-static void make_space_at(dynarr_t *const dynarr, const size_t index, size_t amount);
+static void make_space_at(dynarr_t *const dynarr, const size_t index, /*mut*/ size_t amount);
 
 
 /**                          ***
@@ -45,7 +45,8 @@ void dynarr_create_(dynarr_t **const dynarr, const dynarr_opts_t *const opts)
         .data_offset = sizeof(dynarr_header_t) + opts->data_offset,
         .element_size = opts->element_size,
         .initial_cap = opts->initial_cap,
-        .error_handler = opts->error_handler, /* custom error handling procedure */
+        .error_callback = opts->error_callback, /* custom error handling procedure */
+        .error_out = opts->error_out
     );
 
     if (NULL == *dynarr) return;
@@ -69,7 +70,7 @@ void* dynarr_get_ext_header(const dynarr_t *const dynarr)
 }
 
 
-dynarr_t *dynarr_clone(const dynarr_t *const dynarr)
+dynarr_t *dynarr_clone(dynarr_t *const dynarr)
 {
     assert(dynarr);
     return vector_clone(dynarr);
@@ -326,7 +327,7 @@ static bool grow(dynarr_t **const dynarr, const size_t amount_to_add)
         return true;
     }
 
-    return vector_truncate(dynarr, new_cap, (vector_error_t)DYNARR_GROW_ERROR);
+    return vector_resize(dynarr, new_cap, (vector_error_t)DYNARR_GROW_ERROR);
 }
 
 
@@ -352,7 +353,7 @@ static bool shrink(dynarr_t **const dynarr, const size_t amount_to_remove)
         return true;
     }
 
-    return vector_truncate(dynarr, new_cap, (vector_error_t)DYNARR_SHRINK_ERROR);
+    return vector_resize(dynarr, new_cap, (vector_error_t)DYNARR_SHRINK_ERROR);
 }
 
 
