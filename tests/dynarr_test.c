@@ -2,22 +2,17 @@
 #include <stdlib.h>
 #include "../src/dynarr.h"
 
-// static ssize_t cmp(const void *a, const void *b, void *param)
-// {
-//     (void)param;
-//     return (ssize_t) *(int*)a - *(int*)b;
-// }
-//
-// static bool pred(const void *a, const void *b, void *param)
-// {
-//     return *(int*)a == *(int*)b;
-// }
-
 static dynarr_t *array;
+
+static ssize_t cmp(const void *a, const void *b, void *param)
+{
+    (void)param;
+    return (ssize_t) *(int*)a - *(int*)b;
+}
 
 static void setup_empty(void)
 {
-    dynarr_create(array,
+    array = dynarr_create(
        .element_size = sizeof(int),
        .initial_cap = 10,
        .shrink_threshold = 0.35f,
@@ -46,7 +41,7 @@ START_TEST (test_dynarr_append)
     const int expected_value = 69;
     const size_t expected_size = 1;
 
-    ck_assert(dynarr_append(&array, &expected_value));
+    ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_append(&array, &expected_value));
     ck_assert_int_eq(*(int*)dynarr_get(array, 0), expected_value);
     ck_assert_uint_eq(dynarr_size(array), expected_size);
 
@@ -55,7 +50,7 @@ START_TEST (test_dynarr_append)
 
     for (int i = 0; i < append_count; ++i)
     {
-        dynarr_append(&array, &i);
+        ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_append(&array, &i));
     }
 
     for (int i = 0; i < append_count; ++i)
@@ -74,7 +69,7 @@ START_TEST (test_dynarr_prepend)
     const int expected_value = 69;
     const size_t expected_size = 1;
 
-    ck_assert(dynarr_prepend(&array, &expected_value));
+    ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_prepend(&array, &expected_value));
     ck_assert_int_eq(*(int*)dynarr_get(array, 0), expected_value);
     ck_assert_uint_eq(dynarr_size(array), expected_size);
 
@@ -83,7 +78,7 @@ START_TEST (test_dynarr_prepend)
 
     for (int i = 0; i < append_count; ++i)
     {
-        dynarr_prepend(&array, &i);
+        ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_prepend(&array, &i));
     }
 
     for (int i = 0; i < append_count; ++i)
@@ -101,7 +96,7 @@ START_TEST (test_dynarr_clear)
 {
     for (int i = 0; i < 20; ++i)
     {
-        ck_assert(dynarr_append(&array, &i));
+        ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_append(&array, &i));
     }
     size_t cap = dynarr_capacity(array);
     dynarr_clear(array);
@@ -120,7 +115,7 @@ START_TEST (test_dynarr_pop_back)
 
     for (int i = 0; i < expected_size; ++i)
     {
-        ck_assert(dynarr_append(&array, &i));
+        ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_append(&array, &i));
     }
 
     ck_assert_uint_eq(dynarr_size(array), expected_size);
@@ -132,7 +127,7 @@ START_TEST (test_dynarr_pop_back)
 
     for (int i = 0; i < pop_num; ++i)
     {
-        dynarr_pop_back(&array);
+        ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_pop_back(&array));
     }
 
     ck_assert_uint_eq(dynarr_size(array), expected_size);
@@ -155,7 +150,7 @@ START_TEST (test_dynarr_pop_front)
 
     for (int i = 0; i < expected_size; ++i)
     {
-        ck_assert(dynarr_append(&array, &i));
+        ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_append(&array, &i));
     }
 
     ck_assert_uint_eq(dynarr_size(array), expected_size);
@@ -167,7 +162,7 @@ START_TEST (test_dynarr_pop_front)
 
     for (int i = 0; i < pop_num; ++i)
     {
-        dynarr_pop_front(&array);
+        ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_pop_front(&array));
     }
 
     ck_assert_uint_eq(dynarr_size(array), expected_size);
@@ -184,17 +179,17 @@ END_TEST
 
 START_TEST (test_dynarr_insert)
 {
-    ck_assert(dynarr_insert(&array, 0, TMP_REF(int, 999)));
+    ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_insert(&array, 0, TMP_REF(int, 999)));
     ck_assert_uint_eq(dynarr_size(array), 1);
     ck_assert_mem_eq(dynarr_get(array, 0), TMP_REF(int, 999), sizeof(int));
 
     for (int i = 1; i < 9; ++i)
     {
-        ck_assert(dynarr_insert(&array, i, &i));
+        ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_insert(&array, i, &i));
     }
 
     /* insert at index 5 */
-    ck_assert(dynarr_insert(&array, 5, TMP_REF(int, 777)));
+    ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_insert(&array, 5, TMP_REF(int, 777)));
     ck_assert_mem_eq(dynarr_get(array, 5), TMP_REF(int, 777), sizeof(int));
 
     for (int i = 6; i < 9; ++i) /* check that rest of the elements shifted */
@@ -207,8 +202,7 @@ END_TEST
 
 START_TEST (test_dynarr_spread_insert)
 {
-    bool status = dynarr_spread_insert(&array, 0, 10, TMP_REF(int, 999));
-    ck_assert(status);
+    ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_spread_insert(&array, 0, 10, TMP_REF(int, 999)));
 
     size_t size = dynarr_size(array);
     ck_assert_uint_eq(size, 10);
@@ -221,13 +215,44 @@ START_TEST (test_dynarr_spread_insert)
 END_TEST
 
 
+START_TEST (test_dynarr_spread_insert_inbetween)
+{
+    for (int i = 0; i < 20; ++i)
+    {
+        ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_append(&array, &i));
+    }
+    const int initial_size = dynarr_size(array);
+    const int insert_idx = 9;
+    const int amount = 5;
+
+    ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_spread_insert(&array, insert_idx, amount, TMP_REF(int, 999)));
+
+    const int size = dynarr_size(array);
+    ck_assert_uint_eq(size, amount + initial_size);
+
+    for (int i = 0, k = 0; i < size; ++i)
+    {
+        if (i >= insert_idx && i < (insert_idx + amount))
+        {
+            ck_assert_mem_eq(dynarr_get(array, i), TMP_REF(int, 999), sizeof(int));
+        }
+        else
+        {
+            ck_assert_mem_eq(dynarr_get(array, i), &k, sizeof(int));
+            ++k;
+        }
+    }
+}
+END_TEST
+
+
 START_TEST (test_dynarr_remove)
 {
     for (int i = 0; i < 20; ++i)
     {
-        ck_assert(dynarr_append(&array, &i));
+        ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_append(&array, &i));
     }
-    dynarr_remove(&array, 5);
+    ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_remove(&array, 5));
     ck_assert_uint_eq(dynarr_size(array), 19);
     
     for (int i = 5; i < 19; ++i)
@@ -235,36 +260,30 @@ START_TEST (test_dynarr_remove)
         ck_assert_mem_eq(dynarr_get(array, i), TMP_REF(int, i + 1), sizeof(int));
     }
 }
-
-
 END_TEST
-#if 0
 
 
-
-
-
-START_TEST (test_vector_binary_insert)
+START_TEST (test_dynarr_binary_insert)
 {
     int table[] = {10, 23, 31, 1, 4, 22, 34, 71, 15, 18, 0, 5, 45, 99, 2, 0, 71, 22};
     size_t size = sizeof(table)/sizeof(*table);
 
-    for (int i = 0; i < size; ++i)
+    for (size_t i = 0; i < size; ++i)
     {
-        ck_assert(vector_binary_insert(&vector, cmp, &table[i], NULL, NULL));
+        ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_binary_insert(&array, &table[i], cmp, NULL, NULL));
     }
 
-    ck_assert_uint_eq(size, vector_size(vector));
+    ck_assert_uint_eq(size, dynarr_size(array));
 
     bool ordered = true;
     int curr = 0;
-    int prev = *(int*)vector_first(vector);
-    vector_pop_front(&vector);
+    int prev = *(int*)dynarr_first(array);
+    ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_pop_front(&array));
 
-    while (ordered && (0 < vector_size(vector)))
+    while (ordered && (0 < dynarr_size(array)))
     {
-        curr = *(int*)vector_first(vector);
-        vector_pop_front(&vector);
+        curr = *(int*)dynarr_first(array);
+        ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_pop_front(&array));
         ordered = prev <= curr;
         prev = curr;
     }
@@ -273,33 +292,19 @@ START_TEST (test_vector_binary_insert)
 END_TEST
 
 
-START_TEST (test_vector_binary_insert_random)
-{
-    srand(3011);
-    int random;
-
-    for (int i = 0; i < 100; ++i)
-    {
-        random = rand();
-        vector_binary_insert(&vector, cmp, &random, NULL, NULL);
-    }
-}
-END_TEST
-
-
-START_TEST (test_vector_binary_find)
+START_TEST (test_dynarr_binary_find)
 {
     int table[] = {10, 23, 31, 1, 4, 34, 71, 15, 18, 5, 45, 99, 2, 0, 71, 22};
     size_t size = sizeof(table)/sizeof(*table);
 
-    for (int i = 0; i < size; ++i)
+    for (size_t i = 0; i < size; ++i)
     {
-        ck_assert(vector_binary_insert(&vector, cmp, &table[i], NULL, NULL));
+        ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_binary_insert(&array, &table[i], cmp, NULL, NULL));
     }
 
-    for (int i = 0; i < size; ++i)
+    for (size_t i = 0; i < size; ++i)
     {
-        void *p = vector_binary_find(vector, cmp, &table[i], NULL);
+        void *p = vector_binary_find(array, &table[i], dynarr_size(array), cmp, NULL);
         ck_assert_mem_eq(p, &table[i], sizeof(int));
     }
 }
@@ -307,46 +312,12 @@ END_TEST
 
 
 
-
-START_TEST (test_vector_insert_fill_inbetween)
-{
-    for (int i = 0; i < 20; ++i)
-    {
-        ck_assert(vector_append_back(&vector, &i));
-    }
-    const size_t initial_size = vector_size(vector);
-    const size_t insert_idx = 9;
-    const size_t amount = 5;
-
-    bool status = vector_insert_fill(&vector, insert_idx, amount, TMP_REF(int, 999));
-    ck_assert(status);
-
-    const size_t size = vector_size(vector);
-    ck_assert_uint_eq(size, amount + initial_size);
-
-    for (int i = 0, k = 0; i < size; ++i)
-    {
-        if (i >= insert_idx && i < (insert_idx + amount))
-        {
-            ck_assert_mem_eq(vector_get(vector, i), TMP_REF(int, 999), sizeof(int));
-        }
-        else
-        {
-            ck_assert_mem_eq(vector_get(vector, i), &k, sizeof(int));
-            ++k;
-        }
-    }
-}
-END_TEST
-
-#endif
-
 Suite *dynarr_suite(void)
 {
     Suite *s;
     TCase *tc_core;
 
-    s = suite_create("Vector");
+    s = suite_create("Dynamic Array");
     
     /* Core test case */
     tc_core = tcase_create("Core");
@@ -360,20 +331,10 @@ Suite *dynarr_suite(void)
     tcase_add_test(tc_core, test_dynarr_pop_front);
     tcase_add_test(tc_core, test_dynarr_insert);
     tcase_add_test(tc_core, test_dynarr_spread_insert);
+    tcase_add_test(tc_core, test_dynarr_spread_insert_inbetween);
     tcase_add_test(tc_core, test_dynarr_remove);
-#if 0
-    tcase_add_test(tc_core, test_vector_first);
-    tcase_add_test(tc_core, test_vector_last);
-    tcase_add_test(tc_core, test_vector_get);
-    tcase_add_test(tc_core, test_vector_set);
-    tcase_add_test(tc_core, test_vector_contains);
-    tcase_add_test(tc_core, test_vector_find);
-    tcase_add_test(tc_core, test_vector_remove);
-    tcase_add_test(tc_core, test_vector_binary_insert);
-    tcase_add_test(tc_core, test_vector_binary_insert_random);
-    tcase_add_test(tc_core, test_vector_binary_find);
-    tcase_add_test(tc_core, test_vector_insert_fill_inbetween);
-#endif
+    tcase_add_test(tc_core, test_dynarr_binary_insert);
+    tcase_add_test(tc_core, test_dynarr_binary_find);
     suite_add_tcase(s, tc_core);
 
     return s;

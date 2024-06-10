@@ -21,8 +21,8 @@ dynarr_header_t;
 **                            */
 
 static dynarr_header_t *get_dynarr_header(const dynarr_t *const dynarr);
-static bool grow(dynarr_t **const dynarr, const size_t amount_to_add);
-static bool shrink(dynarr_t **const dynarr, const size_t amount_to_remove);
+static dynarr_status_t grow(dynarr_t **const dynarr, const size_t amount_to_add);
+static dynarr_status_t shrink(dynarr_t **const dynarr, const size_t amount_to_remove);
 static void free_space_at(dynarr_t *const dynarr, const size_t index, const size_t amount);
 static void make_space_at(dynarr_t *const dynarr, const size_t index, /*mut*/ size_t amount);
 
@@ -31,9 +31,8 @@ static void make_space_at(dynarr_t *const dynarr, const size_t index, /*mut*/ si
 * === API Implementation   === *
 **                            */
 
-void dynarr_create_(dynarr_t **const dynarr, const dynarr_opts_t *const opts)
+dynarr_t *dynarr_create_(const dynarr_opts_t *const opts)
 {
-    assert(dynarr);
     assert(opts);
     assert(opts->element_size);
 
@@ -41,23 +40,23 @@ void dynarr_create_(dynarr_t **const dynarr, const dynarr_opts_t *const opts)
     const size_t next_shrink_at = floor(grow_at * opts->shrink_threshold);
     assert(next_shrink_at <= grow_at);
 
-    vector_create(*dynarr,
+    dynarr_t *dynarr = vector_create(
         .data_offset = sizeof(dynarr_header_t) + opts->data_offset,
         .element_size = opts->element_size,
         .initial_cap = opts->initial_cap,
-        .error_callback = opts->error_callback, /* custom error handling procedure */
-        .error_out = opts->error_out
     );
 
-    if (NULL == *dynarr) return;
+    if (NULL == dynarr) return NULL;
 
-    dynarr_header_t *header = get_dynarr_header(*dynarr);
+    dynarr_header_t *header = get_dynarr_header(dynarr);
     *header = (dynarr_header_t){
         .size = 0,
         opts->grow_factor,
         opts->grow_threshold,
         opts->shrink_threshold
     };
+
+    return dynarr;
 }
 
 
@@ -147,7 +146,7 @@ void *dynarr_last(const dynarr_t *const dynarr)
 }
 
 
-bool dynarr_append(dynarr_t **const dynarr, const void *const value)
+dynarr_status_t dynarr_append(dynarr_t **const dynarr, const void *const value)
 {
     assert(dynarr && *dynarr);
     assert(value);
@@ -156,7 +155,7 @@ bool dynarr_append(dynarr_t **const dynarr, const void *const value)
 }
 
 
-bool dynarr_prepend(dynarr_t **const dynarr, const void *const value)
+dynarr_status_t dynarr_prepend(dynarr_t **const dynarr, const void *const value)
 {
     assert(dynarr && *dynarr);
     assert(value);
@@ -165,136 +164,104 @@ bool dynarr_prepend(dynarr_t **const dynarr, const void *const value)
 }
 
 
-void dynarr_pop_back(dynarr_t **const dynarr)
+dynarr_status_t dynarr_pop_back(dynarr_t **const dynarr)
 {
     assert(dynarr && *dynarr);
-    dynarr_remove(dynarr, dynarr_size(*dynarr) - 1);
+    return dynarr_remove(dynarr, dynarr_size(*dynarr) - 1);
 }
 
 
-void dynarr_pop_front(dynarr_t **const dynarr)
+dynarr_status_t dynarr_pop_front(dynarr_t **const dynarr)
 {
     assert(dynarr && *dynarr);
-    dynarr_remove(dynarr, 0);
+    return dynarr_remove(dynarr, 0);
 }
 
 
-bool dynarr_insert(dynarr_t **const dynarr, const size_t index, const void *value)
+dynarr_status_t dynarr_insert(dynarr_t **const dynarr, const size_t index, const void *value)
 {
     assert(dynarr && *dynarr);
     assert(index <= dynarr_size(*dynarr));
     assert(value);
 
-    if (!grow(dynarr, 1))
-    {
-        return false;
-    }
+    dynarr_status_t status = grow(dynarr, 1);
+
+    if (DYNARR_SUCCESS != status) return status;
 
     make_space_at(*dynarr, index, 1);
-
     dynarr_set(*dynarr, index, value);
-    return true;
+
+    return DYNARR_SUCCESS;
 }
 
 
-bool dynarr_spread_insert(dynarr_t **const dynarr, const size_t index, const size_t amount, const void *const value)
+dynarr_status_t dynarr_spread_insert(dynarr_t **const dynarr, const size_t index, const size_t amount, const void *const value)
 {
     assert(dynarr && *dynarr);
     assert(index <= dynarr_size(*dynarr));
     assert(value);
 
-    if (!grow(dynarr, amount))
-    {
-        return false;
-    }
+    dynarr_status_t status = grow(dynarr, amount);
+    if (DYNARR_SUCCESS != status) return status;
 
     make_space_at(*dynarr, index, amount);
     dynarr_set(*dynarr, index, value);
     vector_spread(*dynarr, index, amount);
 
-    return true;
+    return DYNARR_SUCCESS;
 }
 
 
-bool dynarr_binary_insert(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *param, size_t *const index)
+dynarr_status_t dynarr_binary_insert(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *param, size_t *const index)
 {
     assert(dynarr && *dynarr);
     assert(value);
     assert(cmp);
 
     size_t place = vector_binary_find_insert_place(*dynarr, value, dynarr_size(*dynarr), cmp, param);
-    if (!dynarr_insert(dynarr, place, value))
-    {
-        return false;
-    }
+    dynarr_status_t status = dynarr_insert(dynarr, place, value);
 
-    if (index) *index = place;
-    return true;
+    if (DYNARR_SUCCESS != status) return status;
+
+    if (index) *index = place; /* optionally return index of inserted element */
+    return DYNARR_SUCCESS;
 }
 
 
-bool dynarr_binary_reserve(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *const param, size_t *const index)
+dynarr_status_t dynarr_binary_reserve(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *const param, size_t *const index)
 {
     assert(dynarr && *dynarr);
     assert(value);
     assert(cmp);
 
     size_t place = vector_binary_find_insert_place(*dynarr, value, dynarr_size(*dynarr), cmp, param);
-    if (!grow(dynarr, 1))
-    {
-        return false;
-    }
+    dynarr_status_t status = grow(dynarr, 1);
+
+    if (DYNARR_SUCCESS != status) return status;
 
     make_space_at(*dynarr, place, 1);
     *index = place;
-    return true;
+
+    return DYNARR_SUCCESS;
 }
 
 
-void dynarr_remove(dynarr_t **const dynarr, const size_t index)
+dynarr_status_t dynarr_remove(dynarr_t **const dynarr, const size_t index)
 {
     assert(dynarr && *dynarr);
-    dynarr_remove_range(dynarr, index, 1);
+    return dynarr_remove_range(dynarr, index, 1);
 }
 
 
-void dynarr_remove_range(dynarr_t **const dynarr, const size_t index, const size_t amount)
+dynarr_status_t dynarr_remove_range(dynarr_t **const dynarr, const size_t index, const size_t amount)
 {
     assert(dynarr && *dynarr);
     assert(amount > 0);
 
-    const size_t size = dynarr_size(*dynarr);
-    if (0 == size)
-    {
-        return;
-    }
+    if (0 == dynarr_size(*dynarr)) return DYNARR_SUCCESS; /* nothing to remove */
 
     free_space_at(*dynarr, index, amount);
-
-    assert(shrink(dynarr, amount)); /* might never happen */
-}
-
-
-void dynarr_default_error_callback(const vector_error_t error, void *const param)
-{
-    (void) param;
-    const char *pretty_error;
-    switch ((dynarr_error_t)error)
-    {
-        case DYNARR_ALLOC_ERROR:  pretty_error = "DYNARR_ALLOC_ERROR";  break;
-        case DYNARR_GROW_ERROR:   pretty_error = "DYNARR_GROW_ERROR";   break;
-        case DYNARR_SHRINK_ERROR: pretty_error = "DYNARR_SHRINK_ERROR"; break;
-        default: pretty_error = "UNEXPECTED";
-    }
-
-    fprintf(stderr, "Dynarr :: %s error occured! abort()\n", pretty_error);
-    abort();
-}
-
-
-void dynarr_manual_error_callback(const vector_error_t error, void *const param)
-{
-    vector_manual_error_callback(error, param);
+    return shrink(dynarr, amount);
 }
 
 
@@ -308,7 +275,7 @@ static dynarr_header_t *get_dynarr_header(const dynarr_t *const dynarr)
 }
 
 
-static bool grow(dynarr_t **const dynarr, const size_t amount_to_add)
+static dynarr_status_t grow(dynarr_t **const dynarr, const size_t amount_to_add)
 {
     const dynarr_header_t *const header = get_dynarr_header(*dynarr);
     const size_t size = dynarr_size(*dynarr) + amount_to_add;
@@ -324,14 +291,14 @@ static bool grow(dynarr_t **const dynarr, const size_t amount_to_add)
     const size_t new_cap = ceil(capacity);
     if (new_cap == dynarr_capacity(*dynarr))
     {
-        return true;
+        return DYNARR_SUCCESS;
     }
 
-    return vector_resize(dynarr, new_cap, (vector_error_t)DYNARR_GROW_ERROR);
+    return (dynarr_status_t)vector_resize(dynarr, new_cap, (vector_status_t)DYNARR_GROW_ERROR);
 }
 
 
-static bool shrink(dynarr_t **const dynarr, const size_t amount_to_remove)
+static dynarr_status_t shrink(dynarr_t **const dynarr, const size_t amount_to_remove)
 {
     const dynarr_header_t *const header = get_dynarr_header(*dynarr);
     const size_t size = dynarr_size(*dynarr) - amount_to_remove;
@@ -350,10 +317,10 @@ static bool shrink(dynarr_t **const dynarr, const size_t amount_to_remove)
 
     if (dynarr_capacity(*dynarr) == new_cap)
     {
-        return true;
+        return DYNARR_SUCCESS;
     }
 
-    return vector_resize(dynarr, new_cap, (vector_error_t)DYNARR_SHRINK_ERROR);
+    return (dynarr_status_t)vector_resize(dynarr, new_cap, (vector_status_t)DYNARR_SHRINK_ERROR);
 }
 
 

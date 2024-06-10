@@ -9,17 +9,6 @@
 
 typedef struct vector_t dynarr_t;
 
-typedef enum dynarr_error_t
-{
-    DYNARR_NO_ERROR    = VECTOR_NO_ERROR,
-    DYNARR_ALLOC_ERROR = VECTOR_ALLOC_ERROR,
-    DYNARR_GROW_ERROR  = VECTOR_ERROR_LAST,
-    DYNARR_SHRINK_ERROR,
-    DYNARR_ERROR_LAST
-}
-dynarr_error_t;
-
-
 typedef struct dynarr_opts_t
 {
     size_t data_offset;  /* size of extended header */
@@ -28,40 +17,34 @@ typedef struct dynarr_opts_t
     float grow_factor;
     float grow_threshold;
     float shrink_threshold;
-    vector_error_callback_t error_callback;
-    vector_error_t *error_out;
 }
 dynarr_opts_t;
+
+typedef enum dynarr_status_t
+{
+    DYNARR_SUCCESS    = VECTOR_SUCCESS,
+    DYNARR_ALLOC_ERROR = VECTOR_ALLOC_ERROR,
+    DYNARR_GROW_ERROR  = VECTOR_STATUS_LAST,
+    DYNARR_SHRINK_ERROR,
+    DYNARR_STATUS_LAST
+}
+dynarr_status_t;
+
 
 #define DYNARR_DEFAULT_ARGS \
     .initial_cap = 10, \
     .shrink_threshold = 0.25f, \
     .grow_threshold = 0.75f, \
-    .grow_factor = 1.5f, \
-    .error_callback = dynarr_default_error_callback
+    .grow_factor = 1.5f
 
 /*
 * The wrapper for `dynarr_create_` function that provides default values.
 */
-#define dynarr_create(dynarr_p, ...) {\
-    _Pragma("GCC diagnostic push") \
-    _Pragma("GCC diagnostic ignored \"-Woverride-init\"") \
-    dynarr_create_(&dynarr_p, &(dynarr_opts_t){ \
+#define dynarr_create(...) \
+    dynarr_create_(&(dynarr_opts_t){ \
         DYNARR_DEFAULT_ARGS, \
         __VA_ARGS__ \
     }); \
-    _Pragma("GCC diagnostic pop") \
-}
-
-
-#define dynarr_create_manual_errhdl(dynarr_p, error_ptr, ...) do{\
-    *error_ptr = DYNARR_NO_ERROR; \
-    dynarr_create(dynarr_p, \
-        .error_callback = dynarr_manual_error_callback, \
-        .error_out = (vector_error_t *)error_ptr, \
-        __VA_ARGS__ \
-    )} while(0)
-
 
 /*
 * Dynamic array constructor function that initializes array
@@ -70,7 +53,7 @@ dynarr_opts_t;
 * Array will not be able to shrink below `initial_cap`.
 * In case of allocation fail null pointer will be returned.
 */
-void dynarr_create_(dynarr_t **const dynarr, const dynarr_opts_t *const opts);
+dynarr_t *dynarr_create_(const dynarr_opts_t *const opts);
 
 
 /*
@@ -144,52 +127,52 @@ void *dynarr_last(const dynarr_t *const dynarr);
 /*
 * Appends element at array's tail, growing on demand.
 */
-bool dynarr_append(dynarr_t **const dynarr, const void *const value);
+dynarr_status_t dynarr_append(dynarr_t **const dynarr, const void *const value);
 
 
 /*
 * Appends element at array's head by shifting one element forward
 * and growing vector on demand.
 */
-bool dynarr_prepend(dynarr_t **const dynarr, const void *const value);
+dynarr_status_t dynarr_prepend(dynarr_t **const dynarr, const void *const value);
 
 
 /*
 * Removes element from the back, shrinking array on demand.
 */
-void dynarr_pop_back(dynarr_t **const dynarr);
+dynarr_status_t dynarr_pop_back(dynarr_t **const dynarr);
 
 
 /*
 * Removes element from the head by shifting one element to the left
 * and shrinking array on demand.
 */
-void dynarr_pop_front(dynarr_t **const dynarr);
+dynarr_status_t dynarr_pop_front(dynarr_t **const dynarr);
 
 
 /*
 * Inserts new element at given `index`, shifting one element forward
 * from that index.
 */
-bool dynarr_insert(dynarr_t **const dynarr, const size_t index, const void *value);
+dynarr_status_t dynarr_insert(dynarr_t **const dynarr, const size_t index, const void *value);
 
 
 /*
 * Removes element at given `index`.
 */
-void dynarr_remove(dynarr_t **const dynarr, const size_t index);
+dynarr_status_t dynarr_remove(dynarr_t **const dynarr, const size_t index);
 
 
 /*
 * Removes range of elements of `amount` length at given `index`.
 */
-void dynarr_remove_range(dynarr_t **const dynarr, const size_t index, const size_t amount);
+dynarr_status_t dynarr_remove_range(dynarr_t **const dynarr, const size_t index, const size_t amount);
 
 
 /*
 * Inserts range of `value` copies `amount` times at specific `index`.
 */
-bool dynarr_spread_insert(dynarr_t **const dynarr, const size_t index, const size_t amount, const void *const value);
+dynarr_status_t dynarr_spread_insert(dynarr_t **const dynarr, const size_t index, const size_t amount, const void *const value);
 
 
 /*
@@ -197,21 +180,13 @@ bool dynarr_spread_insert(dynarr_t **const dynarr, const size_t index, const siz
 * that contained in the vector are ordered in same way.
 * (Allocation may fail, so returning operation status)
 */
-bool dynarr_binary_insert(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *const param, size_t *const index);
+dynarr_status_t dynarr_binary_insert(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *const param, size_t *const index);
 
 
 /*
 * Similar to insert except it stores no data, leaving slot in undefined state.
 */
-bool dynarr_binary_reserve(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *const param, size_t *const index);
-
-
-/*
-* Error callbacks:
-*/
-void dynarr_default_error_callback(const vector_error_t error, void *const param);
-
-void dynarr_manual_error_callback(const vector_error_t error, void *const param);
+dynarr_status_t dynarr_binary_reserve(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *const param, size_t *const index);
 
 
 #if 0
