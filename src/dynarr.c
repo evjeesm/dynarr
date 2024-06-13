@@ -69,7 +69,7 @@ void* dynarr_get_ext_header(const dynarr_t *const dynarr)
 }
 
 
-dynarr_t *dynarr_clone(dynarr_t *const dynarr)
+dynarr_t *dynarr_clone(const dynarr_t *const dynarr)
 {
     assert(dynarr);
     return vector_clone(dynarr);
