@@ -6,7 +6,6 @@ libdynarr_funcs_la_SOURCES = dynarr.c dynarr.h
 libdynarr_funcs_la_CFLAGS = -I../vector/src
 
 libdynarr_la_SOURCES =
-libdynarr_la_CFLAGS = -I../vector/src/
 libdynarr_la_LDFLAGS = -shared
 libdynarr_la_LIBADD = libdynarr_funcs.la
 
