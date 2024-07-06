@@ -44,7 +44,7 @@ dynarr_status_t;
     dynarr_create_(&(dynarr_opts_t){ \
         DYNARR_DEFAULT_ARGS, \
         __VA_ARGS__ \
-    }); \
+    }) \
 
 /*
 * Dynamic array constructor function that initializes array
