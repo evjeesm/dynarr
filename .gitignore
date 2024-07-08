@@ -1,11 +1,21 @@
 *
 
+# submodules
+!.gitmodules
+
+!build-aux
+!build-aux/**
+!m4
+
 !src/
 !tests/
 !*.c
 !*.h
 !*.am
 !*.ac
+!*.m4
+!*.in
+!configure
 
 !.gitignore
 !.clangd
