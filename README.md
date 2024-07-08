@@ -1,7 +1,7 @@
 # Dynarr - generic dynamic array
 Is an extension over [vector](https://github.com/evjeesm/vector).
 
-![check](https://github.com/evjeesm/dynarr/actions/workflows/makefile.yml)
+![check](https://github.com/evjeesm/dynarr/actions/workflows/makefile.yml/badge.svg)
 
 Keeps containing data sequential, tracks amount of stored elements
 and grows/shrinks on demand.
