@@ -13,3 +13,5 @@ libdynarr_la_LIBADD = libdynarr_funcs.la ../vector/src/libvector.la
 libdynarr_static_la_SOURCES =
 libdynarr_static_la_LDFLAGS = -static
 libdynarr_static_la_LIBADD = libdynarr_funcs.la ../vector/src/libvector_static.la
+
+install_HEADERS = dynarr.h

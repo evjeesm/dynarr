@@ -131,7 +131,7 @@ am__uninstall_files_from_dir = { \
 am__installdirs = "$(DESTDIR)$(libdir)"
 LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES)
 libdynarr_la_DEPENDENCIES = libdynarr_funcs.la \
-	../vector/src/libvector.la
+	$(top_builddir)/vector/src/libvector.la
 am_libdynarr_la_OBJECTS =
 libdynarr_la_OBJECTS = $(am_libdynarr_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
@@ -149,7 +149,7 @@ libdynarr_funcs_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(libdynarr_funcs_la_CFLAGS) $(CFLAGS) \
 	$(libdynarr_funcs_la_LDFLAGS) $(LDFLAGS) -o $@
 libdynarr_static_la_DEPENDENCIES = libdynarr_funcs.la \
-	../vector/src/libvector_static.la
+	$(top_builddir)/vector/src/libvector_static.la
 am_libdynarr_static_la_OBJECTS =
 libdynarr_static_la_OBJECTS = $(am_libdynarr_static_la_OBJECTS)
 libdynarr_static_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
@@ -359,15 +359,15 @@ valgrind_enabled_tools = @valgrind_enabled_tools@
 valgrind_tools = @valgrind_tools@
 noinst_LTLIBRARIES = libdynarr_funcs.la
 lib_LTLIBRARIES = libdynarr.la libdynarr_static.la
-libdynarr_funcs_la_SOURCES = dynarr.c dynarr.h
-libdynarr_funcs_la_CFLAGS = -I../vector/src
-libdynarr_funcs_la_LDFLAGS = -L../vector/src/.libs/
+libdynarr_funcs_la_SOURCES = dynarr.c dynarr.h $(top_builddir)/vector/src/vector.h
+libdynarr_funcs_la_CFLAGS = -I$(top_builddir)/vector/src
+libdynarr_funcs_la_LDFLAGS = -L$(top_builddir)/vector/src/.libs/
 libdynarr_la_SOURCES = 
 libdynarr_la_LDFLAGS = -shared
-libdynarr_la_LIBADD = libdynarr_funcs.la ../vector/src/libvector.la
+libdynarr_la_LIBADD = libdynarr_funcs.la $(top_builddir)/vector/src/libvector.la
 libdynarr_static_la_SOURCES = 
 libdynarr_static_la_LDFLAGS = -static
-libdynarr_static_la_LIBADD = libdynarr_funcs.la ../vector/src/libvector_static.la
+libdynarr_static_la_LIBADD = libdynarr_funcs.la $(top_builddir)/vector/src/libvector_static.la
 all: all-am
 
 .SUFFIXES:
