@@ -388,6 +388,10 @@ START_TEST(test_dynarr_binary_merge)
 
     for (size_t i = 0; i < data_res_size; ++i)
         ck_assert_int_eq(*(int*)dynarr_get(result, i), data_res[i]);
+
+    dynarr_destroy(first);
+    dynarr_destroy(second);
+    dynarr_destroy(result);
 }
 END_TEST
 
