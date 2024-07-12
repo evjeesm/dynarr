@@ -26,6 +26,12 @@ static dynarr_status_t shrink(dynarr_t **const dynarr, const size_t amount_to_re
 static void free_space_at(dynarr_t *const dynarr, const size_t index, const size_t amount);
 static void make_space_at(dynarr_t *const dynarr, const size_t index, /*mut*/ size_t amount);
 
+static size_t binary_find_insert_place(const dynarr_t *const dynarr,
+        const void *value,
+        const size_t start,
+        const size_t end,
+        const compare_t cmp,
+        void *param);
 
 /**                          ***
 * === API Implementation   === *
@@ -212,13 +218,23 @@ dynarr_status_t dynarr_spread_insert(dynarr_t **const dynarr, const size_t index
 }
 
 
+size_t dynarr_binary_find_insert_place(const dynarr_t *const dynarr, const void *const value, const compare_t cmp, void *param)
+{
+    assert(dynarr);
+    assert(value);
+    assert(cmp);
+
+    return binary_find_insert_place(dynarr, value, 0, dynarr_size(dynarr), cmp, param);
+}
+
+
 dynarr_status_t dynarr_binary_insert(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *param, size_t *const index)
 {
     assert(dynarr && *dynarr);
     assert(value);
     assert(cmp);
 
-    size_t place = vector_binary_find_insert_place(*dynarr, value, dynarr_size(*dynarr), cmp, param);
+    size_t place = dynarr_binary_find_insert_place(*dynarr, value, cmp, param);
     dynarr_status_t status = dynarr_insert(dynarr, place, value);
 
     if (DYNARR_SUCCESS != status) return status;
@@ -234,7 +250,7 @@ dynarr_status_t dynarr_binary_reserve(dynarr_t **const dynarr, const void *const
     assert(value);
     assert(cmp);
 
-    size_t place = vector_binary_find_insert_place(*dynarr, value, dynarr_size(*dynarr), cmp, param);
+    size_t place = dynarr_binary_find_insert_place(*dynarr, value, cmp, param);
     dynarr_status_t status = grow(dynarr, 1);
 
     if (DYNARR_SUCCESS != status) return status;
@@ -390,5 +406,34 @@ static void make_space_at(dynarr_t *const dynarr, const size_t index, size_t amo
     }
 
     header->size += amount;
+}
+
+
+static size_t binary_find_insert_place(const dynarr_t *const dynarr,
+        const void *value,
+        const size_t start,
+        const size_t end,
+        const compare_t cmp,
+        void *param)
+{
+    if (start == end)
+    {
+        return start;
+    }
+
+    const size_t middle = (start + end) / 2;
+    const void *middle_value = dynarr_get(dynarr, middle);
+
+    if (0 == cmp(value, middle_value, param))
+    {
+        return middle + 1;
+    }
+
+    if (0 < cmp(value, middle_value, param))
+    {
+        return binary_find_insert_place(dynarr, value, middle + 1, end, cmp, param);
+    }
+
+    return binary_find_insert_place(dynarr, value, start, middle, cmp, param);
 }
 

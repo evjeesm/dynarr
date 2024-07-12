@@ -287,6 +287,38 @@ START_TEST (test_dynarr_remove_if)
 END_TEST
 
 
+static ssize_t cmp_int_asc(const void *value, const void *element, void *param)
+{
+    (void) param;
+    return *(int*) value - *(int*) element;
+}
+
+START_TEST (test_dynarr_binary_find_insert_place)
+{
+    const size_t capacity = dynarr_capacity(array);
+    const int data[] = {-100, -1, 0, 10, 12, 20, 21, 30, 34, 60};
+    for (size_t i = 0; i < sizeof(data)/sizeof(data[0]); ++i)
+    {
+        dynarr_append(&array, &data[i]);
+    }
+
+    size_t index = 0;
+
+    index = dynarr_binary_find_insert_place(array, TMP_REF(int, -200), cmp_int_asc, NULL);
+    ck_assert_uint_eq(0, index);
+
+    index = dynarr_binary_find_insert_place(array, TMP_REF(int, -20), cmp_int_asc, NULL);
+    ck_assert_uint_eq(1, index);
+
+    index = dynarr_binary_find_insert_place(array, TMP_REF(int, 0), cmp_int_asc, NULL);
+    ck_assert_uint_eq(3, index); /* skips equal numbers according to current cmp implementation */
+
+    index = dynarr_binary_find_insert_place(array, TMP_REF(int, 1), cmp_int_asc, NULL);
+    ck_assert_uint_eq(3, index);
+}
+END_TEST
+
+
 START_TEST (test_dynarr_binary_insert)
 {
     int table[] = {10, 23, 31, 1, 4, 22, 34, 71, 15, 18, 0, 5, 45, 99, 2, 0, 71, 22};
@@ -356,6 +388,7 @@ Suite *dynarr_suite(void)
     tcase_add_test(tc_core, test_dynarr_insert);
     tcase_add_test(tc_core, test_dynarr_spread_insert);
     tcase_add_test(tc_core, test_dynarr_spread_insert_inbetween);
+    tcase_add_test(tc_core, test_dynarr_binary_find_insert_place);
     tcase_add_test(tc_core, test_dynarr_remove);
     tcase_add_test(tc_core, test_dynarr_remove_if);
     tcase_add_test(tc_core, test_dynarr_binary_insert);

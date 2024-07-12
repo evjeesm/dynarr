@@ -186,6 +186,13 @@ dynarr_status_t dynarr_spread_insert(dynarr_t **const dynarr, const size_t index
 
 
 /*
+* Binary search that returns index of the insert position for a new value
+* that satisfies `cmp` ordering.
+*/
+size_t dynarr_binary_find_insert_place(const dynarr_t *const dynarr, const void *const value, const compare_t cmp, void *param);
+
+
+/*
 * Binary insert. Works only if previous elements
 * that contained in the vector are ordered in same way.
 * (Allocation may fail, so returning operation status)
@@ -198,13 +205,5 @@ dynarr_status_t dynarr_binary_insert(dynarr_t **const dynarr, const void *const 
 */
 dynarr_status_t dynarr_binary_reserve(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *const param, size_t *const index);
 
-
-#if 0
-
-/*
-* Reverse order of elements in the vector 
-*/
-bool vector_reverse(vector_t **vector);
-#endif
 
 #endif/*_DYNARR_H_*/
