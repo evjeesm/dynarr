@@ -295,7 +295,6 @@ static ssize_t cmp_int_asc(const void *value, const void *element, void *param)
 
 START_TEST (test_dynarr_binary_find_insert_place)
 {
-    const size_t capacity = dynarr_capacity(array);
     const int data[] = {-100, -1, 0, 10, 12, 20, 21, 30, 34, 60};
     for (size_t i = 0; i < sizeof(data)/sizeof(data[0]); ++i)
     {
@@ -367,6 +366,31 @@ START_TEST (test_dynarr_binary_find)
 END_TEST
 
 
+START_TEST(test_dynarr_binary_merge)
+{
+    const int data1[] = {-10, -4, 0, 2, 5, 6, 10, 22, 23, 30};
+    const int data2[] = {-11, -9, 1, 2, 7, 11, 15, 23, 31, 40, 41, 42};
+    const int data_res[] = {-11, -10, -9, -4, 0, 1, 2, 5, 6, 7, 10, 11, 15, 22, 23, 30, 31, 40, 41, 42};
+    const size_t data_res_size = sizeof(data_res)/sizeof(data_res[0]);
+
+    dynarr_t *first = dynarr_create(.element_size = sizeof(int));
+    dynarr_t *second = dynarr_create(.element_size = sizeof(int));
+
+    for (size_t i = 0; i < sizeof(data1)/sizeof(data1[0]); ++i)
+        dynarr_append(&first, &data1[i]);
+
+    for (size_t i = 0; i < sizeof(data2)/sizeof(data2[0]); ++i)
+        dynarr_append(&second, &data2[i]);
+
+    dynarr_t *result = dynarr_binary_merge(first, second, cmp_int_asc, NULL);
+
+    ck_assert_uint_eq(dynarr_size(result), data_res_size);
+
+    for (size_t i = 0; i < data_res_size; ++i)
+        ck_assert_int_eq(*(int*)dynarr_get(result, i), data_res[i]);
+}
+END_TEST
+
 
 Suite *dynarr_suite(void)
 {
@@ -393,6 +417,7 @@ Suite *dynarr_suite(void)
     tcase_add_test(tc_core, test_dynarr_remove_if);
     tcase_add_test(tc_core, test_dynarr_binary_insert);
     tcase_add_test(tc_core, test_dynarr_binary_find);
+    tcase_add_test(tc_core, test_dynarr_binary_merge);
     suite_add_tcase(s, tc_core);
 
     return s;

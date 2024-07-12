@@ -21,6 +21,7 @@ dynarr_header_t;
 * === Forward Declarations === *
 **                            */
 
+static dynarr_opts_t   get_opts(const dynarr_t *const dynarr);
 static dynarr_header_t *get_dynarr_header(const dynarr_t *const dynarr);
 static dynarr_status_t grow(dynarr_t **const dynarr, const size_t amount_to_add);
 static dynarr_status_t shrink(dynarr_t **const dynarr, const size_t amount_to_remove);
@@ -362,19 +363,6 @@ dynarr_status_t dynarr_remove_if(dynarr_t **const dynarr,
     return shrink(dynarr, removed);
 }
 
-typedef struct merge_helper_data
-{
-    const compare_t cmp;
-    void *const param;
-}
-merge_helper_data;
-
-static int merge_helper(const void *const element, void *const acc, void *const param)
-{
-    dynarr_t **acc_ = (dynarr_t**)acc;
-    merge_helper_data *data = param;
-    return dynarr_binary_insert_uniq(acc_, element, data->cmp, data->param, NULL);
-}
 
 dynarr_t *dynarr_binary_merge(const dynarr_t *const first,
         const dynarr_t *const second,
@@ -385,17 +373,76 @@ dynarr_t *dynarr_binary_merge(const dynarr_t *const first,
     assert(second);
     assert(cmp);
 
-    dynarr_t *merged = dynarr_clone(first);
+    // copy opts from first dynarr
+    // NOTE: maybe its relevant to allow for preallocation without using .initial_cap,
+    //       like dynarr_create_prealoc(opts, prealoc_size) ?
+    dynarr_t *merged = dynarr_create_(TMP_REF(dynarr_opts_t, get_opts(first)));
     if (!merged) return NULL;
 
+    dynarr_status_t status = 0;
+    const size_t first_size = dynarr_size(first);
     const size_t second_size = dynarr_size(second);
-    merge_helper_data data = {.cmp = cmp, .param = param };
-    dynarr_status_t status = dynarr_aggregate(second, merge_helper, &merged, &data);
-    if (DYNARR_SUCCESS != status)
+    size_t first_i = 0;
+    size_t second_i = 0;
+
+    for (; first_i < first_size && second_i < second_size ;)
     {
-        dynarr_destroy(merged);
-        return NULL;
+        const void *f = dynarr_get(first, first_i);
+        const void *s = dynarr_get(second, second_i);
+        ssize_t res = cmp(f, s, param);
+        if (0 == res)
+        {
+            status = dynarr_append(&merged, f);
+            ++first_i; ++second_i;
+        }
+        else if (0 > res)
+        {
+            status = dynarr_append(&merged, f);
+            ++first_i;
+        }
+        else // 0 < res
+        {
+            status = dynarr_append(&merged, s);
+            ++second_i;
+        }
+
+        if (DYNARR_SUCCESS != status)
+        {
+            dynarr_destroy(merged);
+            return NULL;
+        }
     }
+
+    if (first_size == second_size) return merged;
+
+    // copy rest
+    {
+        const dynarr_t *src;
+        size_t src_i;
+        size_t src_size;
+        if (first_size > second_size)
+        {
+            src = first;
+            src_i = first_i;
+            src_size = first_size;
+        }
+        else {
+            src = second;
+            src_i = second_i;
+            src_size = second_size;
+        }
+
+        for (; src_i < src_size; ++src_i)
+        {
+            status = dynarr_append(&merged, dynarr_get(src, src_i));
+            if (DYNARR_SUCCESS != status)
+            {
+                dynarr_destroy(merged);
+                return NULL;
+            }
+        }
+    }
+
     return merged;
 }
 
@@ -435,6 +482,20 @@ int dynarr_transform(dynarr_t *const dynarr,
 /**                       ***
 * === Static Functions  === *
 **                         */
+
+static dynarr_opts_t get_opts(const dynarr_t *const dynarr)
+{
+    const dynarr_header_t *header = get_dynarr_header(dynarr);
+    return (dynarr_opts_t) {
+        .data_offset = vector_data_offset(dynarr),
+        .element_size = vector_element_size(dynarr),
+        .initial_cap = vector_initial_capacity(dynarr),
+        .grow_factor = header->grow_factor,
+        .grow_threshold = header->grow_threshold,
+        .shrink_threshold = header->shrink_threshold,
+    };
+}
+
 
 static dynarr_header_t *get_dynarr_header(const dynarr_t *const dynarr)
 {
