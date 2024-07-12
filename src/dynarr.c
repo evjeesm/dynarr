@@ -1,4 +1,5 @@
 #include "dynarr.h"
+#include "vector.h"
 
 #include <assert.h> /* assert */
 #include <string.h> /* memcpy, memset */
@@ -152,6 +153,32 @@ void *dynarr_last(const dynarr_t *const dynarr)
 }
 
 
+void *dynarr_binary_find(const dynarr_t *const dynarr,
+        const void *const value,
+        const compare_t cmp,
+        void *const param)
+{
+    assert(dynarr);
+    assert(value);
+    assert(cmp);
+    return vector_binary_find(dynarr, value, dynarr_size(dynarr), cmp,
+            param);
+}
+
+
+ssize_t dynarr_binary_find_index(const dynarr_t *const dynarr,
+        const void *const value,
+        const compare_t cmp,
+        void *const param)
+{
+    assert(dynarr);
+    assert(value);
+    assert(cmp);
+    return vector_binary_find_index(dynarr, value, dynarr_size(dynarr),
+            cmp, param);
+}
+
+
 dynarr_status_t dynarr_append(dynarr_t **const dynarr, const void *const value)
 {
     assert(dynarr && *dynarr);
@@ -184,7 +211,9 @@ dynarr_status_t dynarr_pop_front(dynarr_t **const dynarr)
 }
 
 
-dynarr_status_t dynarr_insert(dynarr_t **const dynarr, const size_t index, const void *value)
+dynarr_status_t dynarr_insert(dynarr_t **const dynarr,
+        const size_t index,
+        const void *value)
 {
     assert(dynarr && *dynarr);
     assert(index <= dynarr_size(*dynarr));
@@ -201,7 +230,10 @@ dynarr_status_t dynarr_insert(dynarr_t **const dynarr, const size_t index, const
 }
 
 
-dynarr_status_t dynarr_spread_insert(dynarr_t **const dynarr, const size_t index, const size_t amount, const void *const value)
+dynarr_status_t dynarr_spread_insert(dynarr_t **const dynarr,
+        const size_t index,
+        const size_t amount,
+        const void *const value)
 {
     assert(dynarr && *dynarr);
     assert(index <= dynarr_size(*dynarr));
@@ -218,7 +250,10 @@ dynarr_status_t dynarr_spread_insert(dynarr_t **const dynarr, const size_t index
 }
 
 
-size_t dynarr_binary_find_insert_place(const dynarr_t *const dynarr, const void *const value, const compare_t cmp, void *param)
+size_t dynarr_binary_find_insert_place(const dynarr_t *const dynarr,
+        const void *const value,
+        const compare_t cmp,
+        void *param)
 {
     assert(dynarr);
     assert(value);
@@ -228,7 +263,11 @@ size_t dynarr_binary_find_insert_place(const dynarr_t *const dynarr, const void 
 }
 
 
-dynarr_status_t dynarr_binary_insert(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *param, size_t *const index)
+dynarr_status_t dynarr_binary_insert(dynarr_t **const dynarr,
+        const void *const value,
+        const compare_t cmp,
+        void *param,
+        size_t *const index)
 {
     assert(dynarr && *dynarr);
     assert(value);
@@ -244,7 +283,27 @@ dynarr_status_t dynarr_binary_insert(dynarr_t **const dynarr, const void *const 
 }
 
 
-dynarr_status_t dynarr_binary_reserve(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *const param, size_t *const index)
+dynarr_status_t dynarr_binary_insert_uniq(dynarr_t **const dynarr,
+        const void *const value,
+        const compare_t cmp, void *param,
+        size_t *const index)
+{
+    assert(dynarr && *dynarr);
+    assert(value);
+    assert(cmp);
+
+    ssize_t found = dynarr_binary_find_index(*dynarr, value, cmp, param);
+    if (found) return DYNARR_SUCCESS;
+
+    return dynarr_binary_insert(dynarr, value, cmp, param, index);
+}
+
+
+dynarr_status_t dynarr_binary_reserve(dynarr_t **const dynarr,
+        const void *const value,
+        const compare_t cmp,
+        void *const param,
+        size_t *const index)
 {
     assert(dynarr && *dynarr);
     assert(value);
@@ -269,7 +328,9 @@ dynarr_status_t dynarr_remove(dynarr_t **const dynarr, const size_t index)
 }
 
 
-dynarr_status_t dynarr_remove_range(dynarr_t **const dynarr, const size_t index, const size_t amount)
+dynarr_status_t dynarr_remove_range(dynarr_t **const dynarr,
+        const size_t index,
+        const size_t amount)
 {
     assert(dynarr && *dynarr);
     assert(amount > 0);
@@ -281,7 +342,10 @@ dynarr_status_t dynarr_remove_range(dynarr_t **const dynarr, const size_t index,
 }
 
 
-dynarr_status_t dynarr_remove_if(dynarr_t **const dynarr, const predicate_t predicate, const size_t limit, void *const param)
+dynarr_status_t dynarr_remove_if(dynarr_t **const dynarr,
+        const predicate_t predicate,
+        const size_t limit,
+        void *const param)
 {
     assert(dynarr && *dynarr);
 
@@ -296,6 +360,76 @@ dynarr_status_t dynarr_remove_if(dynarr_t **const dynarr, const predicate_t pred
     }
 
     return shrink(dynarr, removed);
+}
+
+typedef struct merge_helper_data
+{
+    const compare_t cmp;
+    void *const param;
+}
+merge_helper_data;
+
+static int merge_helper(const void *const element, void *const acc, void *const param)
+{
+    dynarr_t **acc_ = (dynarr_t**)acc;
+    merge_helper_data *data = param;
+    return dynarr_binary_insert_uniq(acc_, element, data->cmp, data->param, NULL);
+}
+
+dynarr_t *dynarr_binary_merge(const dynarr_t *const first,
+        const dynarr_t *const second,
+        const compare_t cmp,
+        void *const param)
+{
+    assert(first);
+    assert(second);
+    assert(cmp);
+
+    dynarr_t *merged = dynarr_clone(first);
+    if (!merged) return NULL;
+
+    const size_t second_size = dynarr_size(second);
+    merge_helper_data data = {.cmp = cmp, .param = param };
+    dynarr_status_t status = dynarr_aggregate(second, merge_helper, &merged, &data);
+    if (DYNARR_SUCCESS != status)
+    {
+        dynarr_destroy(merged);
+        return NULL;
+    }
+    return merged;
+}
+
+
+int dynarr_foreach(const dynarr_t *const dynarr,
+        const foreach_t func,
+        void *const param)
+{
+    assert(dynarr);
+    assert(func);
+    return vector_foreach(dynarr, dynarr_size(dynarr), func, param);
+}
+
+
+int dynarr_aggregate(const dynarr_t *const dynarr,
+        const aggregate_t func,
+        void *const acc,
+        void *const param)
+{
+    assert(dynarr);
+    assert(func);
+
+    return vector_aggregate(dynarr, dynarr_size(dynarr), func, acc, param);
+}
+
+
+int dynarr_transform(dynarr_t *const dynarr,
+        const transform_t func,
+        void *const param)
+{
+    assert(dynarr);
+    assert(func);
+
+    return dynarr_foreach(dynarr, (foreach_t)func, param);
 }
 
 /**                       ***

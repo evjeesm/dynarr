@@ -125,6 +125,24 @@ void *dynarr_last(const dynarr_t *const dynarr);
 
 
 /*
+* Wrapper for vector binary find
+*/
+void *dynarr_binary_find(const dynarr_t *const dynarr,
+        const void *const value,
+        const compare_t cmp,
+        void *const param);
+
+
+/*
+* Binary search, returns index of the element that matches or (-1) when not found.
+*/
+ssize_t dynarr_binary_find_index(const dynarr_t *const dynarr,
+        const void *const value,
+        const compare_t cmp,
+        void *const param);
+
+
+/*
 * Appends element at array's tail, growing on demand.
 */
 dynarr_status_t dynarr_append(dynarr_t **const dynarr, const void *const value);
@@ -154,7 +172,9 @@ dynarr_status_t dynarr_pop_front(dynarr_t **const dynarr);
 * Inserts new element at given `index`, shifting one element forward
 * from that index.
 */
-dynarr_status_t dynarr_insert(dynarr_t **const dynarr, const size_t index, const void *value);
+dynarr_status_t dynarr_insert(dynarr_t **const dynarr,
+        const size_t index,
+        const void *value);
 
 
 /*
@@ -166,7 +186,9 @@ dynarr_status_t dynarr_remove(dynarr_t **const dynarr, const size_t index);
 /*
 * Removes range of elements of `amount` length at given `index`.
 */
-dynarr_status_t dynarr_remove_range(dynarr_t **const dynarr, const size_t index, const size_t amount);
+dynarr_status_t dynarr_remove_range(dynarr_t **const dynarr,
+        const size_t index,
+        const size_t amount);
 
 
 /*
@@ -176,20 +198,38 @@ dynarr_status_t dynarr_remove_range(dynarr_t **const dynarr, const size_t index,
 *
 * Array reallocation performed at most once per call.
 */
-dynarr_status_t dynarr_remove_if(dynarr_t **const dynarr, const predicate_t predicate, const size_t limit, void *const param);
+dynarr_status_t dynarr_remove_if(dynarr_t **const dynarr,
+        const predicate_t predicate,
+        const size_t limit,
+        void *const param);
+
+
+/*
+* Merge two dynarrs together
+*/
+dynarr_t *dynarr_binary_merge(const dynarr_t *const first,
+        const dynarr_t *const second,
+        const compare_t cmp,
+        void *const param);
 
 
 /*
 * Inserts range of `value` copies `amount` times at specific `index`.
 */
-dynarr_status_t dynarr_spread_insert(dynarr_t **const dynarr, const size_t index, const size_t amount, const void *const value);
+dynarr_status_t dynarr_spread_insert(dynarr_t **const dynarr,
+        const size_t index,
+        const size_t amount,
+        const void *const value);
 
 
 /*
 * Binary search that returns index of the insert position for a new value
 * that satisfies `cmp` ordering.
 */
-size_t dynarr_binary_find_insert_place(const dynarr_t *const dynarr, const void *const value, const compare_t cmp, void *param);
+size_t dynarr_binary_find_insert_place(const dynarr_t *const dynarr,
+        const void *const value,
+        const compare_t cmp,
+        void *param);
 
 
 /*
@@ -197,13 +237,37 @@ size_t dynarr_binary_find_insert_place(const dynarr_t *const dynarr, const void 
 * that contained in the vector are ordered in same way.
 * (Allocation may fail, so returning operation status)
 */
-dynarr_status_t dynarr_binary_insert(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *const param, size_t *const index);
+dynarr_status_t dynarr_binary_insert(dynarr_t **const dynarr,
+        const void *const value,
+        const compare_t cmp,
+        void *const param,
+        size_t *const index);
 
 
 /*
 * Similar to insert except it stores no data, leaving slot in undefined state.
 */
-dynarr_status_t dynarr_binary_reserve(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *const param, size_t *const index);
+dynarr_status_t dynarr_binary_reserve(dynarr_t **const dynarr,
+        const void *const value,
+        const compare_t cmp,
+        void *const param,
+        size_t *const index);
+
+
+int dynarr_foreach(const dynarr_t *const dynarr,
+        const foreach_t func,
+        void *const param);
+
+
+int dynarr_aggregate(const dynarr_t *const dynarr,
+        const aggregate_t func,
+        void *const acc,
+        void *const param);
+
+
+int dynarr_transform(dynarr_t *const dynarr,
+        const transform_t func,
+        void *const param);
 
 
 #endif/*_DYNARR_H_*/
