@@ -1,6 +1,7 @@
 #include <check.h>
 #include <stdlib.h>
 #include "../src/dynarr.h"
+#include "vector.h"
 
 static dynarr_t *array;
 
@@ -263,6 +264,29 @@ START_TEST (test_dynarr_remove)
 END_TEST
 
 
+static bool is_even(const void *const element, void *const param)
+{
+    (void) param;
+    return *(int*)element % 2 == 0;
+}
+
+START_TEST (test_dynarr_remove_if)
+{
+    for (int i = 0; i < 20; ++i)
+    {
+        ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_append(&array, &i));
+    }
+    ck_assert_uint_eq(DYNARR_SUCCESS, dynarr_remove_if(&array, is_even, dynarr_size(array), NULL));
+    ck_assert_uint_eq(dynarr_size(array), 10);
+
+    for (int i = 0; i < 10; ++i)
+    {
+        ck_assert_mem_eq(dynarr_get(array, i), TMP_REF(int, i*2 + 1), sizeof(int));
+    }
+}
+END_TEST
+
+
 START_TEST (test_dynarr_binary_insert)
 {
     int table[] = {10, 23, 31, 1, 4, 22, 34, 71, 15, 18, 0, 5, 45, 99, 2, 0, 71, 22};
@@ -318,7 +342,7 @@ Suite *dynarr_suite(void)
     TCase *tc_core;
 
     s = suite_create("Dynamic Array");
-    
+
     /* Core test case */
     tc_core = tcase_create("Core");
 
@@ -333,6 +357,7 @@ Suite *dynarr_suite(void)
     tcase_add_test(tc_core, test_dynarr_spread_insert);
     tcase_add_test(tc_core, test_dynarr_spread_insert_inbetween);
     tcase_add_test(tc_core, test_dynarr_remove);
+    tcase_add_test(tc_core, test_dynarr_remove_if);
     tcase_add_test(tc_core, test_dynarr_binary_insert);
     tcase_add_test(tc_core, test_dynarr_binary_find);
     suite_add_tcase(s, tc_core);

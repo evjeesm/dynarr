@@ -170,6 +170,16 @@ dynarr_status_t dynarr_remove_range(dynarr_t **const dynarr, const size_t index,
 
 
 /*
+* Removes `limit` elements that match predicate.
+* Element removal performed form tail to head of the array
+* in order to reduce memory movement during the process.
+*
+* Array reallocation performed at most once per call.
+*/
+dynarr_status_t dynarr_remove_if(dynarr_t **const dynarr, const predicate_t predicate, const size_t limit, void *const param);
+
+
+/*
 * Inserts range of `value` copies `amount` times at specific `index`.
 */
 dynarr_status_t dynarr_spread_insert(dynarr_t **const dynarr, const size_t index, const size_t amount, const void *const value);

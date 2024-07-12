@@ -265,6 +265,23 @@ dynarr_status_t dynarr_remove_range(dynarr_t **const dynarr, const size_t index,
 }
 
 
+dynarr_status_t dynarr_remove_if(dynarr_t **const dynarr, const predicate_t predicate, const size_t limit, void *const param)
+{
+    assert(dynarr && *dynarr);
+
+    size_t removed = 0;
+    for (size_t i = dynarr_size(*dynarr); i > 0 && removed < limit; --i) /* going in reverse */
+    {
+        if (predicate(dynarr_get(*dynarr, i - 1), param))
+        {
+            free_space_at(*dynarr, i - 1, 1);
+            ++removed;
+        }
+    }
+
+    return shrink(dynarr, removed);
+}
+
 /**                       ***
 * === Static Functions  === *
 **                         */
