@@ -52,6 +52,7 @@ dynarr_t *dynarr_create_(const dynarr_opts_t *const opts)
         .data_offset = sizeof(dynarr_header_t) + opts->data_offset,
         .element_size = opts->element_size,
         .initial_cap = opts->initial_cap,
+        .alloc_param = opts->alloc_param,
     );
 
     if (NULL == dynarr) return NULL;

@@ -17,6 +17,7 @@ typedef struct dynarr_opts_t
     float grow_factor;
     float grow_threshold;
     float shrink_threshold;
+    void *alloc_param;
 }
 dynarr_opts_t;
 
