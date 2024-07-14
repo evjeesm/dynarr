@@ -52,9 +52,6 @@ Compiles to *static* archive and/or *shared* object.
 - run `./autogen.sh` if you do any changes to `configuration.ac` file.
 - run `./configure CFLAGS="<YOUR COMPILATION FLAGS>"` for instance `-Wall -Wextra -O3 -DNDEBUG`
 - run `make check`, whole thing will be compiled and tested with *check*
-- compiled artifacts will be stored in `./src/.libs/`.
-  I do recommend using symlinks to that folder instead of installing library during development,
-  this way I can be sure that all parts of my projects are synced.
 
 ## Usage
 link against (`libdynarr_static.a` or `libdynarr.so`) and -lm
