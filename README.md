@@ -62,7 +62,7 @@ If you use vector's API exclusively, then link also with vector library.
 
 ### Minimal Example
 ```c
-#include "vector.h"
+#include "dynarr.h"
 int main(void)
 {
     dynarr_t *dynarr = dynarr_create(.element_size = sizeof(int));
