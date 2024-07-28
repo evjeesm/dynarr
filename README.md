@@ -1,8 +1,6 @@
 # Dynarr - generic dynamic array
 Is an extension over [vector](https://github.com/evjeesm/vector).
 
-![check](https://github.com/evjeesm/dynarr/actions/workflows/makefile.yml/badge.svg)
-
 Keeps containing data sequential, tracks amount of stored elements
 and grows/shrinks on demand.
 Resize functionality is parametrized for flexability.
@@ -15,8 +13,13 @@ Supports further extension.
 Compiles to *static* archive and/or *shared* object.
 
 ## Supported platforms
-- GNU Linux
-- crossplatform compatability is not planned yet.
+
+| Platforms | CI/CD | COVERAGE |
+|---|---|---|
+| Linux | ![check-linux](https://github.com/evjeesm/vector/actions/workflows/linux.yml/badge.svg) | [![codecov](https://codecov.io/github/evjeesm/vector/graph/badge.svg?flag=debian)](https://codecov.io/github/evjeesm/vector) |
+| Windows | ![check-windows](https://github.com/evjeesm/vector/actions/workflows/windows.yml/badge.svg) | [![codecov](https://codecov.io/github/evjeesm/vector/graph/badge.svg?flag=windows)](https://codecov.io/github/evjeesm/vector) |
+
+
 
 ## Dependencies
 **Build Tools**:
