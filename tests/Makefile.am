@@ -6,8 +6,8 @@ TESTS = dynarr_test
 check_PROGRAMS = dynarr_test
 
 dynarr_test_SOURCES = dynarr_test.c $(top_srcdir)/src/dynarr.h
-dynarr_test_LDADD = $(top_builddir)/src/libdynarr.la \
-					$(top_builddir)/vector/src/libvector.la \
+dynarr_test_LDADD = $(top_builddir)/src/libdynarr_static.la \
+					$(top_builddir)/vector/src/libvector_static.la \
 					@CHECK_LIBS@
 dynarr_test_LIBS = $(CODE_COVERAGE_LIBS)
 dynarr_test_CPPFLAGS = -I$(top_srcdir)/vector/src/ $(CODE_COVERAGE_CPPFLAGS)
