@@ -5,9 +5,6 @@ include $(top_srcdir)/aminclude_static.am
 clean-local: code-coverage-clean
 distclean-local: code-coverage-dist-clean
 
-debug-dynarr-test: ./src/libdynarr.la ./tests/dynarr_test
-	LD_LIBRARY_PATH=./src/.libs:/usr/local/lib CK_FORK=no gdb -tui ./tests/.libs/dynarr_test
-
 # debug-vector-test-other: ./src/libvector.la ./tests/vector_test_other
 # 	LD_LIBRARY_PATH=./src/.libs:/usr/local/lib CK_FORK=no gdb -tui ./tests/.libs/vector_test_other
 # 

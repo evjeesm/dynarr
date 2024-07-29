@@ -14,3 +14,6 @@ dynarr_test_CPPFLAGS = -I$(top_srcdir)/vector/src/ $(CODE_COVERAGE_CPPFLAGS)
 dynarr_test_CFLAGS = @CHECK_CFLAGS@ $(CODE_COVERAGE_CFLAGS)
 dynarr_test_CXXFLAGS = $(CODE_COVERAGE_CXXFLAGS)
 
+debug-dynarr-test: $(top_builddir)/src/libdynarr_static.la dynarr_test
+	LD_LIBRARY_PATH=$(top_builddir)/srcs:/usr/local/lib CK_FORK=no gdb -tui dynarr_test
+
