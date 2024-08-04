@@ -1,0 +1,21 @@
+*
+
+# submodules
+!.gitmodules
+!vector
+
+!src
+!tests
+!examples
+!imgs
+!*.c
+!*.h
+!*.am
+!*.ac
+
+!.gitignore
+!.clangd
+!autogen.sh
+
+config.h
+aminclude_static.am

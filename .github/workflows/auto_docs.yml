@@ -1,0 +1,64 @@
+name: Auto Docs
+
+on:
+  workflow_call:
+    inputs:
+      source-branch:
+        description: 'The branch to merge from'
+        required: true
+        type: string
+      target-branch:
+        description: 'The branch to merge into'
+        required: true
+        type: string
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: true
+
+    - name: Install Doxygen
+      run: |
+        sudo apt-get install graphviz
+        wget https://www.doxygen.nl/files/doxygen-1.11.0.linux.bin.tar.gz
+        tar -x -gz -f doxygen-1.11.0.linux.bin.tar.gz
+        cd doxygen-1.11.0
+        sudo make install
+        cd ..
+        rm -rf doxygen-1.11.0
+
+    - name: Configure git
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+
+    - name: Fetch all branches
+      run: git fetch --all
+
+    - name: Checkout target branch
+      run: git switch ${{ inputs.target-branch }}
+
+    - name: Update & pull submodules recursively
+      run: |
+        git submodule update --init --recursive
+        git submodule update --recursive --remote
+
+    - name: Merge source branch into target branch
+      run: git merge ${{ inputs.source-branch }} --allow-unrelated-histories --commit -X theirs
+
+    - name: Regenerate Docs
+      run: |
+        rm -rf docs          # Clean docs folder
+        doxygen doxygen/doxyconf     # Run doxygen with config
+        touch docs/.nojekyll # disable Jekyll framework
+
+    - name: Commit Docs
+      run: |
+        git add -f docs
+        git commit -m "AutoDocs Update"
+
+    - name: Push changes to target branch
+      run: git push origin ${{ inputs.target-branch }}
