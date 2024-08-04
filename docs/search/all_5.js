@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['memory_20layout_0',['Memory layout',['../index.html#autotoc_md3',1,'']]],
-  ['minimal_20example_1',['Minimal Example',['../index.html#autotoc_md10',1,'']]]
+  ['implementation_20details_0',['Implementation details',['../index.html#autotoc_md1',1,'']]],
+  ['initial_5fcap_1',['initial_cap',['../structdynarr__opts__t.html#ac6f8e73f613df4b4adb4f5162a301f47',1,'dynarr_opts_t']]]
 ];
