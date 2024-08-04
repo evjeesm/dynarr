@@ -78,6 +78,7 @@ dynarr_status_t;
         __VA_ARGS__ \
     }) \
 
+<<<<<<< HEAD
 /**
 * Dynamic array constructor function that initializes array
 * with properties packed in opts struct.
@@ -128,6 +129,7 @@ size_t dynarr_initial_capacity(const dynarr_t *const dynarr);
 * Reports current capacity of the vector.
 */
 size_t dynarr_capacity(const dynarr_t *const dynarr);
+
 
 
 /**
