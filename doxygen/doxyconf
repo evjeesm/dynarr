@@ -1049,7 +1049,8 @@ RECURSIVE              = YES
 # Note that relative paths are relative to the directory from which doxygen is
 # run.
 
-EXCLUDE                = doxygen-awesome-css \
+EXCLUDE                = vector \
+                         doxygen-awesome-css \
                          memory \
                          tests \
                          examples \
@@ -1104,7 +1105,7 @@ EXAMPLE_RECURSIVE      = NO
 # that contain images that are to be included in the documentation (see the
 # \image command).
 
-IMAGE_PATH             = imgs/vector-scheme.svg
+IMAGE_PATH             = imgs/dynarr-scheme.svg
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program
@@ -2506,7 +2507,7 @@ SKIP_FUNCTION_MACROS   = YES
 # the path). If a tag file is not located in the directory in which doxygen is
 # run, you must also specify the path to the tagfile here.
 
-TAGFILES               = vector/vector.tag=vector/docs
+TAGFILES               = vector/vector.tag=https://evjeesm.github.io/vector/
 
 # When a file name is specified after GENERATE_TAGFILE, doxygen will create a
 # tag file that is based on the input files it reads. See section "Linking to
