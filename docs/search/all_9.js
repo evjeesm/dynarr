@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['shrink_5fthreshold_0',['shrink_threshold',['../structdynarr__opts__t.html#ab6ce4f5254ac3e20dc17c1648cb0605e',1,'dynarr_opts_t']]],
-  ['subprojects_3a_1',['Subprojects:',['../index.html#autotoc_md7',1,'']]],
-  ['supported_20platforms_2',['Supported platforms',['../index.html#autotoc_md2',1,'']]],
-  ['system_3',['Build System',['../index.html#autotoc_md5',1,'']]]
+  ['memory_0',['memory',['https://evjeesm.github.io/vector/structvector__t.html#a2c7a23fb3c2197cc5557b8543ffdb2f7',1,'vector_t']]],
+  ['memory_20layout_1',['Memory layout',['../index.html#autotoc_md3',1,'']]],
+  ['minimal_20example_2',['Minimal Example',['../index.html#autotoc_md10',1,'']]]
 ];

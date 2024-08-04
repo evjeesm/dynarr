@@ -3,7 +3,6 @@ var dynarr_8h =
     [ "dynarr_opts_t", "structdynarr__opts__t.html", "structdynarr__opts__t" ],
     [ "DYNARR_DEFAULT_ARGS", "dynarr_8h.html#a7506aa30c586258bba10244e55492795", null ],
     [ "dynarr_create", "dynarr_8h.html#a1d05157f1911b8d089e57ca0696be01f", null ],
-    [ "dynarr_t", "dynarr_8h.html#a5c6295b8f25a95bf17f26bff03bb9553", null ],
     [ "dynarr_status_t", "dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695d", [
       [ "DYNARR_SUCCESS", "dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695dae2ffc88372b836ecbc0e1eb5743511a4", null ],
       [ "DYNARR_ALLOC_ERROR", "dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695dac1521b11c91058fcbe8d859d57379dd4", null ],
