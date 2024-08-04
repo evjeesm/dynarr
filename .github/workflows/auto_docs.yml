@@ -44,8 +44,8 @@ jobs:
     - name: Update & pull submodules recursively
       run: |
         git submodule update --init --recursive
-        git submodule set-branch -b docs -- vector
         git submodule update --recursive --remote
+        git submodule foreach git pull --depth=1 origin docs
 
     - name: Merge source branch into target branch
       run: git merge ${{ inputs.source-branch }} --allow-unrelated-histories --commit -X theirs
