@@ -43,6 +43,7 @@ jobs:
 
     - name: Update & pull submodules recursively
       run: |
+        git submodule set-branch -b docs -- vector
         git submodule update --init --recursive
         git submodule update --recursive --remote
         git submodule foreach git pull --ff --allow-unrelated-histories --depth=1 origin docs
