@@ -1,5 +1,12 @@
 <map id="dynarr_binary_find" name="dynarr_binary_find">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,148,31"/>
-<area shape="rect" id="Node000002" href="$dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="196,5,293,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,15,182,15,182,21,148,21"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,148,56"/>
+<area shape="rect" id="Node000002" href="$dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="219,5,316,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,31,204,24,205,29,148,37"/>
+<area shape="rect" id="Node000003" href="$group__Vector.html#ga5081815905cf71570856aef717659463" title="Run binary search on the vector." alt="" coords="196,55,339,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,50,183,54,182,59,148,55"/>
+<area shape="rect" id="Node000004" href="$vector_8c.html#afec86be827dcdde96c62016b77630a7c" title="Performs binary search on a vectors range." alt="" coords="387,55,481,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="339,65,373,65,373,70,339,70"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="410,56,405,46,408,37,418,30,434,28,453,32,462,40,458,44,451,36,434,33,420,35,412,40,411,46,415,53"/>
+<area shape="rect" id="Node000005" href="$group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="529,55,620,80"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="482,65,516,65,516,70,482,70"/>
 </map>

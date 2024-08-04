@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Vector: src/dynarr.h File Reference</title>
+<title>Dynarr: src/dynarr.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Vector<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">Dynarr<span id="projectnumber">&#160;1.0</span>
    </div>
   </td>
  </tr>
@@ -108,7 +108,6 @@ $(function(){initNavTree('dynarr_8h.html',''); initResizable(true); });
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">dynarr.h File Reference</div></div>
@@ -117,21 +116,24 @@ $(function(){initNavTree('dynarr_8h.html',''); initResizable(true); });
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;sys/types.h&gt;</code><br />
-<code>#include &quot;vector.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="vector_8h_source.html">vector.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for dynarr.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="dynarr_8h__incl.png" border="0" usemap="#asrc_2dynarr_8h" alt=""/></div>
 <map name="asrc_2dynarr_8h" id="asrc_2dynarr_8h">
-<area shape="rect" title=" " alt="" coords="155,5,253,31"/>
-<area shape="rect" title=" " alt="" coords="5,79,88,104"/>
-<area shape="poly" title=" " alt="" coords="180,33,86,75,84,71,178,28"/>
-<area shape="rect" title=" " alt="" coords="112,79,187,104"/>
-<area shape="poly" title=" " alt="" coords="197,33,169,69,164,66,193,29"/>
-<area shape="rect" title=" " alt="" coords="211,79,307,104"/>
-<area shape="poly" title=" " alt="" coords="215,29,244,66,239,69,211,33"/>
-<area shape="rect" title=" " alt="" coords="331,79,405,104"/>
-<area shape="poly" title=" " alt="" coords="231,28,330,71,328,76,229,33"/>
+<area shape="rect" title=" " alt="" coords="113,5,212,31"/>
+<area shape="rect" title=" " alt="" coords="5,152,88,177"/>
+<area shape="poly" title=" " alt="" coords="139,33,107,53,78,80,62,109,54,139,48,138,58,107,74,77,104,48,136,29"/>
+<area shape="rect" title=" " alt="" coords="112,152,187,177"/>
+<area shape="poly" title=" " alt="" coords="169,30,177,64,177,104,164,141,159,139,172,104,172,64,164,32"/>
+<area shape="rect" title=" " alt="" coords="211,152,307,177"/>
+<area shape="poly" title=" " alt="" coords="173,30,246,139,241,142,168,33"/>
+<area shape="rect" href="vector_8h.html" title=" " alt="" coords="88,79,163,104"/>
+<area shape="poly" title=" " alt="" coords="159,32,140,68,135,65,154,30"/>
+<area shape="poly" title=" " alt="" coords="114,106,71,145,68,141,111,102"/>
+<area shape="poly" title=" " alt="" coords="132,103,144,138,139,140,127,105"/>
+<area shape="poly" title=" " alt="" coords="148,102,226,143,224,148,146,106"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -159,11 +161,6 @@ Macros</h2></td></tr>
 <tr class="memitem:a1d05157f1911b8d089e57ca0696be01f" id="r_a1d05157f1911b8d089e57ca0696be01f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d05157f1911b8d089e57ca0696be01f">dynarr_create</a>(...)</td></tr>
 <tr class="separator:a1d05157f1911b8d089e57ca0696be01f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a5c6295b8f25a95bf17f26bff03bb9553" id="r_a5c6295b8f25a95bf17f26bff03bb9553"><td class="memItemLeft" align="right" valign="top">typedef struct vector_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a></td></tr>
-<tr class="separator:a5c6295b8f25a95bf17f26bff03bb9553"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ac2b2261a1330ac45a85883633d6a695d" id="r_ac2b2261a1330ac45a85883633d6a695d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a> { <br />
@@ -180,65 +177,65 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a99f1163f1932f71f0229a7340df68efb" id="r_a99f1163f1932f71f0229a7340df68efb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99f1163f1932f71f0229a7340df68efb">dynarr_create_</a> (const <a class="el" href="structdynarr__opts__t.html">dynarr_opts_t</a> *const opts)</td></tr>
+<tr class="memitem:a99f1163f1932f71f0229a7340df68efb" id="r_a99f1163f1932f71f0229a7340df68efb"><td class="memItemLeft" align="right" valign="top">dynarr_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99f1163f1932f71f0229a7340df68efb">dynarr_create_</a> (const <a class="el" href="structdynarr__opts__t.html">dynarr_opts_t</a> *const opts)</td></tr>
 <tr class="separator:a99f1163f1932f71f0229a7340df68efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3acd4a1beb0e42a412b0482ddb6b9820" id="r_a3acd4a1beb0e42a412b0482ddb6b9820"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3acd4a1beb0e42a412b0482ddb6b9820">dynarr_get_ext_header</a> (const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const dynarr)</td></tr>
+<tr class="memitem:a3acd4a1beb0e42a412b0482ddb6b9820" id="r_a3acd4a1beb0e42a412b0482ddb6b9820"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3acd4a1beb0e42a412b0482ddb6b9820">dynarr_get_ext_header</a> (const dynarr_t *const dynarr)</td></tr>
 <tr class="separator:a3acd4a1beb0e42a412b0482ddb6b9820"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42427bb2220a4e0bf86a08717719a6a3" id="r_a42427bb2220a4e0bf86a08717719a6a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a> (const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const dynarr)</td></tr>
+<tr class="memitem:a42427bb2220a4e0bf86a08717719a6a3" id="r_a42427bb2220a4e0bf86a08717719a6a3"><td class="memItemLeft" align="right" valign="top">dynarr_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a> (const dynarr_t *const dynarr)</td></tr>
 <tr class="separator:a42427bb2220a4e0bf86a08717719a6a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebbaac3879771d77aa20068a26952197" id="r_aebbaac3879771d77aa20068a26952197"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebbaac3879771d77aa20068a26952197">dynarr_destroy</a> (<a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const dynarr)</td></tr>
+<tr class="memitem:aebbaac3879771d77aa20068a26952197" id="r_aebbaac3879771d77aa20068a26952197"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebbaac3879771d77aa20068a26952197">dynarr_destroy</a> (dynarr_t *const dynarr)</td></tr>
 <tr class="separator:aebbaac3879771d77aa20068a26952197"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afde94d3d24d33d8e81c3943db38a6327" id="r_afde94d3d24d33d8e81c3943db38a6327"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afde94d3d24d33d8e81c3943db38a6327">dynarr_clear</a> (<a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const dynarr)</td></tr>
+<tr class="memitem:afde94d3d24d33d8e81c3943db38a6327" id="r_afde94d3d24d33d8e81c3943db38a6327"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afde94d3d24d33d8e81c3943db38a6327">dynarr_clear</a> (dynarr_t *const dynarr)</td></tr>
 <tr class="separator:afde94d3d24d33d8e81c3943db38a6327"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5c43e2644d185b9b01065af34ed6e29" id="r_af5c43e2644d185b9b01065af34ed6e29"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5c43e2644d185b9b01065af34ed6e29">dynarr_size</a> (const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const dynarr)</td></tr>
+<tr class="memitem:af5c43e2644d185b9b01065af34ed6e29" id="r_af5c43e2644d185b9b01065af34ed6e29"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5c43e2644d185b9b01065af34ed6e29">dynarr_size</a> (const dynarr_t *const dynarr)</td></tr>
 <tr class="separator:af5c43e2644d185b9b01065af34ed6e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ff11107726213a640d814b63cb123b2" id="r_a3ff11107726213a640d814b63cb123b2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ff11107726213a640d814b63cb123b2">dynarr_capacity</a> (const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const dynarr)</td></tr>
+<tr class="memitem:a3ff11107726213a640d814b63cb123b2" id="r_a3ff11107726213a640d814b63cb123b2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ff11107726213a640d814b63cb123b2">dynarr_capacity</a> (const dynarr_t *const dynarr)</td></tr>
 <tr class="separator:a3ff11107726213a640d814b63cb123b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93c32dd116523090126d427cce08e114" id="r_a93c32dd116523090126d427cce08e114"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93c32dd116523090126d427cce08e114">dynarr_get</a> (const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const dynarr, const size_t index)</td></tr>
+<tr class="memitem:a93c32dd116523090126d427cce08e114" id="r_a93c32dd116523090126d427cce08e114"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93c32dd116523090126d427cce08e114">dynarr_get</a> (const dynarr_t *const dynarr, const size_t index)</td></tr>
 <tr class="separator:a93c32dd116523090126d427cce08e114"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30d508a9f387e2227dd0d72a8bfd2a39" id="r_a30d508a9f387e2227dd0d72a8bfd2a39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30d508a9f387e2227dd0d72a8bfd2a39">dynarr_set</a> (<a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const dynarr, const size_t index, const void *value)</td></tr>
+<tr class="memitem:a30d508a9f387e2227dd0d72a8bfd2a39" id="r_a30d508a9f387e2227dd0d72a8bfd2a39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30d508a9f387e2227dd0d72a8bfd2a39">dynarr_set</a> (dynarr_t *const dynarr, const size_t index, const void *value)</td></tr>
 <tr class="separator:a30d508a9f387e2227dd0d72a8bfd2a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a853ebc7310e119a0ebc946a404e0339a" id="r_a853ebc7310e119a0ebc946a404e0339a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a853ebc7310e119a0ebc946a404e0339a">dynarr_set_zero</a> (<a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const dynarr, const size_t index)</td></tr>
+<tr class="memitem:a853ebc7310e119a0ebc946a404e0339a" id="r_a853ebc7310e119a0ebc946a404e0339a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a853ebc7310e119a0ebc946a404e0339a">dynarr_set_zero</a> (dynarr_t *const dynarr, const size_t index)</td></tr>
 <tr class="separator:a853ebc7310e119a0ebc946a404e0339a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a559fc5ecc4687c6936ea890eeb1c79e2" id="r_a559fc5ecc4687c6936ea890eeb1c79e2"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a559fc5ecc4687c6936ea890eeb1c79e2">dynarr_first</a> (const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const dynarr)</td></tr>
+<tr class="memitem:a559fc5ecc4687c6936ea890eeb1c79e2" id="r_a559fc5ecc4687c6936ea890eeb1c79e2"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a559fc5ecc4687c6936ea890eeb1c79e2">dynarr_first</a> (const dynarr_t *const dynarr)</td></tr>
 <tr class="separator:a559fc5ecc4687c6936ea890eeb1c79e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ca5c94e8e78fae1860791386fa56ea6" id="r_a7ca5c94e8e78fae1860791386fa56ea6"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ca5c94e8e78fae1860791386fa56ea6">dynarr_last</a> (const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const dynarr)</td></tr>
+<tr class="memitem:a7ca5c94e8e78fae1860791386fa56ea6" id="r_a7ca5c94e8e78fae1860791386fa56ea6"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ca5c94e8e78fae1860791386fa56ea6">dynarr_last</a> (const dynarr_t *const dynarr)</td></tr>
 <tr class="separator:a7ca5c94e8e78fae1860791386fa56ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf8dc0009bdab23da52ef7bcc5e754fd" id="r_aaf8dc0009bdab23da52ef7bcc5e754fd"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf8dc0009bdab23da52ef7bcc5e754fd">dynarr_binary_find</a> (const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const dynarr, const void *const value, const compare_t cmp, void *const param)</td></tr>
+<tr class="memitem:aaf8dc0009bdab23da52ef7bcc5e754fd" id="r_aaf8dc0009bdab23da52ef7bcc5e754fd"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf8dc0009bdab23da52ef7bcc5e754fd">dynarr_binary_find</a> (const dynarr_t *const dynarr, const void *const value, const <a class="el" href="group__Callbacks.html#gae47f476ece20d219ac1d39c71110e553">compare_t</a> cmp, void *const param)</td></tr>
 <tr class="separator:aaf8dc0009bdab23da52ef7bcc5e754fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8592e4d2a568f36dbcb1bce45a4b1460" id="r_a8592e4d2a568f36dbcb1bce45a4b1460"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8592e4d2a568f36dbcb1bce45a4b1460">dynarr_binary_find_index</a> (const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const dynarr, const void *const value, const compare_t cmp, void *const param)</td></tr>
+<tr class="memitem:a8592e4d2a568f36dbcb1bce45a4b1460" id="r_a8592e4d2a568f36dbcb1bce45a4b1460"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8592e4d2a568f36dbcb1bce45a4b1460">dynarr_binary_find_index</a> (const dynarr_t *const dynarr, const void *const value, const <a class="el" href="group__Callbacks.html#gae47f476ece20d219ac1d39c71110e553">compare_t</a> cmp, void *const param)</td></tr>
 <tr class="separator:a8592e4d2a568f36dbcb1bce45a4b1460"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e7f043863514d809cd6446053f6dc47" id="r_a1e7f043863514d809cd6446053f6dc47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e7f043863514d809cd6446053f6dc47">dynarr_append</a> (<a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const dynarr, const void *const value)</td></tr>
+<tr class="memitem:a1e7f043863514d809cd6446053f6dc47" id="r_a1e7f043863514d809cd6446053f6dc47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e7f043863514d809cd6446053f6dc47">dynarr_append</a> (dynarr_t **const dynarr, const void *const value)</td></tr>
 <tr class="separator:a1e7f043863514d809cd6446053f6dc47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f3cc13065faeaa1b71f9b6c62ac7adf" id="r_a4f3cc13065faeaa1b71f9b6c62ac7adf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f3cc13065faeaa1b71f9b6c62ac7adf">dynarr_prepend</a> (<a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const dynarr, const void *const value)</td></tr>
+<tr class="memitem:a4f3cc13065faeaa1b71f9b6c62ac7adf" id="r_a4f3cc13065faeaa1b71f9b6c62ac7adf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f3cc13065faeaa1b71f9b6c62ac7adf">dynarr_prepend</a> (dynarr_t **const dynarr, const void *const value)</td></tr>
 <tr class="separator:a4f3cc13065faeaa1b71f9b6c62ac7adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a36563e7efd7ad826fac165dd2a0d0c" id="r_a3a36563e7efd7ad826fac165dd2a0d0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a36563e7efd7ad826fac165dd2a0d0c">dynarr_pop_back</a> (<a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const dynarr)</td></tr>
+<tr class="memitem:a3a36563e7efd7ad826fac165dd2a0d0c" id="r_a3a36563e7efd7ad826fac165dd2a0d0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a36563e7efd7ad826fac165dd2a0d0c">dynarr_pop_back</a> (dynarr_t **const dynarr)</td></tr>
 <tr class="separator:a3a36563e7efd7ad826fac165dd2a0d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ba384c69893f0961f0e71d6cd6be8fe" id="r_a4ba384c69893f0961f0e71d6cd6be8fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ba384c69893f0961f0e71d6cd6be8fe">dynarr_pop_front</a> (<a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const dynarr)</td></tr>
+<tr class="memitem:a4ba384c69893f0961f0e71d6cd6be8fe" id="r_a4ba384c69893f0961f0e71d6cd6be8fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ba384c69893f0961f0e71d6cd6be8fe">dynarr_pop_front</a> (dynarr_t **const dynarr)</td></tr>
 <tr class="separator:a4ba384c69893f0961f0e71d6cd6be8fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab449a79e6b33f55af35329df4363336e" id="r_ab449a79e6b33f55af35329df4363336e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab449a79e6b33f55af35329df4363336e">dynarr_insert</a> (<a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const dynarr, const size_t index, const void *value)</td></tr>
+<tr class="memitem:ab449a79e6b33f55af35329df4363336e" id="r_ab449a79e6b33f55af35329df4363336e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab449a79e6b33f55af35329df4363336e">dynarr_insert</a> (dynarr_t **const dynarr, const size_t index, const void *value)</td></tr>
 <tr class="separator:ab449a79e6b33f55af35329df4363336e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2e52e602d3867ce3e5fee688ea20263" id="r_ae2e52e602d3867ce3e5fee688ea20263"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2e52e602d3867ce3e5fee688ea20263">dynarr_remove</a> (<a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const dynarr, const size_t index)</td></tr>
+<tr class="memitem:ae2e52e602d3867ce3e5fee688ea20263" id="r_ae2e52e602d3867ce3e5fee688ea20263"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2e52e602d3867ce3e5fee688ea20263">dynarr_remove</a> (dynarr_t **const dynarr, const size_t index)</td></tr>
 <tr class="separator:ae2e52e602d3867ce3e5fee688ea20263"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1187f49d8bde19551b2c95ad430e596c" id="r_a1187f49d8bde19551b2c95ad430e596c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1187f49d8bde19551b2c95ad430e596c">dynarr_remove_range</a> (<a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const dynarr, const size_t index, const size_t amount)</td></tr>
+<tr class="memitem:a1187f49d8bde19551b2c95ad430e596c" id="r_a1187f49d8bde19551b2c95ad430e596c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1187f49d8bde19551b2c95ad430e596c">dynarr_remove_range</a> (dynarr_t **const dynarr, const size_t index, const size_t amount)</td></tr>
 <tr class="separator:a1187f49d8bde19551b2c95ad430e596c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa975bac298720adfd05a978509081ada" id="r_aa975bac298720adfd05a978509081ada"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa975bac298720adfd05a978509081ada">dynarr_remove_if</a> (<a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const dynarr, const predicate_t predicate, const size_t limit, void *const param)</td></tr>
+<tr class="memitem:aa975bac298720adfd05a978509081ada" id="r_aa975bac298720adfd05a978509081ada"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa975bac298720adfd05a978509081ada">dynarr_remove_if</a> (dynarr_t **const dynarr, const <a class="el" href="group__Callbacks.html#ga61d45c5be2935b552d99c0c74b7973ef">predicate_t</a> predicate, const size_t limit, void *const param)</td></tr>
 <tr class="separator:aa975bac298720adfd05a978509081ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bfdd0d8fbe0ca29ef26df50dc94f310" id="r_a0bfdd0d8fbe0ca29ef26df50dc94f310"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bfdd0d8fbe0ca29ef26df50dc94f310">dynarr_binary_merge</a> (const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const first, const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const second, const compare_t cmp, void *const param)</td></tr>
+<tr class="memitem:a0bfdd0d8fbe0ca29ef26df50dc94f310" id="r_a0bfdd0d8fbe0ca29ef26df50dc94f310"><td class="memItemLeft" align="right" valign="top">dynarr_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bfdd0d8fbe0ca29ef26df50dc94f310">dynarr_binary_merge</a> (const dynarr_t *const first, const dynarr_t *const second, const <a class="el" href="group__Callbacks.html#gae47f476ece20d219ac1d39c71110e553">compare_t</a> cmp, void *const param)</td></tr>
 <tr class="separator:a0bfdd0d8fbe0ca29ef26df50dc94f310"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00ddd61f7109ab9bb88da4fa5a88fb51" id="r_a00ddd61f7109ab9bb88da4fa5a88fb51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00ddd61f7109ab9bb88da4fa5a88fb51">dynarr_spread_insert</a> (<a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const dynarr, const size_t index, const size_t amount, const void *const value)</td></tr>
+<tr class="memitem:a00ddd61f7109ab9bb88da4fa5a88fb51" id="r_a00ddd61f7109ab9bb88da4fa5a88fb51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00ddd61f7109ab9bb88da4fa5a88fb51">dynarr_spread_insert</a> (dynarr_t **const dynarr, const size_t index, const size_t amount, const void *const value)</td></tr>
 <tr class="separator:a00ddd61f7109ab9bb88da4fa5a88fb51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f6a46fc8cc0cfe14d98926cadbaa35d" id="r_a5f6a46fc8cc0cfe14d98926cadbaa35d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f6a46fc8cc0cfe14d98926cadbaa35d">dynarr_binary_find_insert_place</a> (const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const dynarr, const void *const value, const compare_t cmp, void *param)</td></tr>
+<tr class="memitem:a5f6a46fc8cc0cfe14d98926cadbaa35d" id="r_a5f6a46fc8cc0cfe14d98926cadbaa35d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f6a46fc8cc0cfe14d98926cadbaa35d">dynarr_binary_find_insert_place</a> (const dynarr_t *const dynarr, const void *const value, const <a class="el" href="group__Callbacks.html#gae47f476ece20d219ac1d39c71110e553">compare_t</a> cmp, void *param)</td></tr>
 <tr class="separator:a5f6a46fc8cc0cfe14d98926cadbaa35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2dd0b992152881697da2073a0c840d7" id="r_ad2dd0b992152881697da2073a0c840d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2dd0b992152881697da2073a0c840d7">dynarr_binary_insert</a> (<a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const dynarr, const void *const value, const compare_t cmp, void *const param, size_t *const index)</td></tr>
+<tr class="memitem:ad2dd0b992152881697da2073a0c840d7" id="r_ad2dd0b992152881697da2073a0c840d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2dd0b992152881697da2073a0c840d7">dynarr_binary_insert</a> (dynarr_t **const dynarr, const void *const value, const <a class="el" href="group__Callbacks.html#gae47f476ece20d219ac1d39c71110e553">compare_t</a> cmp, void *const param, size_t *const index)</td></tr>
 <tr class="separator:ad2dd0b992152881697da2073a0c840d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20112ff4b2f14ef520353b23c10761de" id="r_a20112ff4b2f14ef520353b23c10761de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20112ff4b2f14ef520353b23c10761de">dynarr_binary_reserve</a> (<a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const dynarr, const void *const value, const compare_t cmp, void *const param, size_t *const index)</td></tr>
+<tr class="memitem:a20112ff4b2f14ef520353b23c10761de" id="r_a20112ff4b2f14ef520353b23c10761de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20112ff4b2f14ef520353b23c10761de">dynarr_binary_reserve</a> (dynarr_t **const dynarr, const void *const value, const <a class="el" href="group__Callbacks.html#gae47f476ece20d219ac1d39c71110e553">compare_t</a> cmp, void *const param, size_t *const index)</td></tr>
 <tr class="separator:a20112ff4b2f14ef520353b23c10761de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2575dd307a95358e074e07c2b9999a9d" id="r_a2575dd307a95358e074e07c2b9999a9d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2575dd307a95358e074e07c2b9999a9d">dynarr_foreach</a> (const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const dynarr, const foreach_t func, void *const param)</td></tr>
+<tr class="memitem:a2575dd307a95358e074e07c2b9999a9d" id="r_a2575dd307a95358e074e07c2b9999a9d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2575dd307a95358e074e07c2b9999a9d">dynarr_foreach</a> (const dynarr_t *const dynarr, const <a class="el" href="group__Callbacks.html#ga2a12fb990fb59f84ca1920d78d867aa6">foreach_t</a> func, void *const param)</td></tr>
 <tr class="separator:a2575dd307a95358e074e07c2b9999a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac18ed54e516f63ace336c4581f0e60c5" id="r_ac18ed54e516f63ace336c4581f0e60c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac18ed54e516f63ace336c4581f0e60c5">dynarr_aggregate</a> (const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const dynarr, const aggregate_t func, void *const acc, void *const param)</td></tr>
+<tr class="memitem:ac18ed54e516f63ace336c4581f0e60c5" id="r_ac18ed54e516f63ace336c4581f0e60c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac18ed54e516f63ace336c4581f0e60c5">dynarr_aggregate</a> (const dynarr_t *const dynarr, const <a class="el" href="group__Callbacks.html#ga89204e5e91ceae8be993751982edb299">aggregate_t</a> func, void *const acc, void *const param)</td></tr>
 <tr class="separator:ac18ed54e516f63ace336c4581f0e60c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8246d131a58a23f4d434775bd02bccb3" id="r_a8246d131a58a23f4d434775bd02bccb3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8246d131a58a23f4d434775bd02bccb3">dynarr_transform</a> (<a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const dynarr, const transform_t func, void *const param)</td></tr>
+<tr class="memitem:a8246d131a58a23f4d434775bd02bccb3" id="r_a8246d131a58a23f4d434775bd02bccb3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8246d131a58a23f4d434775bd02bccb3">dynarr_transform</a> (dynarr_t *const dynarr, const <a class="el" href="group__Callbacks.html#ga3b3896688782a9a532d27c5d841c0e79">transform_t</a> func, void *const param)</td></tr>
 <tr class="separator:a8246d131a58a23f4d434775bd02bccb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -289,27 +286,9 @@ Functions</h2></td></tr>
 <div class="ttc" id="adynarr_8h_html_a99f1163f1932f71f0229a7340df68efb"><div class="ttname"><a href="#a99f1163f1932f71f0229a7340df68efb">dynarr_create_</a></div><div class="ttdeci">dynarr_t * dynarr_create_(const dynarr_opts_t *const opts)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00053">dynarr.c:53</a></div></div>
 <div class="ttc" id="astructdynarr__opts__t_html"><div class="ttname"><a href="structdynarr__opts__t.html">dynarr_opts_t</a></div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00024">dynarr.h:25</a></div></div>
 </div><!-- fragment --><p>The wrapper for <code>dynarr_create_</code> function that provides default values.</p>
-<dl class="section see"><dt>See also</dt><dd>vector_create </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__Vector.html#ga160b0d4b8d0836eda9a50bfa71514de8" title="Vector constructor.">vector_create</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="dynarr_8h_source.html#l00066">66</a> of file <a class="el" href="dynarr_8h_source.html">dynarr.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a5c6295b8f25a95bf17f26bff03bb9553" name="a5c6295b8f25a95bf17f26bff03bb9553"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c6295b8f25a95bf17f26bff03bb9553">&#9670;&#160;</a></span>dynarr_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct vector_t <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>This is the main dynarr type. </p>
-
-<p class="definition">Definition at line <a class="el" href="dynarr_8h_source.html#l00019">19</a> of file <a class="el" href="dynarr_8h_source.html">dynarr.h</a>.</p>
 
 </div>
 </div>
@@ -327,7 +306,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Represents operation error codes. </p>
-<p>Can be extended farther. </p><dl class="section see"><dt>See also</dt><dd>vector_status_t </dd></dl>
+<p>Can be extended farther. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="vector_8h.html#ab79a65b74cda0380395a1ece246f54c6" title="Status enum that indicates errors of operations that may fail.">vector_status_t</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="dynarr_8h_source.html#l00042">42</a> of file <a class="el" href="dynarr_8h_source.html">dynarr.h</a>.</p>
 
@@ -341,7 +320,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> * dynarr_create_ </td>
+          <td class="memname">dynarr_t * dynarr_create_ </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structdynarr__opts__t.html">dynarr_opts_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>opts</em></span></td><td>)</td>
           <td></td>
@@ -365,7 +344,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void * dynarr_get_ext_header </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
+          <td class="paramtype">const dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -373,6 +352,18 @@ Functions</h2></td></tr>
 <p>Returns a pointer to reserved header space for extension. </p>
 
 <p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00083">83</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="dynarr_8h_a3acd4a1beb0e42a412b0482ddb6b9820_cgraph.png" border="0" usemap="#adynarr_8h_a3acd4a1beb0e42a412b0482ddb6b9820_cgraph" alt=""/></div>
+<map name="adynarr_8h_a3acd4a1beb0e42a412b0482ddb6b9820_cgraph" id="adynarr_8h_a3acd4a1beb0e42a412b0482ddb6b9820_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,177,56"/>
+<area shape="rect" href="group__Vector.html#ga435ecb8dca435624d8d277feb6b2cc80" title="Access vector_t::data_offset property for extensions." alt="" coords="239,5,382,31"/>
+<area shape="poly" title=" " alt="" coords="177,31,225,25,226,30,178,36"/>
+<area shape="rect" href="group__Vector.html#gafc2e34dbacffe6480af8681fbf46e808" title="Provides a location where user can put a header for the derived class." alt="" coords="225,55,396,80"/>
+<area shape="poly" title=" " alt="" coords="178,50,212,54,212,59,177,55"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -383,9 +374,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> * dynarr_clone </td>
+          <td class="memname">dynarr_t * dynarr_clone </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
+          <td class="paramtype">const dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -393,6 +384,20 @@ Functions</h2></td></tr>
 <p>Makes a copy of the whole array. </p>
 
 <p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00092">92</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="dynarr_8h_a42427bb2220a4e0bf86a08717719a6a3_cgraph.png" border="0" usemap="#adynarr_8h_a42427bb2220a4e0bf86a08717719a6a3_cgraph" alt=""/></div>
+<map name="adynarr_8h_a42427bb2220a4e0bf86a08717719a6a3_cgraph" id="adynarr_8h_a42427bb2220a4e0bf86a08717719a6a3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,112,56"/>
+<area shape="rect" href="group__Vector.html#ga7243756372efd57714853efaf7521358" title="Duplicate vector." alt="" coords="160,31,265,56"/>
+<area shape="poly" title=" " alt="" coords="112,41,146,41,146,46,112,46"/>
+<area shape="rect" href="vector_8c.html#a50c131cdbcfc769f4bbe9a68912207ca" title=" " alt="" coords="313,5,465,31"/>
+<area shape="poly" title=" " alt="" coords="265,33,299,28,300,34,266,38"/>
+<area shape="rect" href="group__Allocation.html#gac06d4923e85171dfa1e3fae4f141b658" title="Allocates memory chunk of alloc_size." alt="" coords="339,55,440,80"/>
+<area shape="poly" title=" " alt="" coords="266,48,325,56,324,61,265,53"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -405,7 +410,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void dynarr_destroy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
+          <td class="paramtype">dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -413,6 +418,18 @@ Functions</h2></td></tr>
 <p>Deallocates dynamic array. After the call pointer will be invalidated. </p>
 
 <p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00099">99</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="dynarr_8h_aebbaac3879771d77aa20068a26952197_cgraph.png" border="0" usemap="#adynarr_8h_aebbaac3879771d77aa20068a26952197_cgraph" alt=""/></div>
+<map name="adynarr_8h_aebbaac3879771d77aa20068a26952197_cgraph" id="adynarr_8h_aebbaac3879771d77aa20068a26952197_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,125,31"/>
+<area shape="rect" href="group__Vector.html#gae0c0da17ad9469e47ef376a82b6493f3" title="Deallocates vector." alt="" coords="173,5,292,31"/>
+<area shape="poly" title=" " alt="" coords="126,15,160,15,160,21,126,21"/>
+<area shape="rect" href="group__Allocation.html#gacd97ea77de38db5fb50d9e8ba216a734" title="Free allocation that was previously allocated." alt="" coords="340,5,436,31"/>
+<area shape="poly" title=" " alt="" coords="292,15,326,15,326,21,292,21"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -425,7 +442,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void dynarr_clear </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
+          <td class="paramtype">dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -445,7 +462,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">size_t dynarr_size </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
+          <td class="paramtype">const dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -465,7 +482,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">size_t dynarr_capacity </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
+          <td class="paramtype">const dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -473,6 +490,16 @@ Functions</h2></td></tr>
 <p>Reports current capacity of the vector. </p>
 
 <p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00120">120</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="dynarr_8h_a3ff11107726213a640d814b63cb123b2_cgraph.png" border="0" usemap="#adynarr_8h_a3ff11107726213a640d814b63cb123b2_cgraph" alt=""/></div>
+<map name="adynarr_8h_a3ff11107726213a640d814b63cb123b2_cgraph" id="adynarr_8h_a3ff11107726213a640d814b63cb123b2_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,132,31"/>
+<area shape="rect" href="group__Vector.html#gab24bd801f91d4ae1ac79b54430b0409f" title="Reports current capacity of the vector." alt="" coords="180,5,305,31"/>
+<area shape="poly" title=" " alt="" coords="132,15,166,15,166,21,132,21"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -485,7 +512,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void * dynarr_get </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">const dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -502,9 +529,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="dynarr_8h_a93c32dd116523090126d427cce08e114_cgraph.png" border="0" usemap="#adynarr_8h_a93c32dd116523090126d427cce08e114_cgraph" alt=""/></div>
 <map name="adynarr_8h_a93c32dd116523090126d427cce08e114_cgraph" id="adynarr_8h_a93c32dd116523090126d427cce08e114_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,97,31"/>
+<area shape="rect" title=" " alt="" coords="5,31,97,56"/>
 <area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="145,5,243,31"/>
-<area shape="poly" title=" " alt="" coords="97,15,131,15,131,21,97,21"/>
+<area shape="poly" title=" " alt="" coords="97,33,131,26,132,32,98,38"/>
+<area shape="rect" href="group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="149,55,239,80"/>
+<area shape="poly" title=" " alt="" coords="98,48,136,55,135,60,97,54"/>
 </map>
 </div>
 
@@ -519,7 +548,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void dynarr_set </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -541,9 +570,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="dynarr_8h_a30d508a9f387e2227dd0d72a8bfd2a39_cgraph.png" border="0" usemap="#adynarr_8h_a30d508a9f387e2227dd0d72a8bfd2a39_cgraph" alt=""/></div>
 <map name="adynarr_8h_a30d508a9f387e2227dd0d72a8bfd2a39_cgraph" id="adynarr_8h_a30d508a9f387e2227dd0d72a8bfd2a39_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,96,31"/>
+<area shape="rect" title=" " alt="" coords="5,31,96,56"/>
 <area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="144,5,241,31"/>
-<area shape="poly" title=" " alt="" coords="96,15,130,15,130,21,96,21"/>
+<area shape="poly" title=" " alt="" coords="96,33,130,26,131,32,97,38"/>
+<area shape="rect" href="group__Vector.html#gab3a5e466261d31ee9edd77a5eb280030" title="Sets element at given index to a value." alt="" coords="147,55,238,80"/>
+<area shape="poly" title=" " alt="" coords="97,48,134,55,133,60,96,54"/>
+<area shape="rect" href="group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="289,55,380,80"/>
+<area shape="poly" title=" " alt="" coords="238,65,276,65,276,70,238,70"/>
 </map>
 </div>
 
@@ -558,7 +591,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void dynarr_set_zero </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -575,9 +608,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="dynarr_8h_a853ebc7310e119a0ebc946a404e0339a_cgraph.png" border="0" usemap="#adynarr_8h_a853ebc7310e119a0ebc946a404e0339a_cgraph" alt=""/></div>
 <map name="adynarr_8h_a853ebc7310e119a0ebc946a404e0339a_cgraph" id="adynarr_8h_a853ebc7310e119a0ebc946a404e0339a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,132,31"/>
-<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="180,5,277,31"/>
-<area shape="poly" title=" " alt="" coords="132,15,166,15,166,21,132,21"/>
+<area shape="rect" title=" " alt="" coords="5,31,132,56"/>
+<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="194,5,291,31"/>
+<area shape="poly" title=" " alt="" coords="132,31,180,24,181,30,133,37"/>
+<area shape="rect" href="group__Vector.html#gaf3eaea4a3a47741f46eae9ae6e984ef2" title="Sets element at given index to a zero value." alt="" coords="180,55,305,80"/>
+<area shape="poly" title=" " alt="" coords="133,49,167,54,166,60,132,55"/>
+<area shape="rect" href="group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="353,55,444,80"/>
+<area shape="poly" title=" " alt="" coords="305,65,340,65,340,70,305,70"/>
 </map>
 </div>
 
@@ -592,7 +629,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void * dynarr_first </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
+          <td class="paramtype">const dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -605,12 +642,14 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="dynarr_8h_a559fc5ecc4687c6936ea890eeb1c79e2_cgraph.png" border="0" usemap="#adynarr_8h_a559fc5ecc4687c6936ea890eeb1c79e2_cgraph" alt=""/></div>
 <map name="adynarr_8h_a559fc5ecc4687c6936ea890eeb1c79e2_cgraph" id="adynarr_8h_a559fc5ecc4687c6936ea890eeb1c79e2_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,101,56"/>
-<area shape="rect" href="dynarr_8c.html#a93c32dd116523090126d427cce08e114" title=" " alt="" coords="149,5,241,31"/>
-<area shape="poly" title=" " alt="" coords="101,32,135,26,136,31,102,37"/>
-<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="289,31,387,56"/>
-<area shape="poly" title=" " alt="" coords="102,41,276,41,276,46,102,46"/>
-<area shape="poly" title=" " alt="" coords="242,23,276,30,275,35,241,29"/>
+<area shape="rect" title=" " alt="" coords="5,29,101,55"/>
+<area shape="rect" href="dynarr_8c.html#a93c32dd116523090126d427cce08e114" title=" " alt="" coords="149,55,241,80"/>
+<area shape="poly" title=" " alt="" coords="102,48,136,54,135,59,101,53"/>
+<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="289,5,387,31"/>
+<area shape="poly" title=" " alt="" coords="102,35,276,21,276,26,102,41"/>
+<area shape="poly" title=" " alt="" coords="232,52,287,33,288,38,234,57"/>
+<area shape="rect" href="group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="293,55,383,80"/>
+<area shape="poly" title=" " alt="" coords="241,65,279,65,279,70,241,70"/>
 </map>
 </div>
 
@@ -625,7 +664,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void * dynarr_last </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
+          <td class="paramtype">const dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -638,12 +677,14 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="dynarr_8h_a7ca5c94e8e78fae1860791386fa56ea6_cgraph.png" border="0" usemap="#adynarr_8h_a7ca5c94e8e78fae1860791386fa56ea6_cgraph" alt=""/></div>
 <map name="adynarr_8h_a7ca5c94e8e78fae1860791386fa56ea6_cgraph" id="adynarr_8h_a7ca5c94e8e78fae1860791386fa56ea6_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,100,56"/>
-<area shape="rect" href="dynarr_8c.html#a93c32dd116523090126d427cce08e114" title=" " alt="" coords="148,5,240,31"/>
-<area shape="poly" title=" " alt="" coords="100,32,134,26,135,31,101,38"/>
-<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="288,31,385,56"/>
-<area shape="poly" title=" " alt="" coords="100,41,274,41,274,46,100,46"/>
-<area shape="poly" title=" " alt="" coords="240,23,275,30,274,35,240,29"/>
+<area shape="rect" title=" " alt="" coords="5,29,100,55"/>
+<area shape="rect" href="dynarr_8c.html#a93c32dd116523090126d427cce08e114" title=" " alt="" coords="148,55,240,80"/>
+<area shape="poly" title=" " alt="" coords="101,48,135,54,134,59,100,53"/>
+<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="288,5,385,31"/>
+<area shape="poly" title=" " alt="" coords="100,35,274,21,275,26,101,41"/>
+<area shape="poly" title=" " alt="" coords="231,52,285,33,287,38,232,57"/>
+<area shape="rect" href="group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="291,55,382,80"/>
+<area shape="poly" title=" " alt="" coords="240,65,278,65,278,70,240,70"/>
 </map>
 </div>
 
@@ -658,7 +699,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void * dynarr_binary_find </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">const dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -668,7 +709,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const compare_t</td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__Callbacks.html#gae47f476ece20d219ac1d39c71110e553">compare_t</a></td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -685,9 +726,16 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="dynarr_8h_aaf8dc0009bdab23da52ef7bcc5e754fd_cgraph.png" border="0" usemap="#adynarr_8h_aaf8dc0009bdab23da52ef7bcc5e754fd_cgraph" alt=""/></div>
 <map name="adynarr_8h_aaf8dc0009bdab23da52ef7bcc5e754fd_cgraph" id="adynarr_8h_aaf8dc0009bdab23da52ef7bcc5e754fd_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,148,31"/>
-<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="196,5,293,31"/>
-<area shape="poly" title=" " alt="" coords="148,15,182,15,182,21,148,21"/>
+<area shape="rect" title=" " alt="" coords="5,31,148,56"/>
+<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="219,5,316,31"/>
+<area shape="poly" title=" " alt="" coords="148,31,204,24,205,29,148,37"/>
+<area shape="rect" href="group__Vector.html#ga5081815905cf71570856aef717659463" title="Run binary search on the vector." alt="" coords="196,55,339,80"/>
+<area shape="poly" title=" " alt="" coords="148,50,183,54,182,59,148,55"/>
+<area shape="rect" href="vector_8c.html#afec86be827dcdde96c62016b77630a7c" title="Performs binary search on a vectors range." alt="" coords="387,55,481,80"/>
+<area shape="poly" title=" " alt="" coords="339,65,373,65,373,70,339,70"/>
+<area shape="poly" title=" " alt="" coords="410,56,405,46,408,37,418,30,434,28,453,32,462,40,458,44,451,36,434,33,420,35,412,40,411,46,415,53"/>
+<area shape="rect" href="group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="529,55,620,80"/>
+<area shape="poly" title=" " alt="" coords="482,65,516,65,516,70,482,70"/>
 </map>
 </div>
 
@@ -702,7 +750,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">ssize_t dynarr_binary_find_index </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">const dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -712,7 +760,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const compare_t</td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__Callbacks.html#gae47f476ece20d219ac1d39c71110e553">compare_t</a></td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -729,9 +777,16 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="dynarr_8h_a8592e4d2a568f36dbcb1bce45a4b1460_cgraph.png" border="0" usemap="#adynarr_8h_a8592e4d2a568f36dbcb1bce45a4b1460_cgraph" alt=""/></div>
 <map name="adynarr_8h_a8592e4d2a568f36dbcb1bce45a4b1460_cgraph" id="adynarr_8h_a8592e4d2a568f36dbcb1bce45a4b1460_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,148,45"/>
-<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="196,13,293,38"/>
-<area shape="poly" title=" " alt="" coords="148,23,182,23,182,28,148,28"/>
+<area shape="rect" title=" " alt="" coords="5,27,148,67"/>
+<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="219,5,316,31"/>
+<area shape="poly" title=" " alt="" coords="148,34,204,25,205,30,148,39"/>
+<area shape="rect" href="group__Vector.html#gaae3cfb2691a50da87169b5e057169782" title="Run binary search on the vector." alt="" coords="196,55,339,95"/>
+<area shape="poly" title=" " alt="" coords="148,55,183,60,182,66,148,60"/>
+<area shape="rect" href="vector_8c.html#a162bfa9cf07c25a5eb6c883820a68e99" title="Performs binary search on a vectors range." alt="" coords="387,63,524,88"/>
+<area shape="poly" title=" " alt="" coords="339,73,373,73,373,78,339,78"/>
+<area shape="poly" title=" " alt="" coords="428,64,423,54,426,45,437,38,455,36,477,39,487,48,483,52,475,44,455,41,439,43,430,48,428,54,433,61"/>
+<area shape="rect" href="group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="572,63,663,88"/>
+<area shape="poly" title=" " alt="" coords="524,73,558,73,558,78,524,78"/>
 </map>
 </div>
 
@@ -746,7 +801,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a> dynarr_append </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">dynarr_t **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -772,6 +827,10 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="263,53,322,33,324,38,265,58"/>
 <area shape="poly" title=" " alt="" coords="280,66,453,66,453,71,280,71"/>
 <area shape="poly" title=" " alt="" coords="411,28,467,49,465,54,409,33"/>
+<area shape="rect" href="group__Vector.html#gab3a5e466261d31ee9edd77a5eb280030" title="Sets element at given index to a value." alt="" coords="470,5,561,31"/>
+<area shape="poly" title=" " alt="" coords="419,15,456,15,456,21,419,21"/>
+<area shape="rect" href="group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="612,5,703,31"/>
+<area shape="poly" title=" " alt="" coords="561,15,598,15,598,21,561,21"/>
 </map>
 </div>
 
@@ -786,7 +845,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a> dynarr_prepend </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">dynarr_t **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -803,14 +862,18 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="dynarr_8h_a4f3cc13065faeaa1b71f9b6c62ac7adf_cgraph.png" border="0" usemap="#adynarr_8h_a4f3cc13065faeaa1b71f9b6c62ac7adf_cgraph" alt=""/></div>
 <map name="adynarr_8h_a4f3cc13065faeaa1b71f9b6c62ac7adf_cgraph" id="adynarr_8h_a4f3cc13065faeaa1b71f9b6c62ac7adf_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,129,56"/>
-<area shape="rect" href="dynarr_8c.html#ab449a79e6b33f55af35329df4363336e" title=" " alt="" coords="177,31,285,56"/>
-<area shape="poly" title=" " alt="" coords="130,41,163,41,163,46,130,46"/>
-<area shape="rect" href="dynarr_8c.html#a30d508a9f387e2227dd0d72a8bfd2a39" title=" " alt="" coords="333,5,424,31"/>
-<area shape="poly" title=" " alt="" coords="285,31,319,25,320,31,286,37"/>
-<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="472,31,569,56"/>
-<area shape="poly" title=" " alt="" coords="286,41,458,41,458,46,286,46"/>
-<area shape="poly" title=" " alt="" coords="425,23,459,30,458,35,424,29"/>
+<area shape="rect" title=" " alt="" coords="5,29,129,55"/>
+<area shape="rect" href="dynarr_8c.html#ab449a79e6b33f55af35329df4363336e" title=" " alt="" coords="177,29,285,55"/>
+<area shape="poly" title=" " alt="" coords="130,39,163,39,163,45,130,45"/>
+<area shape="rect" href="dynarr_8c.html#a30d508a9f387e2227dd0d72a8bfd2a39" title=" " alt="" coords="333,55,424,80"/>
+<area shape="poly" title=" " alt="" coords="286,49,320,55,319,60,285,54"/>
+<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="472,5,569,31"/>
+<area shape="poly" title=" " alt="" coords="285,35,458,20,458,26,286,40"/>
+<area shape="poly" title=" " alt="" coords="415,52,470,33,471,38,417,57"/>
+<area shape="rect" href="group__Vector.html#gab3a5e466261d31ee9edd77a5eb280030" title="Sets element at given index to a value." alt="" coords="475,55,566,80"/>
+<area shape="poly" title=" " alt="" coords="424,65,462,65,462,70,424,70"/>
+<area shape="rect" href="group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="617,55,708,80"/>
+<area shape="poly" title=" " alt="" coords="566,65,604,65,604,70,566,70"/>
 </map>
 </div>
 
@@ -825,7 +888,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a> dynarr_pop_back </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
+          <td class="paramtype">dynarr_t **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -860,7 +923,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a> dynarr_pop_front </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
+          <td class="paramtype">dynarr_t **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -894,7 +957,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a> dynarr_insert </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">dynarr_t **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -916,12 +979,16 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="dynarr_8h_ab449a79e6b33f55af35329df4363336e_cgraph.png" border="0" usemap="#adynarr_8h_ab449a79e6b33f55af35329df4363336e_cgraph" alt=""/></div>
 <map name="adynarr_8h_ab449a79e6b33f55af35329df4363336e_cgraph" id="adynarr_8h_ab449a79e6b33f55af35329df4363336e_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,113,56"/>
-<area shape="rect" href="dynarr_8c.html#a30d508a9f387e2227dd0d72a8bfd2a39" title=" " alt="" coords="161,5,252,31"/>
-<area shape="poly" title=" " alt="" coords="113,31,147,25,148,31,114,37"/>
-<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="300,31,397,56"/>
-<area shape="poly" title=" " alt="" coords="114,41,286,41,286,46,114,46"/>
-<area shape="poly" title=" " alt="" coords="253,23,287,30,286,35,252,29"/>
+<area shape="rect" title=" " alt="" coords="5,29,113,55"/>
+<area shape="rect" href="dynarr_8c.html#a30d508a9f387e2227dd0d72a8bfd2a39" title=" " alt="" coords="161,55,252,80"/>
+<area shape="poly" title=" " alt="" coords="114,49,148,55,147,60,113,54"/>
+<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="300,5,397,31"/>
+<area shape="poly" title=" " alt="" coords="113,35,286,20,286,26,114,40"/>
+<area shape="poly" title=" " alt="" coords="243,52,298,33,299,38,245,57"/>
+<area shape="rect" href="group__Vector.html#gab3a5e466261d31ee9edd77a5eb280030" title="Sets element at given index to a value." alt="" coords="303,55,394,80"/>
+<area shape="poly" title=" " alt="" coords="252,65,290,65,290,70,252,70"/>
+<area shape="rect" href="group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="445,55,536,80"/>
+<area shape="poly" title=" " alt="" coords="394,65,432,65,432,70,394,70"/>
 </map>
 </div>
 
@@ -936,7 +1003,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a> dynarr_remove </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">dynarr_t **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -972,7 +1039,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a> dynarr_remove_range </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">dynarr_t **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1011,12 +1078,12 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a> dynarr_remove_if </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">dynarr_t **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const predicate_t</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__Callbacks.html#ga61d45c5be2935b552d99c0c74b7973ef">predicate_t</a></td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1039,12 +1106,14 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="dynarr_8h_aa975bac298720adfd05a978509081ada_cgraph.png" border="0" usemap="#adynarr_8h_aa975bac298720adfd05a978509081ada_cgraph" alt=""/></div>
 <map name="adynarr_8h_aa975bac298720adfd05a978509081ada_cgraph" id="adynarr_8h_aa975bac298720adfd05a978509081ada_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,143,56"/>
-<area shape="rect" href="dynarr_8c.html#a93c32dd116523090126d427cce08e114" title=" " alt="" coords="191,5,283,31"/>
-<area shape="poly" title=" " alt="" coords="142,30,177,25,177,30,143,35"/>
-<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="331,31,428,56"/>
-<area shape="poly" title=" " alt="" coords="143,41,317,41,317,46,143,46"/>
-<area shape="poly" title=" " alt="" coords="283,23,318,30,317,35,282,29"/>
+<area shape="rect" title=" " alt="" coords="5,29,143,55"/>
+<area shape="rect" href="dynarr_8c.html#a93c32dd116523090126d427cce08e114" title=" " alt="" coords="191,55,283,80"/>
+<area shape="poly" title=" " alt="" coords="143,50,177,55,177,61,142,55"/>
+<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="331,5,428,31"/>
+<area shape="poly" title=" " alt="" coords="143,34,317,20,317,26,143,39"/>
+<area shape="poly" title=" " alt="" coords="273,52,328,33,330,38,275,57"/>
+<area shape="rect" href="group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="334,55,425,80"/>
+<area shape="poly" title=" " alt="" coords="283,65,320,65,320,70,283,70"/>
 </map>
 </div>
 
@@ -1057,19 +1126,19 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> * dynarr_binary_merge </td>
+          <td class="memname">dynarr_t * dynarr_binary_merge </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+          <td class="paramtype">const dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>second</em></span>, </td>
+          <td class="paramtype">const dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>second</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const compare_t</td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__Callbacks.html#gae47f476ece20d219ac1d39c71110e553">compare_t</a></td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1089,24 +1158,39 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,233,167,259"/>
 <area shape="rect" href="dynarr_8c.html#a1e7f043863514d809cd6446053f6dc47" title=" " alt="" coords="215,107,334,132"/>
 <area shape="poly" title=" " alt="" coords="101,231,150,193,213,149,235,136,237,141,216,154,153,197,105,235"/>
-<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="677,107,775,132"/>
-<area shape="poly" title=" " alt="" coords="113,231,159,211,214,193,338,165,462,144,663,121,664,127,463,149,339,170,215,198,161,216,115,236"/>
+<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="744,107,841,132"/>
+<area shape="poly" title=" " alt="" coords="113,231,159,211,214,193,318,173,461,153,730,123,731,128,461,158,319,178,215,198,161,216,115,236"/>
 <area shape="rect" href="dynarr_8c.html#a99f1163f1932f71f0229a7340df68efb" title=" " alt="" coords="215,208,334,233"/>
 <area shape="poly" title=" " alt="" coords="166,233,201,228,202,233,167,238"/>
 <area shape="rect" href="dynarr_8c.html#aebbaac3879771d77aa20068a26952197" title=" " alt="" coords="215,257,335,283"/>
 <area shape="poly" title=" " alt="" coords="167,254,201,258,201,263,166,259"/>
-<area shape="rect" href="dynarr_8c.html#a93c32dd116523090126d427cce08e114" title=" " alt="" coords="391,283,483,308"/>
-<area shape="poly" title=" " alt="" coords="113,256,160,276,215,293,299,301,377,298,377,304,299,306,214,298,158,281,111,261"/>
-<area shape="rect" href="dynarr_8c.html#a498b4e9fc56a6e87a6c5ca525026a9ed" title=" " alt="" coords="235,359,314,384"/>
-<area shape="poly" title=" " alt="" coords="105,257,154,294,216,337,238,350,235,354,213,342,151,298,102,261"/>
-<area shape="rect" href="dynarr_8c.html#ab449a79e6b33f55af35329df4363336e" title=" " alt="" coords="383,56,491,81"/>
-<area shape="poly" title=" " alt="" coords="315,104,381,83,383,88,317,109"/>
-<area shape="poly" title=" " alt="" coords="334,117,663,117,663,122,334,122"/>
-<area shape="rect" href="dynarr_8c.html#a30d508a9f387e2227dd0d72a8bfd2a39" title=" " alt="" coords="539,5,629,31"/>
-<area shape="poly" title=" " alt="" coords="474,53,532,33,534,38,475,58"/>
-<area shape="poly" title=" " alt="" coords="491,74,630,98,664,105,663,110,629,103,490,80"/>
-<area shape="poly" title=" " alt="" coords="605,29,698,96,695,101,601,33"/>
-<area shape="poly" title=" " alt="" coords="462,280,537,240,628,186,696,138,699,143,631,191,540,245,465,285"/>
+<area shape="rect" href="dynarr_8c.html#a93c32dd116523090126d427cce08e114" title=" " alt="" coords="602,269,694,295"/>
+<area shape="poly" title=" " alt="" coords="114,256,160,276,215,291,317,303,419,303,513,297,588,289,588,294,513,303,420,309,317,308,214,297,159,281,112,261"/>
+<area shape="rect" href="dynarr_8c.html#a498b4e9fc56a6e87a6c5ca525026a9ed" title=" " alt="" coords="235,383,314,408"/>
+<area shape="poly" title=" " alt="" coords="105,257,249,372,245,376,102,261"/>
+<area shape="rect" href="dynarr_8c.html#ab449a79e6b33f55af35329df4363336e" title=" " alt="" coords="413,56,521,81"/>
+<area shape="poly" title=" " alt="" coords="323,104,404,82,406,87,325,109"/>
+<area shape="poly" title=" " alt="" coords="334,117,730,117,730,122,334,122"/>
+<area shape="rect" href="dynarr_8c.html#a30d508a9f387e2227dd0d72a8bfd2a39" title=" " alt="" coords="603,5,693,31"/>
+<area shape="poly" title=" " alt="" coords="513,53,589,32,590,37,514,58"/>
+<area shape="poly" title=" " alt="" coords="522,73,696,98,731,104,730,110,696,103,521,78"/>
+<area shape="poly" title=" " alt="" coords="670,29,698,48,765,97,762,101,694,52,667,33"/>
+<area shape="rect" href="group__Vector.html#gab3a5e466261d31ee9edd77a5eb280030" title="Sets element at given index to a value." alt="" coords="747,32,838,57"/>
+<area shape="poly" title=" " alt="" coords="694,24,734,31,734,37,693,29"/>
+<area shape="rect" href="group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="889,157,980,183"/>
+<area shape="poly" title=" " alt="" coords="810,56,911,146,907,150,807,60"/>
+<area shape="rect" href="group__Vector.html#gae0c0da17ad9469e47ef376a82b6493f3" title="Deallocates vector." alt="" coords="408,232,527,257"/>
+<area shape="poly" title=" " alt="" coords="335,259,394,252,395,257,335,265"/>
+<area shape="rect" href="group__Allocation.html#gacd97ea77de38db5fb50d9e8ba216a734" title="Free allocation that was previously allocated." alt="" coords="600,220,696,245"/>
+<area shape="poly" title=" " alt="" coords="527,238,586,234,586,239,527,243"/>
+<area shape="poly" title=" " alt="" coords="676,267,694,255,733,205,774,142,779,145,738,208,698,259,679,271"/>
+<area shape="poly" title=" " alt="" coords="681,267,888,185,889,190,683,272"/>
+<area shape="rect" href="group__Vector.html#ga435ecb8dca435624d8d277feb6b2cc80" title="Access vector_t::data_offset property for extensions." alt="" coords="396,359,539,384"/>
+<area shape="poly" title=" " alt="" coords="314,388,382,379,382,385,315,393"/>
+<area shape="rect" href="group__Vector.html#gaae93d7f0c056c1d11d3232a7a7aa5e09" title="Reports current element size." alt="" coords="389,408,546,433"/>
+<area shape="poly" title=" " alt="" coords="315,398,375,406,375,411,314,403"/>
+<area shape="rect" href="group__Vector.html#ga8920a1d7d9d5db65a90e0e27b112ed2e" title="Reports initial capacity of the vector." alt="" coords="383,457,552,483"/>
+<area shape="poly" title=" " alt="" coords="301,406,384,444,405,451,403,456,382,448,299,411"/>
 </map>
 </div>
 
@@ -1121,7 +1205,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a> dynarr_spread_insert </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">dynarr_t **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1148,12 +1232,22 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="dynarr_8h_a00ddd61f7109ab9bb88da4fa5a88fb51_cgraph.png" border="0" usemap="#adynarr_8h_a00ddd61f7109ab9bb88da4fa5a88fb51_cgraph" alt=""/></div>
 <map name="adynarr_8h_a00ddd61f7109ab9bb88da4fa5a88fb51_cgraph" id="adynarr_8h_a00ddd61f7109ab9bb88da4fa5a88fb51_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,164,56"/>
-<area shape="rect" href="dynarr_8c.html#a30d508a9f387e2227dd0d72a8bfd2a39" title=" " alt="" coords="212,5,303,31"/>
-<area shape="poly" title=" " alt="" coords="164,29,198,24,199,29,164,34"/>
-<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="351,31,448,56"/>
-<area shape="poly" title=" " alt="" coords="164,41,337,41,337,46,164,46"/>
-<area shape="poly" title=" " alt="" coords="303,23,338,30,337,35,302,29"/>
+<area shape="rect" title=" " alt="" coords="5,56,164,81"/>
+<area shape="rect" href="dynarr_8c.html#a30d508a9f387e2227dd0d72a8bfd2a39" title=" " alt="" coords="224,56,315,81"/>
+<area shape="poly" title=" " alt="" coords="164,66,210,66,210,71,164,71"/>
+<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="377,5,474,31"/>
+<area shape="poly" title=" " alt="" coords="144,53,212,41,362,21,363,27,212,46,145,59"/>
+<area shape="rect" href="group__Vector.html#ga6312527827ba72441feeef4fc4047f94" title="Duplicates existing element across range." alt="" coords="212,105,327,131"/>
+<area shape="poly" title=" " alt="" coords="134,79,208,99,207,104,132,84"/>
+<area shape="poly" title=" " alt="" coords="309,53,371,33,373,38,310,58"/>
+<area shape="rect" href="group__Vector.html#gab3a5e466261d31ee9edd77a5eb280030" title="Sets element at given index to a value." alt="" coords="380,55,471,80"/>
+<area shape="poly" title=" " alt="" coords="315,66,366,65,366,71,315,71"/>
+<area shape="rect" href="group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="524,105,615,131"/>
+<area shape="poly" title=" " alt="" coords="463,78,521,98,519,103,461,83"/>
+<area shape="poly" title=" " alt="" coords="327,115,510,115,510,121,327,121"/>
+<area shape="rect" href="group__Vector.html#gabf21611afbbdda61da4ffa361fc783dc" title="Copy element range to other location." alt="" coords="375,156,476,181"/>
+<area shape="poly" title=" " alt="" coords="310,128,373,149,371,154,309,133"/>
+<area shape="poly" title=" " alt="" coords="461,153,519,133,521,138,463,158"/>
 </map>
 </div>
 
@@ -1168,7 +1262,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">size_t dynarr_binary_find_insert_place </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">const dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1178,7 +1272,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const compare_t</td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__Callbacks.html#gae47f476ece20d219ac1d39c71110e553">compare_t</a></td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1212,7 +1306,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a> dynarr_binary_insert </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">dynarr_t **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1222,7 +1316,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const compare_t</td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__Callbacks.html#gae47f476ece20d219ac1d39c71110e553">compare_t</a></td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1255,6 +1349,10 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="dynarr_8c.html#a30d508a9f387e2227dd0d72a8bfd2a39" title=" " alt="" coords="391,121,482,146"/>
 <area shape="poly" title=" " alt="" coords="308,93,380,114,378,119,307,98"/>
 <area shape="poly" title=" " alt="" coords="479,118,548,97,550,102,481,123"/>
+<area shape="rect" href="group__Vector.html#gab3a5e466261d31ee9edd77a5eb280030" title="Sets element at given index to a value." alt="" coords="559,121,650,146"/>
+<area shape="poly" title=" " alt="" coords="482,131,545,131,545,136,482,136"/>
+<area shape="rect" href="group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="701,121,792,146"/>
+<area shape="poly" title=" " alt="" coords="650,131,688,131,688,136,650,136"/>
 </map>
 </div>
 
@@ -1269,7 +1367,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a> dynarr_binary_reserve </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">dynarr_t **const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1279,7 +1377,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const compare_t</td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__Callbacks.html#gae47f476ece20d219ac1d39c71110e553">compare_t</a></td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1320,12 +1418,12 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">int dynarr_foreach </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">const dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const foreach_t</td>          <td class="paramname"><span class="paramname"><em>func</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__Callbacks.html#ga2a12fb990fb59f84ca1920d78d867aa6">foreach_t</a></td>          <td class="paramname"><span class="paramname"><em>func</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1334,7 +1432,7 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd>vector_foreach </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__Vector.html#ga988880baa4fe32fb6d4299daf1a29a1f" title="Perform immutable action on each element of the vector.">vector_foreach</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00462">462</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
@@ -1342,9 +1440,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="dynarr_8h_a2575dd307a95358e074e07c2b9999a9d_cgraph.png" border="0" usemap="#adynarr_8h_a2575dd307a95358e074e07c2b9999a9d_cgraph" alt=""/></div>
 <map name="adynarr_8h_a2575dd307a95358e074e07c2b9999a9d_cgraph" id="adynarr_8h_a2575dd307a95358e074e07c2b9999a9d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,125,31"/>
-<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="173,5,271,31"/>
-<area shape="poly" title=" " alt="" coords="126,15,159,15,159,21,126,21"/>
+<area shape="rect" title=" " alt="" coords="5,31,125,56"/>
+<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="184,5,281,31"/>
+<area shape="poly" title=" " alt="" coords="125,32,170,25,170,30,126,37"/>
+<area shape="rect" href="group__Vector.html#ga988880baa4fe32fb6d4299daf1a29a1f" title="Perform immutable action on each element of the vector." alt="" coords="173,55,292,80"/>
+<area shape="poly" title=" " alt="" coords="126,49,160,54,160,60,125,55"/>
+<area shape="rect" href="group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="340,55,431,80"/>
+<area shape="poly" title=" " alt="" coords="292,65,326,65,326,70,292,70"/>
 </map>
 </div>
 
@@ -1359,12 +1461,12 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">int dynarr_aggregate </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">const dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const aggregate_t</td>          <td class="paramname"><span class="paramname"><em>func</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__Callbacks.html#ga89204e5e91ceae8be993751982edb299">aggregate_t</a></td>          <td class="paramname"><span class="paramname"><em>func</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1378,7 +1480,7 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd>vector_aggregate </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__Vector.html#ga1a193e06f6700de896628631b8569740" title="Perform immutable accamulating action on each element of the vector.">vector_aggregate</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00472">472</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
@@ -1386,9 +1488,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="dynarr_8h_ac18ed54e516f63ace336c4581f0e60c5_cgraph.png" border="0" usemap="#adynarr_8h_ac18ed54e516f63ace336c4581f0e60c5_cgraph" alt=""/></div>
 <map name="adynarr_8h_ac18ed54e516f63ace336c4581f0e60c5_cgraph" id="adynarr_8h_ac18ed54e516f63ace336c4581f0e60c5_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,143,31"/>
-<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="191,5,288,31"/>
-<area shape="poly" title=" " alt="" coords="143,15,177,15,177,21,143,21"/>
+<area shape="rect" title=" " alt="" coords="5,31,143,56"/>
+<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="210,5,307,31"/>
+<area shape="poly" title=" " alt="" coords="143,31,196,24,197,29,143,37"/>
+<area shape="rect" href="group__Vector.html#ga1a193e06f6700de896628631b8569740" title="Perform immutable accamulating action on each element of the vector." alt="" coords="191,55,327,80"/>
+<area shape="poly" title=" " alt="" coords="143,50,177,54,176,59,143,55"/>
+<area shape="rect" href="group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="375,55,465,80"/>
+<area shape="poly" title=" " alt="" coords="327,65,361,65,361,70,327,70"/>
 </map>
 </div>
 
@@ -1403,12 +1509,12 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">int dynarr_transform </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
+          <td class="paramtype">dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const transform_t</td>          <td class="paramname"><span class="paramname"><em>func</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__Callbacks.html#ga3b3896688782a9a532d27c5d841c0e79">transform_t</a></td>          <td class="paramname"><span class="paramname"><em>func</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1417,7 +1523,7 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd>vector_transform </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__Vector.html#ga176c007bd441e4469a28ba47ca952dfb" title="Perform mutable transformation on each element of the vector.">vector_transform</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00484">484</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
@@ -1425,11 +1531,15 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="dynarr_8h_a8246d131a58a23f4d434775bd02bccb3_cgraph.png" border="0" usemap="#adynarr_8h_a8246d131a58a23f4d434775bd02bccb3_cgraph" alt=""/></div>
 <map name="adynarr_8h_a8246d131a58a23f4d434775bd02bccb3_cgraph" id="adynarr_8h_a8246d131a58a23f4d434775bd02bccb3_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,140,31"/>
-<area shape="rect" href="dynarr_8c.html#a2575dd307a95358e074e07c2b9999a9d" title=" " alt="" coords="188,5,308,31"/>
-<area shape="poly" title=" " alt="" coords="140,15,174,15,174,21,140,21"/>
-<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="356,5,453,31"/>
-<area shape="poly" title=" " alt="" coords="308,15,342,15,342,21,308,21"/>
+<area shape="rect" title=" " alt="" coords="5,31,140,56"/>
+<area shape="rect" href="dynarr_8c.html#a2575dd307a95358e074e07c2b9999a9d" title=" " alt="" coords="188,31,308,56"/>
+<area shape="poly" title=" " alt="" coords="140,41,174,41,174,46,140,46"/>
+<area shape="rect" href="dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="367,5,464,31"/>
+<area shape="poly" title=" " alt="" coords="308,32,352,25,353,30,309,37"/>
+<area shape="rect" href="group__Vector.html#ga988880baa4fe32fb6d4299daf1a29a1f" title="Perform immutable action on each element of the vector." alt="" coords="356,55,475,80"/>
+<area shape="poly" title=" " alt="" coords="309,49,343,54,342,60,308,55"/>
+<area shape="rect" href="group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="523,55,613,80"/>
+<area shape="poly" title=" " alt="" coords="475,65,509,65,509,70,475,70"/>
 </map>
 </div>
 

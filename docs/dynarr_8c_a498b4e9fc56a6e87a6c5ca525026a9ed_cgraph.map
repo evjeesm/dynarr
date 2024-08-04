@@ -1,0 +1,9 @@
+<map id="get_opts" name="get_opts">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,84,80"/>
+<area shape="rect" id="Node000002" href="$group__Vector.html#ga435ecb8dca435624d8d277feb6b2cc80" title="Access vector_t::data_offset property for extensions." alt="" coords="145,5,288,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,54,131,39,157,32,158,37,133,45,85,59"/>
+<area shape="rect" id="Node000003" href="$group__Vector.html#gaae93d7f0c056c1d11d3232a7a7aa5e09" title="Reports current element size." alt="" coords="138,55,295,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="84,65,124,65,124,70,84,70"/>
+<area shape="rect" id="Node000004" href="$group__Vector.html#ga8920a1d7d9d5db65a90e0e27b112ed2e" title="Reports initial capacity of the vector." alt="" coords="132,104,301,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="85,76,159,98,158,103,83,81"/>
+</map>

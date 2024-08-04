@@ -1,10 +1,14 @@
 <map id="dynarr_prepend" name="dynarr_prepend">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,129,56"/>
-<area shape="rect" id="Node000002" href="$dynarr_8c.html#ab449a79e6b33f55af35329df4363336e" title=" " alt="" coords="177,31,285,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,41,163,41,163,46,130,46"/>
-<area shape="rect" id="Node000003" href="$dynarr_8c.html#a30d508a9f387e2227dd0d72a8bfd2a39" title=" " alt="" coords="333,5,424,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="285,31,319,25,320,31,286,37"/>
-<area shape="rect" id="Node000004" href="$dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="472,31,569,56"/>
-<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="286,41,458,41,458,46,286,46"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="425,23,459,30,458,35,424,29"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,129,55"/>
+<area shape="rect" id="Node000002" href="$dynarr_8c.html#ab449a79e6b33f55af35329df4363336e" title=" " alt="" coords="177,29,285,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,39,163,39,163,45,130,45"/>
+<area shape="rect" id="Node000003" href="$dynarr_8c.html#a30d508a9f387e2227dd0d72a8bfd2a39" title=" " alt="" coords="333,55,424,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="286,49,320,55,319,60,285,54"/>
+<area shape="rect" id="Node000004" href="$dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="472,5,569,31"/>
+<area shape="poly" id="edge6_Node000002_Node000004" title=" " alt="" coords="285,35,458,20,458,26,286,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="415,52,470,33,471,38,417,57"/>
+<area shape="rect" id="Node000005" href="$group__Vector.html#gab3a5e466261d31ee9edd77a5eb280030" title="Sets element at given index to a value." alt="" coords="475,55,566,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="424,65,462,65,462,70,424,70"/>
+<area shape="rect" id="Node000006" href="$group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="617,55,708,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="566,65,604,65,604,70,566,70"/>
 </map>

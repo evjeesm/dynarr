@@ -1,0 +1,7 @@
+<map id="dynarr_destroy" name="dynarr_destroy">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,125,31"/>
+<area shape="rect" id="Node000002" href="$group__Vector.html#gae0c0da17ad9469e47ef376a82b6493f3" title="Deallocates vector." alt="" coords="173,5,292,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,15,160,15,160,21,126,21"/>
+<area shape="rect" id="Node000003" href="$group__Allocation.html#gacd97ea77de38db5fb50d9e8ba216a734" title="Free allocation that was previously allocated." alt="" coords="340,5,436,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="292,15,326,15,326,21,292,21"/>
+</map>

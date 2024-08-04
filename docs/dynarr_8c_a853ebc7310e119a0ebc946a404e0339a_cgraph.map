@@ -1,5 +1,9 @@
 <map id="dynarr_set_zero" name="dynarr_set_zero">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,132,31"/>
-<area shape="rect" id="Node000002" href="$dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="180,5,277,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,15,166,15,166,21,132,21"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,132,56"/>
+<area shape="rect" id="Node000002" href="$dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="194,5,291,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,31,180,24,181,30,133,37"/>
+<area shape="rect" id="Node000003" href="$group__Vector.html#gaf3eaea4a3a47741f46eae9ae6e984ef2" title="Sets element at given index to a zero value." alt="" coords="180,55,305,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="133,49,167,54,166,60,132,55"/>
+<area shape="rect" id="Node000004" href="$group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="353,55,444,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="305,65,340,65,340,70,305,70"/>
 </map>
