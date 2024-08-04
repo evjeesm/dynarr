@@ -6,6 +6,8 @@
 
 !src
 !tests
+!examples
+!imgs
 !*.c
 !*.h
 !*.am
@@ -14,4 +16,6 @@
 !.gitignore
 !.clangd
 !autogen.sh
+
 config.h
+aminclude_static.am
