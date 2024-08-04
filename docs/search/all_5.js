@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['foreach_5ft_0',['foreach_t',['../group__Callbacks.html#ga2a12fb990fb59f84ca1920d78d867aa6',1,'vector.h']]]
+  ['implementation_20details_0',['Implementation details',['../index.html#autotoc_md1',1,'']]],
+  ['initial_5fcap_1',['initial_cap',['../structdynarr__opts__t.html#ac6f8e73f613df4b4adb4f5162a301f47',1,'dynarr_opts_t']]]
 ];

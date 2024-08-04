@@ -1,12 +1,8 @@
 <map id="dynarr_insert" name="dynarr_insert">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,113,55"/>
-<area shape="rect" id="Node000002" href="$dynarr_8c.html#a30d508a9f387e2227dd0d72a8bfd2a39" title=" " alt="" coords="161,55,252,80"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,49,148,55,147,60,113,54"/>
-<area shape="rect" id="Node000003" href="$dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="300,5,397,31"/>
-<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="113,35,286,20,286,26,114,40"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="243,52,298,33,299,38,245,57"/>
-<area shape="rect" id="Node000004" href="$group__Vector.html#gab3a5e466261d31ee9edd77a5eb280030" title="Sets element at given index to a value." alt="" coords="303,55,394,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="252,65,290,65,290,70,252,70"/>
-<area shape="rect" id="Node000005" href="$group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="445,55,536,80"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="394,65,432,65,432,70,394,70"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,113,56"/>
+<area shape="rect" id="Node000002" href="$dynarr_8c.html#a30d508a9f387e2227dd0d72a8bfd2a39" title=" " alt="" coords="161,5,252,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,31,147,25,148,31,114,37"/>
+<area shape="rect" id="Node000003" href="$dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="300,31,397,56"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="114,41,286,41,286,46,114,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="253,23,287,30,286,35,252,29"/>
 </map>

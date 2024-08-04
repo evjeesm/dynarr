@@ -1,18 +1,8 @@
 <map id="dynarr_spread_insert" name="dynarr_spread_insert">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,164,81"/>
-<area shape="rect" id="Node000002" href="$dynarr_8c.html#a30d508a9f387e2227dd0d72a8bfd2a39" title=" " alt="" coords="224,56,315,81"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,66,210,66,210,71,164,71"/>
-<area shape="rect" id="Node000003" href="$dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="377,5,474,31"/>
-<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="144,53,212,41,362,21,363,27,212,46,145,59"/>
-<area shape="rect" id="Node000006" href="$group__Vector.html#ga6312527827ba72441feeef4fc4047f94" title="Duplicates existing element across range." alt="" coords="212,105,327,131"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="134,79,208,99,207,104,132,84"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="309,53,371,33,373,38,310,58"/>
-<area shape="rect" id="Node000004" href="$group__Vector.html#gab3a5e466261d31ee9edd77a5eb280030" title="Sets element at given index to a value." alt="" coords="380,55,471,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="315,66,366,65,366,71,315,71"/>
-<area shape="rect" id="Node000005" href="$group__Vector.html#ga9437d9506a3b2799f595c88b82f160b3" title="Returns pointer for the element at index." alt="" coords="524,105,615,131"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="463,78,521,98,519,103,461,83"/>
-<area shape="poly" id="edge9_Node000006_Node000005" title=" " alt="" coords="327,115,510,115,510,121,327,121"/>
-<area shape="rect" id="Node000007" href="$group__Vector.html#gabf21611afbbdda61da4ffa361fc783dc" title="Copy element range to other location." alt="" coords="375,156,476,181"/>
-<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="310,128,373,149,371,154,309,133"/>
-<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="461,153,519,133,521,138,463,158"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,164,56"/>
+<area shape="rect" id="Node000002" href="$dynarr_8c.html#a30d508a9f387e2227dd0d72a8bfd2a39" title=" " alt="" coords="212,5,303,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,29,198,24,199,29,164,34"/>
+<area shape="rect" id="Node000003" href="$dynarr_8c.html#af5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="351,31,448,56"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="164,41,337,41,337,46,164,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="303,23,338,30,337,35,302,29"/>
 </map>

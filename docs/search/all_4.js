@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['element_5fsize_0',['element_size',['../structdynarr__opts__t.html#a61aa2f610ed5a0202bd558522d04c7d9',1,'dynarr_opts_t::element_size'],['../structvector__t.html#a8647ef54101afd019320f1e8a6be05c3',1,'vector_t::element_size'],['../structvector__opts__t.html#a18f1f3e195d1c4a691e232b1fcaec0c1',1,'vector_opts_t::element_size']]],
-  ['example_1',['Example',['..//home/runner/work/dynarr/dynarr/vector/README.md#autotoc_md9',1,'Minimal Example'],['../index.html#autotoc_md20',1,'Minimal Example']]]
+  ['get_5fopts_0',['get_opts',['../dynarr_8c.html#a498b4e9fc56a6e87a6c5ca525026a9ed',1,'dynarr.c']]],
+  ['grow_5ffactor_1',['grow_factor',['../structdynarr__opts__t.html#ae9243a6cf230d13c19c3e1eed2f78e61',1,'dynarr_opts_t']]],
+  ['grow_5fthreshold_2',['grow_threshold',['../structdynarr__opts__t.html#a387926f265aff246f24154f0bdbf731d',1,'dynarr_opts_t']]]
 ];
