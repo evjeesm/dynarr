@@ -1049,7 +1049,8 @@ RECURSIVE              = YES
 # Note that relative paths are relative to the directory from which doxygen is
 # run.
 
-EXCLUDE                = doxygen-awesome-css \
+EXCLUDE                = vector \
+                         doxygen-awesome-css \
                          memory \
                          tests \
                          examples \
@@ -2506,7 +2507,7 @@ SKIP_FUNCTION_MACROS   = YES
 # the path). If a tag file is not located in the directory in which doxygen is
 # run, you must also specify the path to the tagfile here.
 
-TAGFILES               = vector/vector.tag=https://evjeesm.github.io/vector/
+TAGFILES               = vector/vector.tag=https://evjeesm.github.io/vector
 
 # When a file name is specified after GENERATE_TAGFILE, doxygen will create a
 # tag file that is based on the input files it reads. See section "Linking to
@@ -2519,7 +2520,7 @@ GENERATE_TAGFILE       = dynarr.tag
 # inherited external classes will be listed.
 # The default value is: NO.
 
-ALLEXTERNALS           = NO
+ALLEXTERNALS           = YES
 
 # If the EXTERNAL_GROUPS tag is set to YES, all external groups will be listed
 # in the topic index. If set to NO, only the current project's groups will be
