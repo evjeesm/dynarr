@@ -1,3 +1,9 @@
+/**
+* @file
+* @author Evgeni Semenov
+* Contains implementation of the dynarr.
+*/
+
 #include "dynarr.h"
 #include "vector.h"
 
@@ -7,6 +13,11 @@
 #include <stdio.h>  /* fprintf */
 #include <stdlib.h> /* abort */
 
+/**
+* Describes header that will be concatenated after @ref vector_t.
+* @warning Size for the header has to be reserved via vector_t::data_offset on vector creation.
+* @see vector_get_ext_header
+*/
 typedef struct dynarr_header_t
 {
     size_t size;
