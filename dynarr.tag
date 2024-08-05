@@ -436,7 +436,7 @@
   </compound>
   <compound kind="group">
     <name>Dynarr</name>
-    <title>API</title>
+    <title>API&quot;</title>
     <filename>group__Dynarr.html</filename>
     <member kind="define">
       <type>#define</type>
