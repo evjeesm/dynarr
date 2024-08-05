@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['utilities_0',['Utilities',['https://evjeesm.github.io/vector/group__Utilities.html',1,'']]]
+  ['resize_0',['Auto-resize',['../group__Auto-resize.html',1,'']]]
 ];
