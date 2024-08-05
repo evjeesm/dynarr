@@ -63,7 +63,7 @@ dynarr_status_t;
     .grow_factor = 1.5f
 
 /**
-* @addtogroup Dynarr API
+* @addtogroup "Dynarr API"
 * @brief Main dynarr methods. 
 * @ref Callbacks @{ */
 
@@ -303,6 +303,6 @@ int dynarr_transform(dynarr_t *const dynarr,
         const transform_t func,
         void *const param);
 
-/** @} @noop Dynarr API */
+/** @} @noop "Dynarr API" */
 
 #endif/*_DYNARR_H_*/
