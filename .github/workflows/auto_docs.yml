@@ -46,7 +46,7 @@ jobs:
         git submodule update --init --recursive
         git submodule update --recursive --remote
         git submodule foreach git pull --ff --allow-unrelated-histories --depth=1 origin docs
-        git diff --quite && git commit -am "Update submodule"
+        git diff --quiet && git commit -am "Update submodule"
 
     - name: Merge source branch into target branch
       run: git merge ${{ inputs.source-branch }} --allow-unrelated-histories --commit -X theirs
