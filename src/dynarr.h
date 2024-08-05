@@ -7,9 +7,9 @@
 #ifndef _DYNARR_H_
 #define _DYNARR_H_
 
-#include <stdbool.h> /* bool, true, false */
-#include <stddef.h>  /* size_t */
-#include <sys/types.h> /* ssize_t */
+#include <stdbool.h>    /* bool, true, false */
+#include <stddef.h>     /* size_t */
+#include <sys/types.h>  /* ssize_t */
 
 #include "vector.h"
 
@@ -41,11 +41,15 @@ dynarr_opts_t;
 */
 typedef enum dynarr_status_t
 {
-    DYNARR_SUCCESS    = VECTOR_SUCCESS,
-    DYNARR_ALLOC_ERROR = VECTOR_ALLOC_ERROR,
-    DYNARR_GROW_ERROR  = VECTOR_STATUS_LAST,
-    DYNARR_SHRINK_ERROR,
-    DYNARR_STATUS_LAST
+    DYNARR_SUCCESS     = VECTOR_SUCCESS,     /**< @brief Success status inherited from #VECTOR_SUCCESS. */
+    DYNARR_ALLOC_ERROR = VECTOR_ALLOC_ERROR, /**< @brief Success status inherited from #VECTOR_ALLOC_ERROR. */
+    DYNARR_GROW_ERROR  = VECTOR_STATUS_LAST, /**<
+    * @brief Allocation error on grow.
+    * @details Where dynarr specific status codes begin at. */
+    DYNARR_SHRINK_ERROR, /**< @brief Success status inherited from #VECTOR_ALLOC_ERROR. */
+    DYNARR_STATUS_LAST /**<
+    * @brief Total number of valid dynarr status codes. 
+    * @details Extension point for derived enum codes */
 }
 dynarr_status_t;
 
@@ -57,6 +61,11 @@ dynarr_status_t;
     .shrink_threshold = 0.25f, \
     .grow_threshold = 0.75f, \
     .grow_factor = 1.5f
+
+/**
+* @addtogroup Dynarr API
+* @brief Main dynarr methods. 
+* @ref Callbacks @{ */
 
 /**
 * The wrapper for `dynarr_create_` function that provides default values.
@@ -294,5 +303,6 @@ int dynarr_transform(dynarr_t *const dynarr,
         const transform_t func,
         void *const param);
 
+/** @} @noop Dynarr API */
 
 #endif/*_DYNARR_H_*/

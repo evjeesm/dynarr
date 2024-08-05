@@ -20,25 +20,58 @@
 */
 typedef struct dynarr_header_t
 {
-    size_t size;
-    float grow_factor;
-    float grow_threshold;
-    float shrink_threshold;
+    size_t size;            /**< tracked amount of stored elements. */
+    float grow_factor;      /**< @brief @copybrief dynarr_opts_t    */
+    float grow_threshold;   /**< @brief @copybrief grow_threshold   */
+    float shrink_threshold; /**< @brief @copybrief shrink_threshold */
 }
 dynarr_header_t;
 
 
-/**                          ***
+/*                             *
 * === Forward Declarations === *
-**                            */
+*                             */
 
+/**
+* Sometimes its necessary to reproduce dynarr options.
+*/
 static dynarr_opts_t   get_opts(const dynarr_t *const dynarr);
+
+/**
+* Access a vector structure where @ref dynarr_header_t is located.
+*/
 static dynarr_header_t *get_dynarr_header(const dynarr_t *const dynarr);
+
+/**
+* @addtogroup Auto-resize
+* @brief Internals for auto-resize support. @{ */
+
+/**
+* Perform a @b growth operation taking into a count amount of elements we need to @b add.
+*/
 static dynarr_status_t grow(dynarr_t **const dynarr, const size_t amount_to_add);
+
+/**
+* Perform a @b shrinking operation taking into a count amount of elements we need to @b remove.
+*/
 static dynarr_status_t shrink(dynarr_t **const dynarr, const size_t amount_to_remove);
+
+/**
+* Shifting elements at @f(index + amount) to the left by @c amount.
+*/
 static void free_space_at(dynarr_t *const dynarr, const size_t index, const size_t amount);
+
+/**
+* Shifting elements at @c index by @c amount.
+* Sufficient space has to be allocated prior to that call.
+*/
 static void make_space_at(dynarr_t *const dynarr, const size_t index, /*mut*/ size_t amount);
 
+/** }@ @noop Auto-resize */
+
+/**
+* Support for binary insertion.
+*/
 static size_t binary_find_insert_place(const dynarr_t *const dynarr,
         const void *value,
         const size_t start,
@@ -46,9 +79,9 @@ static size_t binary_find_insert_place(const dynarr_t *const dynarr,
         const compare_t cmp,
         void *param);
 
-/**                          ***
+/*                             *
 * === API Implementation   === *
-**                            */
+*                             */
 
 dynarr_t *dynarr_create_(const dynarr_opts_t *const opts)
 {
@@ -491,9 +524,9 @@ int dynarr_transform(dynarr_t *const dynarr,
     return dynarr_foreach(dynarr, (foreach_t)func, param);
 }
 
-/**                       ***
+/*                          *
 * === Static Functions  === *
-**                         */
+*                          */
 
 static dynarr_opts_t get_opts(const dynarr_t *const dynarr)
 {
