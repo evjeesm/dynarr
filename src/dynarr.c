@@ -1,7 +1,7 @@
 /**
 * @file
+* @brief Contains implementation of the dynarr.
 * @author Evgeni Semenov
-* Contains implementation of the dynarr.
 */
 
 #include "dynarr.h"
@@ -17,7 +17,6 @@
 * Describes header that will be concatenated after @ref vector_t.
 * @warning Size for the header has to be reserved via vector_t::data_offset on vector creation.
 *
-* @memberof vector_t
 * @see vector_get_ext_header
 */
 typedef struct dynarr_header_t
@@ -69,7 +68,7 @@ static void free_space_at(dynarr_t *const dynarr, const size_t index, const size
 */
 static void make_space_at(dynarr_t *const dynarr, const size_t index, /*mut*/ size_t amount);
 
-/** }@ @noop Auto-resize */
+/** @} @noop Auto-resize */
 
 /**
 * Support for binary insertion.

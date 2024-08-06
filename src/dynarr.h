@@ -1,7 +1,7 @@
 /**
 * @file
 * @author Evgeni Semenov
-* Describes dynarr public interface.
+* @brief Describes dynarr public interface.
 */
 
 #ifndef _DYNARR_H_
@@ -19,7 +19,7 @@
 typedef struct vector_t dynarr_t;
 
 /**
-* This is the main dynarr type.
+* @brief Dynarr creating options.
 */
 typedef struct dynarr_opts_t
 {
