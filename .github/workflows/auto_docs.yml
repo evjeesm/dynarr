@@ -66,7 +66,9 @@ jobs:
     - name: Commit Docs
       run: |
         git add -f docs *.tag
-        git commit -m "AutoDocs Update"
+        git diff --staged --quiet \
+          || git commit -m "AutoDocs Update" \
+          && echo "No documentation changes!"
 
     - name: Push changes to target branch
       run: git push origin ${{ inputs.target-branch }}
