@@ -1,7 +1,7 @@
 /**
 * @file
-* @author Evgeni Semenov
 * @brief Describes dynarr public interface.
+* @author Evgeni Semenov
 */
 
 #ifndef _DYNARR_H_
@@ -273,6 +273,14 @@ dynarr_status_t dynarr_binary_insert(dynarr_t **const dynarr,
         const void *const value,
         const compare_t cmp,
         void *const param,
+        size_t *const index);
+
+/**
+* @brief Same as @ref dynarr_binary_insert except does not inserts duplicates.
+*/ 
+dynarr_status_t dynarr_binary_insert_uniq(dynarr_t **const dynarr,
+        const void *const value,
+        const compare_t cmp, void *param,
         size_t *const index);
 
 
