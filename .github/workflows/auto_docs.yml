@@ -46,9 +46,10 @@ jobs:
         git submodule update --init --recursive
         git submodule update --recursive --remote
 
-    # - name: Bump docs submodules version
-    #   run: |
-    #     git diff --quiet || git commit -am "Bump subdocs!" && true
+    - name: Checkout vector
+      run: |
+        git checkout ${{ inputs.source-branch }} -- vector
+        git commit -am "Bump vector version!"
 
     - name: Merge source branch into target branch
       run: git merge ${{ inputs.source-branch }} --allow-unrelated-histories --commit -X theirs
