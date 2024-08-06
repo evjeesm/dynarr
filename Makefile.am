@@ -1,5 +1,5 @@
 ACLOCAL_AMFLAGS = -I m4 -I/usr/share/aclocal
-SUBDIRS = vector src tests
+SUBDIRS = vector src tests examples
 
 CODE_COVERAGE_BRANCH_COVERAGE = 1
 
