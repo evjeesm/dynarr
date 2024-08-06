@@ -14,7 +14,7 @@
 #include "vector.h"
 
 /**
-* This is the main dynarr type.
+* @brief This is the main dynarr type.
 */
 typedef struct vector_t dynarr_t;
 
