@@ -45,10 +45,17 @@ jobs:
       run: |
         git submodule update --init --recursive
         git submodule update --recursive --remote
-        git submodule foreach git pull --ff --allow-unrelated-histories --depth=1 origin docs
+
+    - name: Checkout vector
+      run: |
+        git checkout ${{ inputs.source-branch }} -- vector
+        git commit -am "Bump vector version!"
 
     - name: Merge source branch into target branch
       run: git merge ${{ inputs.source-branch }} --allow-unrelated-histories --commit -X theirs
+
+    - name: Pull submodule docs
+      run: git submodule foreach git pull --ff --allow-unrelated-histories --depth=1 origin docs
 
     - name: Regenerate Docs
       run: |
@@ -59,7 +66,9 @@ jobs:
     - name: Commit Docs
       run: |
         git add -f docs *.tag
-        git commit -m "AutoDocs Update"
+        git diff --staged --quiet \
+          || git commit -m "AutoDocs Update" \
+          && echo "No documentation changes!"
 
     - name: Push changes to target branch
       run: git push origin ${{ inputs.target-branch }}
