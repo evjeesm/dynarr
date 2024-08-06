@@ -21,9 +21,9 @@
 typedef struct dynarr_header_t
 {
     size_t size;            /**< tracked amount of stored elements. */
-    float grow_factor;      /**< @brief @copybrief dynarr_opts_t    */
-    float grow_threshold;   /**< @brief @copybrief grow_threshold   */
-    float shrink_threshold; /**< @brief @copybrief shrink_threshold */
+    float grow_factor;      /**< @brief @copybrief dynarr_opts_t:grow_factor    */
+    float grow_threshold;   /**< @brief @copybrief dynarr_opts_t:grow_threshold   */
+    float shrink_threshold; /**< @brief @copybrief dynarr_opts_t:shrink_threshold */
 }
 dynarr_header_t;
 
