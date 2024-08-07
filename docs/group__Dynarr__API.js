@@ -27,6 +27,7 @@ var group__Dynarr__API =
     [ "dynarr_spread_insert", "group__Dynarr__API.html#ga00ddd61f7109ab9bb88da4fa5a88fb51", null ],
     [ "dynarr_binary_find_insert_place", "group__Dynarr__API.html#ga5f6a46fc8cc0cfe14d98926cadbaa35d", null ],
     [ "dynarr_binary_insert", "group__Dynarr__API.html#gad2dd0b992152881697da2073a0c840d7", null ],
+    [ "dynarr_binary_insert_uniq", "group__Dynarr__API.html#ga093962de5ee87e07faeda4575cc73dc0", null ],
     [ "dynarr_binary_reserve", "group__Dynarr__API.html#ga20112ff4b2f14ef520353b23c10761de", null ],
     [ "dynarr_foreach", "group__Dynarr__API.html#ga2575dd307a95358e074e07c2b9999a9d", null ],
     [ "dynarr_aggregate", "group__Dynarr__API.html#gac18ed54e516f63ace336c4581f0e60c5", null ],
