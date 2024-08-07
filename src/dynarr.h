@@ -1,7 +1,7 @@
 /**
 * @file
+* @brief Describes dynarr public interface.
 * @author Evgeni Semenov
-* Describes dynarr public interface.
 */
 
 #ifndef _DYNARR_H_
@@ -14,12 +14,12 @@
 #include "vector.h"
 
 /**
-* This is the main dynarr type.
+* @brief This is the main dynarr type.
 */
 typedef struct vector_t dynarr_t;
 
 /**
-* This is the main dynarr type.
+* @brief Dynarr creating options.
 */
 typedef struct dynarr_opts_t
 {
@@ -273,6 +273,14 @@ dynarr_status_t dynarr_binary_insert(dynarr_t **const dynarr,
         const void *const value,
         const compare_t cmp,
         void *const param,
+        size_t *const index);
+
+/**
+* @brief Same as @ref dynarr_binary_insert except does not inserts duplicates.
+*/ 
+dynarr_status_t dynarr_binary_insert_uniq(dynarr_t **const dynarr,
+        const void *const value,
+        const compare_t cmp, void *param,
         size_t *const index);
 
 
