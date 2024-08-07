@@ -895,22 +895,6 @@
     </member>
   </compound>
   <compound kind="page">
-    <name>Guide</name>
-    <title>📘 Guide</title>
-    <filename>Guide.html</filename>
-    <docanchor file="Guide.html" title="🔨 Creating Dynarr">create</docanchor>
-    <docanchor file="Guide.html" title="🏭 Invoking dynarr_create">dynarr_create_section</docanchor>
-    <docanchor file="Guide.html" title="⚙️ With default options">def_create</docanchor>
-    <docanchor file="Guide.html" title="⚙️ With custom options">custom_opts</docanchor>
-    <docanchor file="Guide.html" title="⚙️ Without macro wrapper">wthout_macro_wrapper</docanchor>
-    <docanchor file="Guide.html" title="⚙️ Allocate extended header">extended_header</docanchor>
-    <docanchor file="Guide.html" title="⿻ Clone an existing array">cloning</docanchor>
-    <docanchor file="Guide.html" title="❌ Handle allocation error">handle_alloc_error</docanchor>
-    <docanchor file="Guide.html" title="❗Manual error resolution">manual_error_resolution</docanchor>
-    <docanchor file="Guide.html" title="❗ Asserting">asserting</docanchor>
-    <docanchor file="Guide.html" title="🧨 Deallocating Dynarr">deallocate</docanchor>
-  </compound>
-  <compound kind="page">
     <name>index</name>
     <title>Dynarr</title>
     <filename>index.html</filename>

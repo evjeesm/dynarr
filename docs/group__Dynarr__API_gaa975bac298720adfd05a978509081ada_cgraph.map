@@ -1,0 +1,33 @@
+<map id="dynarr_remove_if" name="dynarr_remove_if">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,157,143,183"/>
+<area shape="rect" id="Node000002" href="$group__Dynarr__API.html#ga93c32dd116523090126d427cce08e114" title=" " alt="" coords="385,5,477,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,155,134,124,190,92,284,55,370,29,372,34,285,60,192,96,137,128,93,159"/>
+<area shape="rect" id="Node000003" href="$group__Dynarr__API.html#gaf5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="593,157,691,183"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="143,167,579,167,579,173,143,173"/>
+<area shape="rect" id="Node000007" href="$group__Auto-resize.html#ga9ff20c2ac9693f6d8f0ea97f9b46539c" title=" " alt="" coords="191,107,304,132"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="118,155,189,133,190,139,119,160"/>
+<area shape="rect" id="Node000009" href="$group__Auto-resize.html#ga8eb6c0a577084ccd7a64bec67b8bdbbe" title=" " alt="" coords="399,259,462,284"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="93,181,136,210,192,237,242,251,295,260,386,268,385,273,294,266,241,256,190,242,134,214,90,185"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="451,29,614,147,610,151,448,33"/>
+<area shape="rect" id="Node000006" href="/home/runner/work/dynarr/dynarr/vector/vector.tag$group__Vector__API.html#ga9437d9506a3b2799f595c88b82f160b3" title=" " alt="" coords="597,5,687,31"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="477,15,583,15,583,21,477,21"/>
+<area shape="rect" id="Node000004" href="$dynarr_8c.html#a73f42f3f25cd0920d8039d63ea31be07" title=" " alt="" coords="775,157,919,183"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="691,167,761,167,761,173,691,173"/>
+<area shape="rect" id="Node000005" href="/home/runner/work/dynarr/dynarr/vector/vector.tag$group__Vector__API.html#gafc2e34dbacffe6480af8681fbf46e808" title=" " alt="" coords="967,157,1137,183"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="919,167,953,167,953,173,919,173"/>
+<area shape="poly" id="edge8_Node000007_Node000002" title=" " alt="" coords="264,104,303,77,351,48,381,33,383,38,353,52,306,81,267,109"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="298,129,352,141,473,156,580,164,579,169,473,161,352,146,297,135"/>
+<area shape="poly" id="edge10_Node000007_Node000004" title=" " alt="" coords="290,104,352,91,414,87,478,88,602,103,712,127,796,151,795,156,711,132,601,108,477,94,414,92,352,97,291,109"/>
+<area shape="rect" id="Node000008" href="/home/runner/work/dynarr/dynarr/vector/vector.tag$group__Vector__API.html#gaae93d7f0c056c1d11d3232a7a7aa5e09" title=" " alt="" coords="352,107,509,132"/>
+<area shape="poly" id="edge11_Node000007_Node000008" title=" " alt="" coords="304,117,338,117,338,122,304,122"/>
+<area shape="poly" id="edge15_Node000009_Node000003" title=" " alt="" coords="461,259,508,237,532,218,556,200,587,185,589,190,559,204,535,223,511,242,463,263"/>
+<area shape="poly" id="edge16_Node000009_Node000004" title=" " alt="" coords="461,261,779,183,781,189,463,267"/>
+<area shape="rect" id="Node000010" href="$group__Dynarr__API.html#ga3ff11107726213a640d814b63cb123b2" title=" " alt="" coords="579,357,705,383"/>
+<area shape="poly" id="edge13_Node000009_Node000010" title=" " alt="" coords="451,282,499,312,558,344,577,351,575,356,556,348,496,317,448,286"/>
+<area shape="rect" id="Node000012" href="/home/runner/work/dynarr/dynarr/vector/vector.tag$group__Vector__API.html#ga8920a1d7d9d5db65a90e0e27b112ed2e" title=" " alt="" coords="557,259,727,284"/>
+<area shape="poly" id="edge17_Node000009_Node000012" title=" " alt="" coords="462,269,544,269,544,274,462,274"/>
+<area shape="rect" id="Node000013" href="/home/runner/work/dynarr/dynarr/vector/vector.tag$group__Vector__API.html#ga6e5077303af4dfe720af5a0608553922" title=" " alt="" coords="587,308,697,333"/>
+<area shape="poly" id="edge18_Node000009_Node000013" title=" " alt="" coords="463,276,574,302,573,307,462,281"/>
+<area shape="rect" id="Node000011" href="/home/runner/work/dynarr/dynarr/vector/vector.tag$group__Vector__API.html#gab24bd801f91d4ae1ac79b54430b0409f" title=" " alt="" coords="784,357,909,383"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="706,367,770,367,770,373,706,373"/>
+</map>
