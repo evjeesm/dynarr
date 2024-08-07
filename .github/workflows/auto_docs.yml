@@ -50,7 +50,7 @@ jobs:
       run: |
         git checkout ${{ inputs.source-branch }} -- vector
         git diff --staged --quiet \
-          || git commit -am "Bump vector version!"
+          || git commit -am "Bump vector version!" \
           && echo "No vector update required!"
 
     - name: Merge source branch into target branch
