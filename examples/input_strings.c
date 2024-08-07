@@ -26,9 +26,12 @@ int main(void)
     {
         return DYNARR_ALLOC_ERROR;
     }
-
+    
+    printf("Enter strings:\n");
     do
     {
+        printf("> ");
+
         memset(input_name.data, 0, MAX_NAME_LEN + 1);
         entered = scanf("%" STR(MAX_NAME_LEN) "s\n", input_name.data);
 
