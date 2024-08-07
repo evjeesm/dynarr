@@ -80,7 +80,9 @@ void extended_header(void)
 
 void cloning(void)
 {
-    dynarr_t *dynarr = dynarr_create(.element_size = sizeof(int));
+    dynarr_opts_t opts = {.element_size = sizeof(int)};
+    dynarr_t *dynarr = dynarr_create_(&opts);
+
     dynarr_t *clone = dynarr_clone(dynarr);
 
     dynarr_destroy(dynarr);
