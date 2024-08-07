@@ -534,15 +534,9 @@ int dynarr_transform(dynarr_t *const dynarr,
     return dynarr_foreach(dynarr, (foreach_t)func, param);
 }
 
-<<<<<<< HEAD
 /*                          *
 * === Static Functions  === *
 *                          */
-=======
-/**                       ***
-* === Static Functions  === *
-**                         */
->>>>>>> 1ab9e04 (Initial docs commit)
 
 static dynarr_opts_t get_opts(const dynarr_t *const dynarr)
 {
@@ -604,11 +598,8 @@ static dynarr_status_t shrink(dynarr_t **const dynarr, const size_t amount_to_re
         shrink_at = capacity * header->shrink_threshold;
     }
 
-<<<<<<< HEAD
+
     const size_t initial_cap = dynarr_initial_capacity(*dynarr);
-=======
-    const size_t initial_cap = vector_initial_capacity(*dynarr);
->>>>>>> 1ab9e04 (Initial docs commit)
     size_t new_cap = floor(capacity);
     new_cap = new_cap < initial_cap ? initial_cap : new_cap;
 
