@@ -10,7 +10,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,6 +23,10 @@
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
 <!-- ... other metadata & script includes ... -->
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+</script>
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
@@ -132,7 +135,7 @@ $(function(){initNavTree('create_8c-example.html',''); initResizable(true); });
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> default_create(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    <a class="code hl_typedef" href="dynarr_8h.html#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *dynarr = <a id="a0" name="a0"></a><a class="code hl_define" href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a>(.element_size = <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line">    dynarr_t *dynarr = <a id="a0" name="a0"></a><a class="code hl_define" href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a>(.element_size = <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">if</span> (!dynarr)</div>
 <div class="line">    {</div>
@@ -147,7 +150,7 @@ $(function(){initNavTree('create_8c-example.html',''); initResizable(true); });
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> explicit_opts_create(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    <a class="code hl_typedef" href="dynarr_8h.html#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *dynarr = <a class="code hl_define" href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a></div>
+<div class="line">    dynarr_t *dynarr = <a class="code hl_define" href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a></div>
 <div class="line">        (</div>
 <div class="line">            .element_size = <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>),</div>
 <div class="line">            .initial_cap = 100,</div>
@@ -174,7 +177,7 @@ $(function(){initNavTree('create_8c-example.html',''); initResizable(true); });
 <div class="line">    }</div>
 <div class="line">    ext_t;</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_typedef" href="dynarr_8h.html#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *dynarr = <a class="code hl_define" href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a></div>
+<div class="line">    dynarr_t *dynarr = <a class="code hl_define" href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a></div>
 <div class="line">        (</div>
 <div class="line">            .data_offset = <span class="keyword">sizeof</span>(ext_t),</div>
 <div class="line">            .element_size = <span class="keyword">sizeof</span>(<span class="keywordtype">long</span>)</div>
@@ -193,15 +196,14 @@ $(function(){initNavTree('create_8c-example.html',''); initResizable(true); });
 <div class="line"><span class="keywordtype">void</span> cloning(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
 <div class="line">    <a id="_a3" name="_a3"></a><a class="code hl_struct" href="structdynarr__opts__t.html">dynarr_opts_t</a> opts = {.<a id="a4" name="a4"></a><a class="code hl_variable" href="structdynarr__opts__t.html#a61aa2f610ed5a0202bd558522d04c7d9">element_size</a> = <span class="keyword">sizeof</span>(int)};</div>
-<div class="line">    <a class="code hl_typedef" href="dynarr_8h.html#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *dynarr = <a id="a5" name="a5"></a><a class="code hl_function" href="group__Dynarr__API.html#ga99f1163f1932f71f0229a7340df68efb">dynarr_create_</a>(&amp;opts);</div>
+<div class="line">    dynarr_t *dynarr = <a id="a5" name="a5"></a><a class="code hl_function" href="group__Dynarr__API.html#ga99f1163f1932f71f0229a7340df68efb">dynarr_create_</a>(&amp;opts);</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_typedef" href="dynarr_8h.html#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *clone = <a id="a6" name="a6"></a><a class="code hl_function" href="group__Dynarr__API.html#ga42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a>(dynarr);</div>
+<div class="line">    dynarr_t *clone = <a id="a6" name="a6"></a><a class="code hl_function" href="group__Dynarr__API.html#ga42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a>(dynarr);</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="group__Dynarr__API.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a>(dynarr);</div>
 <div class="line">    <a class="code hl_function" href="group__Dynarr__API.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a>(clone);</div>
 <div class="line">}</div>
 <div class="ttc" id="adynarr_8h_html"><div class="ttname"><a href="dynarr_8h.html">dynarr.h</a></div><div class="ttdoc">Describes dynarr public interface.</div></div>
-<div class="ttc" id="adynarr_8h_html_a5c6295b8f25a95bf17f26bff03bb9553"><div class="ttname"><a href="dynarr_8h.html#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a></div><div class="ttdeci">struct vector_t dynarr_t</div><div class="ttdoc">This is the main dynarr type.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00019">dynarr.h:19</a></div></div>
 <div class="ttc" id="agroup__Dynarr__API_html_ga1d05157f1911b8d089e57ca0696be01f"><div class="ttname"><a href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a></div><div class="ttdeci">#define dynarr_create(...)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00075">dynarr.h:75</a></div></div>
 <div class="ttc" id="agroup__Dynarr__API_html_ga3acd4a1beb0e42a412b0482ddb6b9820"><div class="ttname"><a href="group__Dynarr__API.html#ga3acd4a1beb0e42a412b0482ddb6b9820">dynarr_get_ext_header</a></div><div class="ttdeci">void * dynarr_get_ext_header(const dynarr_t *const dynarr)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00117">dynarr.c:117</a></div></div>
 <div class="ttc" id="agroup__Dynarr__API_html_ga42427bb2220a4e0bf86a08717719a6a3"><div class="ttname"><a href="group__Dynarr__API.html#ga42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a></div><div class="ttdeci">dynarr_t * dynarr_clone(const dynarr_t *const dynarr)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00126">dynarr.c:126</a></div></div>
