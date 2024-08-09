@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['initial_5fcap_0',['initial_cap',['https://evjeesm.github.io/vector/structvector__opts__t.html#a3bcfe6caf89c0029a925d0be842abc23',1,'vector_opts_t::initial_cap'],['https://evjeesm.github.io/vector/structvector__t.html#ac2a9b3a5c2b8dc9cdd3995b771056ece',1,'vector_t::initial_cap'],['../structdynarr__opts__t.html#ac6f8e73f613df4b4adb4f5162a301f47',1,'dynarr_opts_t::initial_cap']]]
+  ['shrink_5fthreshold_0',['shrink_threshold',['../structdynarr__header__t.html#a9ac26b188c46aab2c31a7f10680f0a57',1,'dynarr_header_t::shrink_threshold'],['../structdynarr__opts__t.html#ab6ce4f5254ac3e20dc17c1648cb0605e',1,'dynarr_opts_t::shrink_threshold']]],
+  ['size_1',['size',['../structdynarr__header__t.html#a9032f10d549397f65978b97d1b6de673',1,'dynarr_header_t']]]
 ];

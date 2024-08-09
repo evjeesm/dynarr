@@ -1,14 +1,10 @@
 <map id="binary_find_insert_place" name="binary_find_insert_place">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,144,69"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="43,29,42,20,47,11,58,5,75,3,94,6,105,13,102,17,92,11,75,8,59,10,50,14,47,21,49,28"/>
-<area shape="rect" id="Node000002" href="$group__Dynarr__API.html#ga93c32dd116523090126d427cce08e114" title=" " alt="" coords="192,37,284,62"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="144,47,178,47,178,52,144,52"/>
-<area shape="rect" id="Node000003" href="$group__Dynarr__API.html#gaf5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="332,11,429,37"/>
-<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="284,39,318,32,319,38,284,44"/>
-<area shape="rect" id="Node000006" href="/home/runner/work/dynarr/dynarr/vector/vector.tag$group__Vector__API.html#ga9437d9506a3b2799f595c88b82f160b3" title=" " alt="" coords="335,61,426,86"/>
-<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="284,54,322,61,321,66,284,60"/>
-<area shape="rect" id="Node000004" href="$dynarr_8c.html#a73f42f3f25cd0920d8039d63ea31be07" title=" " alt="" coords="477,11,621,37"/>
-<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="430,21,463,21,463,27,430,27"/>
-<area shape="rect" id="Node000005" href="/home/runner/work/dynarr/dynarr/vector/vector.tag$group__Vector__API.html#gafc2e34dbacffe6480af8681fbf46e808" title=" " alt="" coords="669,11,840,37"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="622,21,656,21,656,27,622,27"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,153,69"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="47,30,45,20,50,11,62,5,79,3,99,6,110,13,107,17,97,11,79,8,63,10,54,15,51,21,52,28"/>
+<area shape="rect" id="Node000002" href="$group__Dynarr__API.html#ga93c32dd116523090126d427cce08e114" title=" " alt="" coords="201,37,293,62"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="154,47,187,47,187,52,154,52"/>
+<area shape="rect" id="Node000003" href="$group__Dynarr__API.html#gaf5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="341,37,440,62"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="294,47,327,47,327,52,294,52"/>
+<area shape="rect" id="Node000004" href="$dynarr_8c.html#a73f42f3f25cd0920d8039d63ea31be07" title=" " alt="" coords="488,37,629,62"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="440,47,474,47,474,52,440,52"/>
 </map>

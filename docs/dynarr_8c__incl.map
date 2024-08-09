@@ -1,24 +1,24 @@
 <map id="src/dynarr.c" name="src/dynarr.c">
-<area shape="rect" id="Node000001" title="Contains implementation of the dynarr." alt="" coords="474,5,571,31"/>
-<area shape="rect" id="Node000002" href="$dynarr_8h.html" title="Describes dynarr public interface." alt="" coords="221,79,296,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="481,33,310,79,309,74,480,28"/>
-<area shape="rect" id="Node000006" href="/home/runner/work/dynarr/dynarr/vector/vector.tag$vector_8h.html" title=" " alt="" coords="331,152,405,177"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="475,28,422,46,398,61,378,80,371,93,367,108,367,138,361,138,362,107,366,92,374,77,395,56,420,41,473,23"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="388,79,463,104"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="509,33,454,72,451,68,505,29"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="487,79,558,104"/>
-<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="525,31,525,65,520,65,520,31"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="582,79,650,104"/>
-<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="539,29,592,68,588,72,536,33"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="675,79,741,104"/>
-<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="553,28,666,71,664,76,551,33"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="766,79,837,104"/>
-<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="568,28,753,75,752,80,567,33"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,88,177"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="225,107,95,150,93,145,224,101"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="112,152,187,177"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="243,106,180,147,177,142,240,102"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="211,152,307,177"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="261,104,261,138,256,138,256,104"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="278,102,340,142,337,147,275,106"/>
+<area shape="rect" id="Node000001" title="Contains implementation of the dynarr." alt="" coords="489,5,596,31"/>
+<area shape="rect" id="Node000002" href="$dynarr_8h.html" title="Describes dynarr public interface." alt="" coords="229,79,307,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="499,33,321,79,320,74,498,28"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="342,152,421,177"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="490,28,436,46,412,60,391,80,384,93,381,108,380,138,374,138,375,107,379,91,387,77,408,56,434,41,488,23"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="401,79,479,104"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="528,33,470,73,467,68,525,28"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="503,79,582,104"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="545,31,545,65,540,65,540,31"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="607,79,671,104"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="560,29,613,68,610,72,557,33"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="695,79,766,104"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="574,28,688,71,686,76,572,33"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="790,79,869,104"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="589,28,777,74,776,80,588,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,91,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="233,107,97,150,96,145,232,101"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="115,152,194,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="251,106,186,147,183,142,248,102"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="219,152,317,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="271,104,271,138,265,138,265,104"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="288,102,353,142,350,147,285,106"/>
 </map>
