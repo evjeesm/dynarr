@@ -1,20 +1,20 @@
 <map id="dynarr_remove_range" name="dynarr_remove_range">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,160,81"/>
-<area shape="rect" id="Node000002" href="$group__Dynarr__API.html#gaf5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="523,107,622,132"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,68,301,76,462,93,510,102,509,107,461,98,300,81,160,73"/>
-<area shape="rect" id="Node000004" href="$group__Auto-resize.html#ga9ff20c2ac9693f6d8f0ea97f9b46539c" title=" " alt="" coords="208,132,321,157"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="115,79,222,124,220,129,113,84"/>
-<area shape="rect" id="Node000006" href="$group__Auto-resize.html#ga8eb6c0a577084ccd7a64bec67b8bdbbe" title=" " alt="" coords="383,5,447,31"/>
-<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="160,54,370,22,370,27,161,60"/>
-<area shape="rect" id="Node000003" href="$dynarr_8c.html#a73f42f3f25cd0920d8039d63ea31be07" title=" " alt="" coords="684,107,825,132"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="622,117,670,117,670,122,622,122"/>
-<area shape="poly" id="edge6_Node000004_Node000002" title=" " alt="" coords="321,145,388,146,461,142,513,133,514,138,462,147,388,152,321,151"/>
-<area shape="poly" id="edge7_Node000004_Node000003" title=" " alt="" coords="322,148,369,151,503,155,636,142,689,132,690,138,636,147,503,160,369,157,322,153"/>
-<area shape="rect" id="Node000005" href="$group__Dynarr__API.html#ga93c32dd116523090126d427cce08e114" title=" " alt="" coords="369,107,461,132"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="321,133,355,127,356,132,322,138"/>
-<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="461,117,509,117,509,122,461,122"/>
-<area shape="poly" id="edge10_Node000006_Node000002" title=" " alt="" coords="437,29,463,48,486,71,511,92,523,99,521,103,508,96,483,75,460,52,434,33"/>
-<area shape="poly" id="edge11_Node000006_Node000003" title=" " alt="" coords="448,15,534,20,586,28,637,42,687,67,729,96,726,100,685,72,635,47,585,33,534,25,447,20"/>
-<area shape="rect" id="Node000007" href="$group__Dynarr__API.html#ga3ff11107726213a640d814b63cb123b2" title=" " alt="" coords="509,56,636,81"/>
-<area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="448,26,520,49,519,54,447,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,171,81"/>
+<area shape="rect" id="Node000002" href="$group__Dynarr__API.html#gaf5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="535,107,632,132"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,68,312,76,472,93,522,102,521,107,472,98,312,81,171,74"/>
+<area shape="rect" id="Node000004" href="$group__Auto-resize.html#ga9ff20c2ac9693f6d8f0ea97f9b46539c" title=" " alt="" coords="219,132,332,157"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="121,79,231,124,229,129,119,84"/>
+<area shape="rect" id="Node000006" href="$group__Auto-resize.html#ga8eb6c0a577084ccd7a64bec67b8bdbbe" title=" " alt="" coords="395,5,457,31"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="171,54,381,22,381,27,171,59"/>
+<area shape="rect" id="Node000003" href="$dynarr_8c.html#a73f42f3f25cd0920d8039d63ea31be07" title=" " alt="" coords="695,107,839,132"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="632,117,681,117,681,122,632,122"/>
+<area shape="poly" id="edge6_Node000004_Node000002" title=" " alt="" coords="332,145,399,146,472,142,524,133,525,138,472,147,399,152,332,151"/>
+<area shape="poly" id="edge7_Node000004_Node000003" title=" " alt="" coords="333,148,380,151,514,155,646,142,701,132,702,138,647,147,514,160,380,157,332,153"/>
+<area shape="rect" id="Node000005" href="$group__Dynarr__API.html#ga93c32dd116523090126d427cce08e114" title=" " alt="" coords="380,107,472,132"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="332,133,366,127,367,132,333,138"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="472,117,521,117,521,122,472,122"/>
+<area shape="poly" id="edge10_Node000006_Node000002" title=" " alt="" coords="448,29,474,48,497,71,522,92,534,99,531,103,518,96,493,75,470,52,445,33"/>
+<area shape="poly" id="edge11_Node000006_Node000003" title=" " alt="" coords="458,15,544,20,596,28,648,42,699,67,741,96,738,100,696,72,646,47,595,33,544,25,457,20"/>
+<area shape="rect" id="Node000007" href="$group__Dynarr__API.html#ga3ff11107726213a640d814b63cb123b2" title=" " alt="" coords="520,56,647,81"/>
+<area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="458,25,531,49,529,54,457,30"/>
 </map>
