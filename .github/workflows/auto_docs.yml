@@ -94,5 +94,13 @@ jobs:
           || git commit -m "AutoDocs Update" \
           && echo "No documentation changes!"
 
+    - name: Setup Deploy Key and SSH
+      env:
+        DEPLOY_KEY: ${{ secrets.AUTO_DOCS_DEPLOY_KEY }}
+      run: |
+        echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519
+
     - name: Push changes to target branch
+      env:
+        GIT_SSH_COMMAND: "ssh -i ~/.ssh/id_ed25519"
       run: git push origin ${{ inputs.target-branch }}
