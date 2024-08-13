@@ -95,12 +95,10 @@ jobs:
           && echo "No documentation changes!"
 
     - name: Setup Deploy Key and SSH
-      env:
-        DEPLOY_KEY: ${{ secrets.AUTO_DOCS_DEPLOY_KEY }}
       run: |
         mkdir ~/.ssh
         touch ~/.ssh/id_ed25519
-        echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519
+        echo "${{ secrets.AUTO_DOCS_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
         chmod 600 ~/.ssh/id_ed25519
 
     - name: Push changes to target branch
