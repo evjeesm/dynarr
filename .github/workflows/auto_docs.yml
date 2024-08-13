@@ -76,6 +76,8 @@ jobs:
     - name: Merge source branch into target branch
       run: git merge ${{ inputs.source-branch }} --allow-unrelated-histories --commit -X theirs
 
+    # - NOTE: What if submodule have no docs bruch? will it fail?
+    # - FIXME: We dont want to pull whole docs brunch, only tagfile (.tag)
     - name: Pull submodule docs
       run: git submodule foreach git pull --ff --allow-unrelated-histories --depth=1 origin docs
 
