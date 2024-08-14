@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dynarr_5ft_0',['dynarr_t',['../dynarr_8h.html#a5c6295b8f25a95bf17f26bff03bb9553',1,'dynarr.h']]]
+  ['aggregate_5ft_0',['aggregate_t',['https://evjeesm.github.io/vector/group__Callbacks.html#ga89204e5e91ceae8be993751982edb299',1,]]]
 ];

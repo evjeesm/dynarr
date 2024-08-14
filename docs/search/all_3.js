@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['data_5foffset_0',['data_offset',['../structdynarr__opts__t.html#a6478b70c526a7158e1feefe1a3c34ea7',1,'dynarr_opts_t']]],
+  ['data_5foffset_0',['data_offset',['https://evjeesm.github.io/vector/structvector__opts__t.html#a5e3487546230439b703036a86b7eace1',1,'vector_opts_t::data_offset'],['https://evjeesm.github.io/vector/structvector__t.html#ab0fb2acbeb3bf70cb7dc348958b76990',1,'vector_t::data_offset'],['../structdynarr__opts__t.html#a6478b70c526a7158e1feefe1a3c34ea7',1,'dynarr_opts_t::data_offset']]],
   ['deallocating_20dynarr_1',['🧨 Deallocating Dynarr',['../Guide.html#deallocate',1,'']]],
   ['default_20options_2',['⚙️ With default options',['../Guide.html#def_create',1,'']]],
   ['dependencies_3',['Dependencies',['../index.html#autotoc_md4',1,'']]],
@@ -49,6 +49,5 @@ var searchData=
   ['dynarr_5fstatus_5flast_46',['DYNARR_STATUS_LAST',['../dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695daf8a07ecd59ab08058a8a49a974a6737d',1,'dynarr.h']]],
   ['dynarr_5fstatus_5ft_47',['dynarr_status_t',['../dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695d',1,'dynarr.h']]],
   ['dynarr_5fsuccess_48',['DYNARR_SUCCESS',['../dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695dae2ffc88372b836ecbc0e1eb5743511a4',1,'dynarr.h']]],
-  ['dynarr_5ft_49',['dynarr_t',['../dynarr_8h.html#a5c6295b8f25a95bf17f26bff03bb9553',1,'dynarr.h']]],
-  ['dynarr_5ftransform_50',['dynarr_transform',['../group__Dynarr__API.html#ga8246d131a58a23f4d434775bd02bccb3',1,'dynarr_transform(dynarr_t *const dynarr, const transform_t func, void *const param):&#160;dynarr.c'],['../group__Dynarr__API.html#ga8246d131a58a23f4d434775bd02bccb3',1,'dynarr_transform(dynarr_t *const dynarr, const transform_t func, void *const param):&#160;dynarr.c']]]
+  ['dynarr_5ftransform_49',['dynarr_transform',['../group__Dynarr__API.html#ga8246d131a58a23f4d434775bd02bccb3',1,'dynarr_transform(dynarr_t *const dynarr, const transform_t func, void *const param):&#160;dynarr.c'],['../group__Dynarr__API.html#ga8246d131a58a23f4d434775bd02bccb3',1,'dynarr_transform(dynarr_t *const dynarr, const transform_t func, void *const param):&#160;dynarr.c']]]
 ];

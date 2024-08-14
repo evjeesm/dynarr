@@ -292,13 +292,6 @@
       <anchor>ga1d05157f1911b8d089e57ca0696be01f</anchor>
       <arglist>(...)</arglist>
     </member>
-    <member kind="typedef">
-      <type>struct vector_t</type>
-      <name>dynarr_t</name>
-      <anchorfile>dynarr_8h.html</anchorfile>
-      <anchor>a5c6295b8f25a95bf17f26bff03bb9553</anchor>
-      <arglist></arglist>
-    </member>
     <member kind="enumeration">
       <type></type>
       <name>dynarr_status_t</name>
@@ -921,6 +914,6 @@
     <name>index</name>
     <title>Dynarr</title>
     <filename>index.html</filename>
-    <docanchor file="index.html" title="Dynarr">md_README</docanchor>
+    <docanchor file="index.html">md_README</docanchor>
   </compound>
 </tagfile>
