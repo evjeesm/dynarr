@@ -21,7 +21,8 @@
 */
 typedef struct dynarr_header_t
 {
-    size_t size;            /**< tracked amount of stored elements. */
+    size_t size;            /**< @brief Tracked amount of stored elements. */
+    size_t initial_cap;     /**< @brief Amount of elements preallocated,@n (dynarr won't shrink below that amount). */
     float grow_factor;      /**< @brief @copybrief dynarr_opts_t::grow_factor    */
     float grow_threshold;   /**< @brief @copybrief dynarr_opts_t::grow_threshold   */
     float shrink_threshold; /**< @brief @copybrief dynarr_opts_t::shrink_threshold */
@@ -96,7 +97,6 @@ dynarr_t *dynarr_create_(const dynarr_opts_t *const opts)
     dynarr_t *dynarr = vector_create(
         .data_offset = sizeof(dynarr_header_t) + opts->data_offset,
         .element_size = opts->element_size,
-        .initial_cap = opts->initial_cap,
         .alloc_param = opts->alloc_param,
     );
 
@@ -105,6 +105,7 @@ dynarr_t *dynarr_create_(const dynarr_opts_t *const opts)
     dynarr_header_t *header = get_dynarr_header(dynarr);
     *header = (dynarr_header_t){
         .size = 0,
+        opts->initial_cap,
         opts->grow_factor,
         opts->grow_threshold,
         opts->shrink_threshold
@@ -148,6 +149,13 @@ size_t dynarr_size(const dynarr_t *const dynarr)
 {
     assert(dynarr);
     return get_dynarr_header(dynarr)->size;
+}
+
+
+size_t dynarr_initial_capacity(const dynarr_t *const dynarr)
+{
+    assert(dynarr);
+    return get_dynarr_header(dynarr)->initial_cap;
 }
 
 
@@ -535,7 +543,7 @@ static dynarr_opts_t get_opts(const dynarr_t *const dynarr)
     return (dynarr_opts_t) {
         .data_offset = vector_data_offset(dynarr),
         .element_size = vector_element_size(dynarr),
-        .initial_cap = vector_initial_capacity(dynarr),
+        .initial_cap = dynarr_initial_capacity(dynarr),
         .grow_factor = header->grow_factor,
         .grow_threshold = header->grow_threshold,
         .shrink_threshold = header->shrink_threshold,
@@ -585,7 +593,7 @@ static dynarr_status_t shrink(dynarr_t **const dynarr, const size_t amount_to_re
         shrink_at = capacity * header->shrink_threshold;
     }
 
-    const size_t initial_cap = vector_initial_capacity(*dynarr);
+    const size_t initial_cap = dynarr_initial_capacity(*dynarr);
     size_t new_cap = floor(capacity);
     new_cap = new_cap < initial_cap ? initial_cap : new_cap;
 
