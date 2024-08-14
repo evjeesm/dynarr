@@ -119,6 +119,12 @@ size_t dynarr_size(const dynarr_t *const dynarr);
 
 
 /**
+* Getter for initial capacity.
+*/
+size_t dynarr_initial_capacity(const dynarr_t *const dynarr);
+
+
+/**
 * Reports current capacity of the vector.
 */
 size_t dynarr_capacity(const dynarr_t *const dynarr);
