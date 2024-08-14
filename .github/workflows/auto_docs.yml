@@ -79,7 +79,7 @@ jobs:
 
     - name: Checkout submodule documentation
       run: git submodule foreach "git fetch origin docs &&
-        git checkout docs || 
+        git switch docs ||
         echo \"Module has no documentation!\""
 
     - name: Regenerate Docs
