@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DOXYGEN_VER: 1.11.0
+      CURRENT_REPO: ${{ github.repository }}
 
     steps:
     - uses: actions/checkout@v4
@@ -102,7 +103,7 @@ jobs:
         destination_branch: docs
         git_username: "Github Actions"
         git_email: "actions@github.com"
-        destination_repo: "${{ github.event.repository }}"
+        destination_repo: "$CURRENT_REPO"
         deploy_key: ${{ secrets.AUTO_DOCS_DEPLOY_KEY }}
 
 
