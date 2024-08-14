@@ -16,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DOXYGEN_VER: 1.11.0
-      CURRENT_REPO: ${{ github.repository }}
 
     steps:
     - uses: actions/checkout@v4
@@ -34,6 +33,9 @@ jobs:
       with:
         path: /usr/local/bin/doxygen
         key: doxygen-${{ env.DOXYGEN_VER }}
+
+    - name: Configure dots
+      run: sudo dots -c
 
     - name: Install Doxygen if not cached
       if: steps.cache-doxygen-restore.outputs.cache-hit != 'true'
