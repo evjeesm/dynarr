@@ -95,18 +95,14 @@ jobs:
           || git commit -m "AutoDocs Update" \
           && echo "No documentation changes!"
 
-    - name: Deploy Docs
-      uses: leigholiver/commit-with-deploy-key@v1.0.4
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        source: .
-        destination_folder: .
-        destination_branch: docs
-        git_username: "Github Actions"
-        git_email: "actions@github.com"
-        destination_repo: ${{ env.CURRENT_REPO }}
-        deploy_key: ${{ secrets.AUTO_DOCS_DEPLOY_KEY }}
-
-
+        branch: docs
+        clean: true
+        folder: .
+        ssh: true
+        ssh-key: ${{ secrets.AUTO_DOCS_DEPLOY_KEY }}
 
     # - name: Push changes to target branch
     #   env:
