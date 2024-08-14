@@ -94,14 +94,15 @@ jobs:
           || git commit -m "AutoDocs Update" \
           && echo "No documentation changes!"
 
-    - name: Setup Deploy Key and SSH
-      run: |
-        mkdir ~/.ssh
-        touch ~/.ssh/id_ed25519
-        echo "${{ secrets.AUTO_DOCS_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
-        chmod 600 ~/.ssh/id_ed25519
+    - name: Deploy Docs
+      uses: leigholiver/commit-with-deploy-key@v1.0.4
+      with:
+        source: .
+        destination_folder: .
+        destination_repo: ${{ github.repository }}
+        deploy_key: ${{ secrets.AUTO_DOCS_DEPLOY_KEY }}
 
-    - name: Push changes to target branch
-      env:
-        GIT_SSH_COMMAND: "ssh -i ~/.ssh/id_ed25519"
-      run: git push origin ${{ inputs.target-branch }}
+    # - name: Push changes to target branch
+    #   env:
+    #     GIT_SSH_COMMAND: "ssh -i ~/.ssh/id_ed25519"
+    #   run: git push origin ${{ inputs.target-branch }}
