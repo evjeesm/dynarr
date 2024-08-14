@@ -104,7 +104,6 @@ jobs:
         ssh: true
         ssh-key: ${{ secrets.AUTO_DOCS_DEPLOY_KEY }}
 
-
     # - name: Push changes to target branch
     #   env:
     #     GIT_SSH_COMMAND: "ssh -i ~/.ssh/id_ed25519"
