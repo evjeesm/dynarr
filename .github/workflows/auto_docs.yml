@@ -99,7 +99,7 @@ jobs:
       with:
         source: .
         destination_folder: .
-        destination_repo: ${{ GITHUB_REPOSITORY }}
+        destination_repo: ${{ github.repository }}
         deploy_key: ${{ secrets.AUTO_DOCS_DEPLOY_KEY }}
 
 
