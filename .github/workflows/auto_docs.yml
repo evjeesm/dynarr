@@ -77,9 +77,9 @@ jobs:
     - name: Merge source branch into target branch
       run: git merge ${{ inputs.source-branch }} --allow-unrelated-histories --commit -X theirs
 
-    - name: Get submodule .tag files
-      run: git submodule foreach "git fetch origin docs && 
-        git checkout docs -- *.tags || 
+    - name: Checkout submodule documentation
+      run: git submodule foreach "git fetch origin docs &&
+        git checkout docs || 
         echo \"Module has no documentation!\""
 
     - name: Regenerate Docs
