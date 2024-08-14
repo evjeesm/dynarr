@@ -34,8 +34,8 @@ jobs:
         path: /usr/local/bin/doxygen
         key: doxygen-${{ env.DOXYGEN_VER }}
 
-    - name: Configure dots
-      run: sudo dots -c
+    - name: Configure dot
+      run: sudo dot -c
 
     - name: Install Doxygen if not cached
       if: steps.cache-doxygen-restore.outputs.cache-hit != 'true'
