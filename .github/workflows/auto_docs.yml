@@ -77,10 +77,11 @@ jobs:
     - name: Merge source branch into target branch
       run: git merge ${{ inputs.source-branch }} --allow-unrelated-histories --commit -X theirs
 
-    # - NOTE: What if submodule have no docs bruch? will it fail?
-    # - FIXME: We dont want to pull whole docs brunch, only tagfile (.tag)
-    - name: Pull submodule docs
-      run: git submodule foreach git pull --ff --allow-unrelated-histories --depth=1 origin docs
+    - name: Get submodule .tag files
+      run: git submodule foreach \
+        git rev-parse --verify docs \
+        && git checkout docs -- *.tags
+        || echo "Module has no documentation!"
 
     - name: Regenerate Docs
       run: |
@@ -102,8 +103,3 @@ jobs:
         clean: true
         folder: .
         ssh-key: ${{ secrets.AUTO_DOCS_DEPLOY_KEY }}
-
-    # - name: Push changes to target branch
-    #   env:
-    #     GIT_SSH_COMMAND: "ssh -i ~/.ssh/id_ed25519"
-    #   run: git push origin ${{ inputs.target-branch }}
