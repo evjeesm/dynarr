@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dynarr_20api_0',['Dynarr API',['../group__Dynarr__API.html',1,'']]]
+  ['resize_0',['Auto-resize',['../group__Auto-resize.html',1,'']]]
 ];

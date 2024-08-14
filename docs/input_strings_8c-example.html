@@ -132,7 +132,7 @@ $(function(){initNavTree('input_strings_8c-example.html',''); initResizable(true
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    dynarr_t        *dynarr;</div>
+<div class="line">    <a class="code hl_typedef" href="dynarr_8h.html#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a>        *dynarr;</div>
 <div class="line">    <a class="code hl_enumeration" href="dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a> status     = <a id="a0" name="a0"></a><a class="code hl_enumvalue" href="dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695dae2ffc88372b836ecbc0e1eb5743511a4">DYNARR_SUCCESS</a>;</div>
 <div class="line">    name_t          input_name = {0};</div>
 <div class="line">    <span class="keywordtype">int</span>             entered    = 0;</div>
@@ -155,20 +155,20 @@ $(function(){initNavTree('input_strings_8c-example.html',''); initResizable(true
 <div class="line">        {</div>
 <div class="line">            status = <a id="a3" name="a3"></a><a class="code hl_function" href="group__Dynarr__API.html#gad2dd0b992152881697da2073a0c840d7">dynarr_binary_insert</a>(&amp;dynarr,</div>
 <div class="line">                    input_name.data,</div>
-<div class="line">                    <a id="a4" name="a4"></a>cmp_lex_asc,</div>
-<div class="line">                    <a id="a5" name="a5"></a><a class="code hl_defineRef" href="https://evjeesm.github.io/vector/vector_8h.html#ad92ce696967261588cab3848dfe73c02">TMP_REF</a>(<span class="keywordtype">int</span>, MAX_NAME_LEN),</div>
+<div class="line">                    cmp_lex_asc,</div>
+<div class="line">                    TMP_REF(<span class="keywordtype">int</span>, MAX_NAME_LEN),</div>
 <div class="line">                    NULL);</div>
 <div class="line">        }</div>
 <div class="line"> </div>
 <div class="line">        <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695dae2ffc88372b836ecbc0e1eb5743511a4">DYNARR_SUCCESS</a> != status)</div>
 <div class="line">        {</div>
-<div class="line">            <a id="a6" name="a6"></a><a class="code hl_function" href="group__Dynarr__API.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a>(dynarr);</div>
+<div class="line">            <a id="a4" name="a4"></a><a class="code hl_function" href="group__Dynarr__API.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a>(dynarr);</div>
 <div class="line">            <span class="keywordflow">return</span> status;</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">while</span> (entered != EOF);</div>
 <div class="line"> </div>
-<div class="line">    <a id="a7" name="a7"></a><a class="code hl_function" href="group__Dynarr__API.html#ga2575dd307a95358e074e07c2b9999a9d">dynarr_foreach</a>(dynarr, print_name, NULL);</div>
+<div class="line">    <a id="a5" name="a5"></a><a class="code hl_function" href="group__Dynarr__API.html#ga2575dd307a95358e074e07c2b9999a9d">dynarr_foreach</a>(dynarr, print_name, NULL);</div>
 <div class="line">    <a class="code hl_function" href="group__Dynarr__API.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a>(dynarr);</div>
 <div class="line">    <span class="keywordflow">return</span> 0; <span class="comment">/* normal exit */</span></div>
 <div class="line">}</div>
@@ -181,14 +181,14 @@ $(function(){initNavTree('input_strings_8c-example.html',''); initResizable(true
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="ttc" id="adynarr_8h_html"><div class="ttname"><a href="dynarr_8h.html">dynarr.h</a></div><div class="ttdoc">Describes dynarr public interface.</div></div>
+<div class="ttc" id="adynarr_8h_html_a5c6295b8f25a95bf17f26bff03bb9553"><div class="ttname"><a href="dynarr_8h.html#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a></div><div class="ttdeci">struct vector_t dynarr_t</div><div class="ttdoc">This is the main dynarr type.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00019">dynarr.h:19</a></div></div>
 <div class="ttc" id="adynarr_8h_html_ac2b2261a1330ac45a85883633d6a695d"><div class="ttname"><a href="dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a></div><div class="ttdeci">dynarr_status_t</div><div class="ttdoc">Represents operation error codes.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00042">dynarr.h:43</a></div></div>
-<div class="ttc" id="adynarr_8h_html_ac2b2261a1330ac45a85883633d6a695dac1521b11c91058fcbe8d859d57379dd4"><div class="ttname"><a href="dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695dac1521b11c91058fcbe8d859d57379dd4">DYNARR_ALLOC_ERROR</a></div><div class="ttdeci">@ DYNARR_ALLOC_ERROR</div><div class="ttdoc">Success status inherited from VECTOR_ALLOC_ERROR.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00045">dynarr.h:45</a></div></div>
-<div class="ttc" id="adynarr_8h_html_ac2b2261a1330ac45a85883633d6a695dae2ffc88372b836ecbc0e1eb5743511a4"><div class="ttname"><a href="dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695dae2ffc88372b836ecbc0e1eb5743511a4">DYNARR_SUCCESS</a></div><div class="ttdeci">@ DYNARR_SUCCESS</div><div class="ttdoc">Success status inherited from VECTOR_SUCCESS.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00044">dynarr.h:44</a></div></div>
+<div class="ttc" id="adynarr_8h_html_ac2b2261a1330ac45a85883633d6a695dac1521b11c91058fcbe8d859d57379dd4"><div class="ttname"><a href="dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695dac1521b11c91058fcbe8d859d57379dd4">DYNARR_ALLOC_ERROR</a></div><div class="ttdeci">@ DYNARR_ALLOC_ERROR</div><div class="ttdoc">Success status inherited from #VECTOR_ALLOC_ERROR.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00045">dynarr.h:45</a></div></div>
+<div class="ttc" id="adynarr_8h_html_ac2b2261a1330ac45a85883633d6a695dae2ffc88372b836ecbc0e1eb5743511a4"><div class="ttname"><a href="dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695dae2ffc88372b836ecbc0e1eb5743511a4">DYNARR_SUCCESS</a></div><div class="ttdeci">@ DYNARR_SUCCESS</div><div class="ttdoc">Success status inherited from #VECTOR_SUCCESS.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00044">dynarr.h:44</a></div></div>
 <div class="ttc" id="agroup__Dynarr__API_html_ga1d05157f1911b8d089e57ca0696be01f"><div class="ttname"><a href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a></div><div class="ttdeci">#define dynarr_create(...)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00075">dynarr.h:75</a></div></div>
 <div class="ttc" id="agroup__Dynarr__API_html_ga2575dd307a95358e074e07c2b9999a9d"><div class="ttname"><a href="group__Dynarr__API.html#ga2575dd307a95358e074e07c2b9999a9d">dynarr_foreach</a></div><div class="ttdeci">int dynarr_foreach(const dynarr_t *const dynarr, const foreach_t func, void *const param)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00496">dynarr.c:496</a></div></div>
 <div class="ttc" id="agroup__Dynarr__API_html_gad2dd0b992152881697da2073a0c840d7"><div class="ttname"><a href="group__Dynarr__API.html#gad2dd0b992152881697da2073a0c840d7">dynarr_binary_insert</a></div><div class="ttdeci">dynarr_status_t dynarr_binary_insert(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *param, size_t *const index)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00313">dynarr.c:313</a></div></div>
 <div class="ttc" id="agroup__Dynarr__API_html_gaebbaac3879771d77aa20068a26952197"><div class="ttname"><a href="group__Dynarr__API.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a></div><div class="ttdeci">void dynarr_destroy(dynarr_t *const dynarr)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00133">dynarr.c:133</a></div></div>
-<div class="ttc" id="avector_8h_html_ad92ce696967261588cab3848dfe73c02"><div class="ttname"><a href="https://evjeesm.github.io/vector/vector_8h.html#ad92ce696967261588cab3848dfe73c02">TMP_REF</a></div><div class="ttdeci">#define TMP_REF(type, value)</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

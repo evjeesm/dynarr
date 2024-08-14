@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['element_5fsize_0',['element_size',['https://evjeesm.github.io/vector/structvector__opts__t.html#a18f1f3e195d1c4a691e232b1fcaec0c1',1,'vector_opts_t::element_size'],['https://evjeesm.github.io/vector/structvector__t.html#ada42e4f54768423800961ae3e815406d',1,'vector_t::element_size'],['../structdynarr__opts__t.html#a61aa2f610ed5a0202bd558522d04c7d9',1,'dynarr_opts_t::element_size']]]
+  ['grow_5ffactor_0',['grow_factor',['../structdynarr__header__t.html#a7dd4212117236dd67d893e6254cb52fa',1,'dynarr_header_t::grow_factor'],['../structdynarr__opts__t.html#ae9243a6cf230d13c19c3e1eed2f78e61',1,'dynarr_opts_t::grow_factor']]],
+  ['grow_5fthreshold_1',['grow_threshold',['../structdynarr__header__t.html#a3acec781fe6f00ae1c2e7ffca03836cb',1,'dynarr_header_t::grow_threshold'],['../structdynarr__opts__t.html#a387926f265aff246f24154f0bdbf731d',1,'dynarr_opts_t::grow_threshold']]]
 ];
