@@ -101,7 +101,6 @@ jobs:
         branch: docs
         clean: true
         folder: .
-        ssh: true
         ssh-key: ${{ secrets.AUTO_DOCS_DEPLOY_KEY }}
 
     # - name: Push changes to target branch
