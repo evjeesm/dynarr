@@ -78,8 +78,9 @@ jobs:
       run: git merge ${{ inputs.source-branch }} --allow-unrelated-histories --commit -X theirs
 
     - name: Get submodule .tag files
-      run: git submodule foreach \
-        "git fetch origin docs && git checkout docs -- *.tags || echo \"Module has no documentation!\""
+      run: git submodule foreach "git fetch origin docs && 
+        git checkout docs -- *.tags || 
+        echo \"Module has no documentation!\""
 
     - name: Regenerate Docs
       run: |
