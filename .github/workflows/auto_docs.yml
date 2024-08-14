@@ -102,7 +102,7 @@ jobs:
         destination_branch: docs
         git_username: "Github Actions"
         git_email: "actions@github.com"
-        destination_repo: "${{ github.repository }}"
+        destination_repo: "${{ github.event.repository }}"
         deploy_key: ${{ secrets.AUTO_DOCS_DEPLOY_KEY }}
 
 
