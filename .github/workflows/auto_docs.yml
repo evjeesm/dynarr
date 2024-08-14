@@ -79,7 +79,7 @@ jobs:
 
     - name: Get submodule .tag files
       run: git submodule foreach \
-        git fetch origin docs \
+        git fetch origin docs; \
         git rev-parse --verify docs \
         && git checkout docs -- *.tags \
         || echo "Module has no documentation!"
