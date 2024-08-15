@@ -1,4 +1,3 @@
-
 /**
 * @file
 * @brief Contains implementation of the dynarr.
@@ -544,11 +543,7 @@ static dynarr_opts_t get_opts(const dynarr_t *const dynarr)
     return (dynarr_opts_t) {
         .data_offset = vector_data_offset(dynarr),
         .element_size = vector_element_size(dynarr),
-<<<<<<< HEAD
         .initial_cap = dynarr_initial_capacity(dynarr),
-=======
-        .initial_cap = vector_initial_capacity(dynarr),
->>>>>>> 1ab9e04 (Initial docs commit)
         .grow_factor = header->grow_factor,
         .grow_threshold = header->grow_threshold,
         .shrink_threshold = header->shrink_threshold,
@@ -597,7 +592,6 @@ static dynarr_status_t shrink(dynarr_t **const dynarr, const size_t amount_to_re
         capacity /= header->grow_factor;
         shrink_at = capacity * header->shrink_threshold;
     }
-
 
     const size_t initial_cap = dynarr_initial_capacity(*dynarr);
     size_t new_cap = floor(capacity);

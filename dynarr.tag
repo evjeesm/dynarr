@@ -99,6 +99,13 @@
     </member>
     <member kind="function">
       <type>size_t</type>
+      <name>dynarr_initial_capacity</name>
+      <anchorfile>group__Dynarr__API.html</anchorfile>
+      <anchor>ga745bff084f68eec950fa9ea0b42fb4e7</anchor>
+      <arglist>(const dynarr_t *const dynarr)</arglist>
+    </member>
+    <member kind="function">
+      <type>size_t</type>
       <name>dynarr_capacity</name>
       <anchorfile>group__Dynarr__API.html</anchorfile>
       <anchor>ga3ff11107726213a640d814b63cb123b2</anchor>
@@ -373,6 +380,13 @@
     </member>
     <member kind="function">
       <type>size_t</type>
+      <name>dynarr_initial_capacity</name>
+      <anchorfile>group__Dynarr__API.html</anchorfile>
+      <anchor>ga745bff084f68eec950fa9ea0b42fb4e7</anchor>
+      <arglist>(const dynarr_t *const dynarr)</arglist>
+    </member>
+    <member kind="function">
+      <type>size_t</type>
       <name>dynarr_capacity</name>
       <anchorfile>group__Dynarr__API.html</anchorfile>
       <anchor>ga3ff11107726213a640d814b63cb123b2</anchor>
@@ -558,6 +572,13 @@
       <arglist></arglist>
     </member>
     <member kind="variable">
+      <type>size_t</type>
+      <name>initial_cap</name>
+      <anchorfile>structdynarr__header__t.html</anchorfile>
+      <anchor>a8c6ec2f4eea67a515b9803453dfe9d8c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
       <type>float</type>
       <name>grow_factor</name>
       <anchorfile>structdynarr__header__t.html</anchorfile>
@@ -716,6 +737,13 @@
       <name>dynarr_size</name>
       <anchorfile>group__Dynarr__API.html</anchorfile>
       <anchor>gaf5c43e2644d185b9b01065af34ed6e29</anchor>
+      <arglist>(const dynarr_t *const dynarr)</arglist>
+    </member>
+    <member kind="function">
+      <type>size_t</type>
+      <name>dynarr_initial_capacity</name>
+      <anchorfile>group__Dynarr__API.html</anchorfile>
+      <anchor>ga745bff084f68eec950fa9ea0b42fb4e7</anchor>
       <arglist>(const dynarr_t *const dynarr)</arglist>
     </member>
     <member kind="function">

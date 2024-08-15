@@ -7,6 +7,7 @@ var group__Dynarr__API =
     [ "dynarr_destroy", "group__Dynarr__API.html#gaebbaac3879771d77aa20068a26952197", null ],
     [ "dynarr_clear", "group__Dynarr__API.html#gafde94d3d24d33d8e81c3943db38a6327", null ],
     [ "dynarr_size", "group__Dynarr__API.html#gaf5c43e2644d185b9b01065af34ed6e29", null ],
+    [ "dynarr_initial_capacity", "group__Dynarr__API.html#ga745bff084f68eec950fa9ea0b42fb4e7", null ],
     [ "dynarr_capacity", "group__Dynarr__API.html#ga3ff11107726213a640d814b63cb123b2", null ],
     [ "dynarr_get", "group__Dynarr__API.html#ga93c32dd116523090126d427cce08e114", null ],
     [ "dynarr_set", "group__Dynarr__API.html#ga30d508a9f387e2227dd0d72a8bfd2a39", null ],

@@ -192,14 +192,14 @@ Just create <a class="el" href="structdynarr__opts__t.html">opts</a> on stack an
 <div class="line">        );</div>
 </div><!-- fragment --><p> Initialize extended header: </p><div class="fragment"><div class="line">    ext_t *header = <a class="code hl_function" href="group__Dynarr__API.html#ga3acd4a1beb0e42a412b0482ddb6b9820">dynarr_get_ext_header</a>(dynarr);</div>
 <div class="line">    *header = (ext_t) {0};</div>
-<div class="ttc" id="agroup__Dynarr__API_html_ga3acd4a1beb0e42a412b0482ddb6b9820"><div class="ttname"><a href="group__Dynarr__API.html#ga3acd4a1beb0e42a412b0482ddb6b9820">dynarr_get_ext_header</a></div><div class="ttdeci">void * dynarr_get_ext_header(const dynarr_t *const dynarr)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00117">dynarr.c:117</a></div></div>
+<div class="ttc" id="agroup__Dynarr__API_html_ga3acd4a1beb0e42a412b0482ddb6b9820"><div class="ttname"><a href="group__Dynarr__API.html#ga3acd4a1beb0e42a412b0482ddb6b9820">dynarr_get_ext_header</a></div><div class="ttdeci">void * dynarr_get_ext_header(const dynarr_t *const dynarr)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00118">dynarr.c:118</a></div></div>
 </div><!-- fragment --><p> <br  />
  </p>
 <h2><a class="anchor" id="cloning"></a>
 ⿻ Clone an existing array</h2>
 <p>With <a class="el" href="group__Dynarr__API.html#ga42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a> you are able to produce exact copy of an existing array.</p>
 <div class="fragment"><div class="line">    dynarr_t *clone = <a class="code hl_function" href="group__Dynarr__API.html#ga42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a>(dynarr);</div>
-<div class="ttc" id="agroup__Dynarr__API_html_ga42427bb2220a4e0bf86a08717719a6a3"><div class="ttname"><a href="group__Dynarr__API.html#ga42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a></div><div class="ttdeci">dynarr_t * dynarr_clone(const dynarr_t *const dynarr)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00126">dynarr.c:126</a></div></div>
+<div class="ttc" id="agroup__Dynarr__API_html_ga42427bb2220a4e0bf86a08717719a6a3"><div class="ttname"><a href="group__Dynarr__API.html#ga42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a></div><div class="ttdeci">dynarr_t * dynarr_clone(const dynarr_t *const dynarr)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00127">dynarr.c:127</a></div></div>
 </div><!-- fragment --><p> <br  />
 </p>
 <h2><a class="anchor" id="handle_alloc_error"></a>
@@ -228,7 +228,7 @@ Just create <a class="el" href="structdynarr__opts__t.html">opts</a> on stack an
 🧨 Deallocating Dynarr</h1>
 <p>Prevent memory leaks by deallocation resources, when they not needed anymore! <br  />
   </p><div class="fragment"><div class="line">    <a class="code hl_function" href="group__Dynarr__API.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a>(dynarr);</div>
-<div class="ttc" id="agroup__Dynarr__API_html_gaebbaac3879771d77aa20068a26952197"><div class="ttname"><a href="group__Dynarr__API.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a></div><div class="ttdeci">void dynarr_destroy(dynarr_t *const dynarr)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00133">dynarr.c:133</a></div></div>
+<div class="ttc" id="agroup__Dynarr__API_html_gaebbaac3879771d77aa20068a26952197"><div class="ttname"><a href="group__Dynarr__API.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a></div><div class="ttdeci">void dynarr_destroy(dynarr_t *const dynarr)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00134">dynarr.c:134</a></div></div>
 </div><!-- fragment --> <dl class="section attention"><dt>Attention</dt><dd>Always remember to deallocate <code>dynarr</code> created with <a class="el" href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a> or <a class="el" href="group__Dynarr__API.html#ga42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a> ! </dd></dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

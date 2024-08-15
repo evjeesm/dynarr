@@ -137,6 +137,8 @@ Functions</h2></td></tr>
 <tr class="separator:gafde94d3d24d33d8e81c3943db38a6327"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf5c43e2644d185b9b01065af34ed6e29" id="r_gaf5c43e2644d185b9b01065af34ed6e29"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf5c43e2644d185b9b01065af34ed6e29">dynarr_size</a> (const dynarr_t *const dynarr)</td></tr>
 <tr class="separator:gaf5c43e2644d185b9b01065af34ed6e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga745bff084f68eec950fa9ea0b42fb4e7" id="r_ga745bff084f68eec950fa9ea0b42fb4e7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga745bff084f68eec950fa9ea0b42fb4e7">dynarr_initial_capacity</a> (const dynarr_t *const dynarr)</td></tr>
+<tr class="separator:ga745bff084f68eec950fa9ea0b42fb4e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3ff11107726213a640d814b63cb123b2" id="r_ga3ff11107726213a640d814b63cb123b2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3ff11107726213a640d814b63cb123b2">dynarr_capacity</a> (const dynarr_t *const dynarr)</td></tr>
 <tr class="separator:ga3ff11107726213a640d814b63cb123b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga93c32dd116523090126d427cce08e114" id="r_ga93c32dd116523090126d427cce08e114"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga93c32dd116523090126d427cce08e114">dynarr_get</a> (const dynarr_t *const dynarr, const size_t index)</td></tr>
@@ -211,7 +213,7 @@ Functions</h2></td></tr>
 <div class="line">        __VA_ARGS__ \</div>
 <div class="line">    }) \</div>
 <div class="ttc" id="adynarr_8h_html_a7506aa30c586258bba10244e55492795"><div class="ttname"><a href="dynarr_8h.html#a7506aa30c586258bba10244e55492795">DYNARR_DEFAULT_ARGS</a></div><div class="ttdeci">#define DYNARR_DEFAULT_ARGS</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00059">dynarr.h:59</a></div></div>
-<div class="ttc" id="agroup__Dynarr__API_html_ga99f1163f1932f71f0229a7340df68efb"><div class="ttname"><a href="#ga99f1163f1932f71f0229a7340df68efb">dynarr_create_</a></div><div class="ttdeci">dynarr_t * dynarr_create_(const dynarr_opts_t *const opts)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00087">dynarr.c:87</a></div></div>
+<div class="ttc" id="agroup__Dynarr__API_html_ga99f1163f1932f71f0229a7340df68efb"><div class="ttname"><a href="#ga99f1163f1932f71f0229a7340df68efb">dynarr_create_</a></div><div class="ttdeci">dynarr_t * dynarr_create_(const dynarr_opts_t *const opts)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00088">dynarr.c:88</a></div></div>
 <div class="ttc" id="astructdynarr__opts__t_html"><div class="ttname"><a href="structdynarr__opts__t.html">dynarr_opts_t</a></div><div class="ttdoc">Dynarr creating options.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00024">dynarr.h:25</a></div></div>
 </div><!-- fragment --><p>The wrapper for <code>dynarr_create_</code> function that provides default values.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="elRef" href="https://evjeesm.github.io/vector/group__Vector__API.html#ga160b0d4b8d0836eda9a50bfa71514de8">vector_create</a> </dd></dl>
@@ -239,7 +241,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Dynamic array constructor function that initializes array with properties packed in opts struct. Space for <code>initial_cap</code> elements will be reserved. Array will not be able to shrink below <code>initial_cap</code>. In case of allocation fail null pointer will be returned. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00087">87</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00088">88</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -264,7 +266,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Returns a pointer to reserved header space for extension. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00117">117</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00118">118</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -289,7 +291,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Makes a copy of the whole array. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00126">126</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00127">127</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -314,7 +316,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Deallocates dynamic array. After the call pointer will be invalidated. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00133">133</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00134">134</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -339,7 +341,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Removes all of the elements of the vector. But not performs any grow/shrink operations. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00140">140</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00141">141</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -364,11 +366,36 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Reports current amount of elements containing within the vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00147">147</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00148">148</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="group__Dynarr__API_gaf5c43e2644d185b9b01065af34ed6e29_cgraph.svg" width="519" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ga745bff084f68eec950fa9ea0b42fb4e7" name="ga745bff084f68eec950fa9ea0b42fb4e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga745bff084f68eec950fa9ea0b42fb4e7">&#9670;&#160;</a></span>dynarr_initial_capacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t dynarr_initial_capacity </td>
+          <td>(</td>
+          <td class="paramtype">const dynarr_t *const</td>          <td class="paramname"><span class="paramname"><em>dynarr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Getter for initial capacity. </p>
+
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00155">155</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="group__Dynarr__API_ga745bff084f68eec950fa9ea0b42fb4e7_cgraph.svg" width="592" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -389,7 +416,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Reports current capacity of the vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00154">154</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00162">162</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -418,7 +445,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Returns pointer for the element at <code>index</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00161">161</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00169">169</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -452,7 +479,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>sets element at given <code>index</code> to a <code>value</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00169">169</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00177">177</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -481,7 +508,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Sets element at given <code>index</code> to a zero value. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00178">178</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00186">186</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -506,7 +533,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Returns pointer for the first element in the array, assuming that array contains at least one element. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00186">186</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00194">194</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -531,7 +558,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Returns pointer for the last element in the array, assuming that array contains at least one element. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00194">194</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00202">202</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -570,7 +597,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Wrapper for vector binary find </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00203">203</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00211">211</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -609,7 +636,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Binary search, returns index of the element that matches or (-1) when not found. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00216">216</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00224">224</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -638,7 +665,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Appends element at array's tail, growing on demand. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00229">229</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00237">237</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -667,7 +694,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Appends element at array's head by shifting one element forward and growing vector on demand. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00238">238</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00246">246</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -692,11 +719,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Removes element from the back, shrinking array on demand. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00247">247</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00255">255</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="group__Dynarr__API_ga3a36563e7efd7ad826fac165dd2a0d0c_cgraph.svg" width="100%" height="595"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="group__Dynarr__API_ga3a36563e7efd7ad826fac165dd2a0d0c_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -717,11 +744,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Removes element from the head by shifting one element to the left and shrinking array on demand. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00254">254</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00262">262</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="group__Dynarr__API_ga4ba384c69893f0961f0e71d6cd6be8fe_cgraph.svg" width="100%" height="554"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="group__Dynarr__API_ga4ba384c69893f0961f0e71d6cd6be8fe_cgraph.svg" width="100%" height="597"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -751,7 +778,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Inserts new element at given <code>index</code>, shifting one element forward from that index. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00261">261</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00269">269</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -780,11 +807,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Removes element at given <code>index</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00371">371</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00379">379</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="group__Dynarr__API_gae2e52e602d3867ce3e5fee688ea20263_cgraph.svg" width="100%" height="554"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="group__Dynarr__API_gae2e52e602d3867ce3e5fee688ea20263_cgraph.svg" width="100%" height="597"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -814,11 +841,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Removes range of elements of <code>amount</code> length at given <code>index</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00378">378</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00386">386</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="group__Dynarr__API_ga1187f49d8bde19551b2c95ad430e596c_cgraph.svg" width="100%" height="554"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="group__Dynarr__API_ga1187f49d8bde19551b2c95ad430e596c_cgraph.svg" width="100%" height="597"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -854,11 +881,11 @@ Here is the call graph for this function:</div>
 <p>Removes <code>limit</code> elements that match predicate. Element removal performed form tail to head of the array in order to reduce memory movement during the process.</p>
 <p>Array reallocation performed at most once per call. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00392">392</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00400">400</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="group__Dynarr__API_gaa975bac298720adfd05a978509081ada_cgraph.svg" width="100%" height="535"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="group__Dynarr__API_gaa975bac298720adfd05a978509081ada_cgraph.svg" width="100%" height="591"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -893,7 +920,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Merge two dynarrs together </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00413">413</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00421">421</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -932,7 +959,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Inserts range of <code>value</code> copies <code>amount</code> times at specific <code>index</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00280">280</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00288">288</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -971,7 +998,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Binary search that returns index of the insert position for a new value that satisfies <code>cmp</code> ordering. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00300">300</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00308">308</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1015,7 +1042,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Binary insert. Works only if previous elements that contained in the vector are ordered in same way. (Allocation may fail, so returning operation status) </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00313">313</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00321">321</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1060,7 +1087,7 @@ Here is the call graph for this function:</div>
 
 <p>Same as <a class="el" href="#gad2dd0b992152881697da2073a0c840d7">dynarr_binary_insert</a> except does not inserts duplicates. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00333">333</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00341">341</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1104,7 +1131,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Similar to insert except it stores no data, leaving slot in undefined state. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00349">349</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00357">357</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1138,7 +1165,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="elRef" href="https://evjeesm.github.io/vector/group__Vector__API.html#ga988880baa4fe32fb6d4299daf1a29a1f">vector_foreach</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00496">496</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00504">504</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1177,7 +1204,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="elRef" href="https://evjeesm.github.io/vector/group__Vector__API.html#ga1a193e06f6700de896628631b8569740">vector_aggregate</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00506">506</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00514">514</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1211,7 +1238,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="elRef" href="https://evjeesm.github.io/vector/group__Vector__API.html#ga176c007bd441e4469a28ba47ca952dfb">vector_transform</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00518">518</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00526">526</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
