@@ -69,14 +69,6 @@ jobs:
         git submodule update --init --recursive
         git submodule update --recursive --remote
 
-    - name: Checkout vector
-      run: |
-        git checkout ${{ inputs.source-branch }} -- vector
-        (git diff --staged --quiet \
-          || git diff --quiet) \
-          && echo "No vector update required!" \
-          || git commit -am "Bump vector version!"
-
     - name: Merge source branch into target branch
       run: git merge ${{ inputs.source-branch }} --allow-unrelated-histories --commit -X theirs
 
