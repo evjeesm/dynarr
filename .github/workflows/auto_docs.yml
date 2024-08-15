@@ -73,7 +73,7 @@ jobs:
       run: |
         git checkout ${{ inputs.source-branch }} -- vector
         (git diff --staged --quiet \
-          || git diff --quiet)
+          || git diff --quiet) \
           && echo "No vector update required!" \
           || git commit -am "Bump vector version!"
 
