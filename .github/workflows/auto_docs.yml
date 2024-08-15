@@ -92,9 +92,6 @@ jobs:
     - name: Commit Docs
       run: |
         git add -f docs *.tag
-        git diff --staged --quiet \
-          || git commit -m "AutoDocs Update" \
-          && echo "No documentation changes!"
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
