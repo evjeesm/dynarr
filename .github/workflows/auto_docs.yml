@@ -81,7 +81,7 @@ jobs:
       run: git merge ${{ inputs.source-branch }} --allow-unrelated-histories --commit -X theirs
 
     - name: Pull submodule documentation
-      run: git submodule foreach git pull --ff --allow-unrelated-histories --depth=1 origin docs
+      run: git submodule foreach git pull --ff --allow-unrelated-histories --depth=1 -Xtheirs origin docs
 
     - name: Regenerate Docs
       run: |
