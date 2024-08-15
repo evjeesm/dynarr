@@ -73,8 +73,8 @@ jobs:
       run: |
         git checkout ${{ inputs.source-branch }} -- vector
         git diff --staged --quiet \
-          || git commit -am "Bump vector version!" \
-          && echo "No vector update required!"
+          && echo "No vector update required!" \
+          || git commit -am "Bump vector version!"
 
     - name: Merge source branch into target branch
       run: git merge ${{ inputs.source-branch }} --allow-unrelated-histories --commit -X theirs
