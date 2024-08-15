@@ -97,6 +97,6 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: docs
-        clean: true
         folder: .
+        clean: false
         ssh-key: ${{ secrets.AUTO_DOCS_DEPLOY_KEY }}
