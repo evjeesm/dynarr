@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Get vector.tag"
-        run: wget https://evjeesm.github.io/vector/vector.tag -o vector/vector.tag
+        run: wget https://evjeesm.github.io/vector/vector.tag
 
       - uses: DenverCoder1/doxygen-github-pages-action@v2.0.0
         with:
