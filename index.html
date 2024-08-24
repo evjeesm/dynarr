@@ -112,13 +112,13 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a> Generic dynamic array for C. <br  />
  Is an extension over <a href="https://github.com/evjeesm/vector">vector</a>.</p>
-<h1><a class="anchor" id="autotoc_md1"></a>
+<h1><a class="anchor" id="autotoc_md2"></a>
 Implementation details</h1>
 <p>Keeps containing data sequential, tracks amount of stored elements and grows/shrinks on demand. <br  />
  Resize functionality is parametrized for flexability. <br  />
  Has variety of common array operation, like append, insert, search, etc ... Vector API can seamlessly operate on <code>dynarr_t *</code>. <br  />
  Supports farther extension.</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Supported platforms</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -129,12 +129,12 @@ Supported platforms</h1>
 <td class="markdownTableBodyNone">Windows   </td><td class="markdownTableBodyNone"><img src="https://github.com/evjeesm/dynarr/actions/workflows/windows.yml/badge.svg" alt="check-windows" style="pointer-events: none;" class="inline"/>   </td><td class="markdownTableBodyNone"><a href="https://codecov.io/github/evjeesm/dynarr"><img src="https://codecov.io/github/evjeesm/dynarr/graph/badge.svg?flag=windows" alt="codecov" style="pointer-events: none;" class="inline"/></a>   </td></tr>
 </table>
 <p><a href="https://evjeesm.github.io/dynarr">See Full Documentation</a></p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Memory layout</h1>
 <p><img src="imgs/dynarr-scheme.svg" alt="dynarr-scheme" style="pointer-events: none;" class="inline"/> </p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Dependencies</h1>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Build System</h2>
 <ul>
 <li>gcc</li>
@@ -148,7 +148,7 @@ Build System</h2>
 <li>valgrind - for memory leak checks</li>
 <li>lcov - for code coverage analizing</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Libraries</h2>
 <ul>
 <li>stdlib</li>
@@ -157,12 +157,12 @@ Libraries</h2>
 <li>sys/types</li>
 <li>math</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Subprojects:</h2>
 <ul>
 <li><a href="https://github.com/evjeesm/vector">vector</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Build Process</h1>
 <ul>
 <li>Install <b>Build System</b> dependencies:<ul>
@@ -198,13 +198,13 @@ Build Process</h1>
  Procede to installation: <div class="fragment"><div class="line">make install</div>
 </div><!-- fragment --></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 Usage</h1>
 <p>Link against <code>libdynarr_static.a</code> or <code>libdynarr.so</code> on <b>linux</b>. <br  />
  If you on <b>Windows</b> platform link to <code>libdynarr_static.dll</code>.</p>
 <p>Requires standard math library, so remember to provide <code>-lm</code>. <br  />
  Requires linking with vector's libraries.</p>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Minimal Example</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dynarr_8h.html">dynarr.h</a>&quot;</span></div>
 <div class="line"> </div>
