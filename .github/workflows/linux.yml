@@ -1,10 +1,7 @@
 name: Linux Debian CI
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_call:
 
 jobs:
   build:
@@ -59,14 +56,3 @@ jobs:
 
     - name: Run distcheck
       run: make distcheck
-
-  # Build and upload documentation
-  call-auto-docs:
-      uses: ./.github/workflows/auto_docs.yml
-      if: ${{ github.ref_name == 'main' }} # if not triggered by pull request
-      with:
-        source-branch: 'main'
-        target-branch: 'docs'
-      permissions:
-        contents: write
-      secrets: inherit
