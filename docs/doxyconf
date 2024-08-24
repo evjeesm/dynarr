@@ -1053,7 +1053,6 @@ EXCLUDE                = docs \
                          memory \
                          vector \
                          tests \
-                         examples \
                          config.h
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
@@ -2509,13 +2508,13 @@ SKIP_FUNCTION_MACROS   = YES
 # the path). If a tag file is not located in the directory in which doxygen is
 # run, you must also specify the path to the tagfile here.
 
-TAGFILES               =
+TAGFILES               = vector.tag=https://evjeesm.github.io/vector
 
 # When a file name is specified after GENERATE_TAGFILE, doxygen will create a
 # tag file that is based on the input files it reads. See section "Linking to
 # external documentation" for more information about the usage of tag files.
 
-GENERATE_TAGFILE       = docs/html/vector.tag
+GENERATE_TAGFILE       = docs/html/dynarr.tag
 
 # If the ALLEXTERNALS tag is set to YES, all external classes and namespaces
 # will be listed in the class and namespace index. If set to NO, only the

@@ -1,0 +1,135 @@
+/**
+@page Guide 📘 Guide
+@tableofcontents
+
+@section create 🔨 Creating Dynarr
+In this section we'll discuss creation of the dynamic array. @n
+
+Based on @ref create.c "Example file".
+
+@subsection dynarr_create_section 🏭 Invoking dynarr_create
+A standard way to create @c dynarr_t is to call a macro wrapper @ref dynarr_create,
+it passes default option values, so you dont have to provide them yourself.
+
+@n
+
+@paragraph def_create ⚙️ With default options
+
+@dontinclude create.c
+@skip main
+@skip default_create
+@skipline dynarr_t
+@arg @ref dynarr_opts_t::element_size "element_size" is the only mandatory explicit option.
+@arg Full list of default options: @ref DYNARR_DEFAULT_ARGS
+@n@n
+
+@paragraph custom_opts ⚙️ With custom options
+
+@skip explicit_opts_create
+@skip  dynarr_t
+@until );
+@arg @ref dynarr_opts_t::data_offset "data_offset" option omitted.
+@arg @ref dynarr_opts_t::alloc_param "alloc_param" option omitted.
+@n@n
+
+@paragraph wthout_macro_wrapper ⚙️ Without macro wrapper
+You can avoid macro wrapper with default values if you know what you are doing. @n
+Just create @ref dynarr_opts_t "opts" on stack and pass by reference into a @ref dynarr_create_ function directly:
+
+@dontinclude create.c
+@skip cloning
+@skipline opts
+@skipline dynarr_t
+@n
+
+@paragraph extended_header ⚙️ Allocate extended header
+This is important for derived classes that what to include their data @n in a memory allocated by underlying @ref src/vector.h "vector".
+
+Define a structure @p ext_t that will be peallocated right after @ref dynarr_header_t :
+@dontinclude create.c
+@skip extended_header
+@skip typedef
+@until _t;
+
+Create dynarr specifying @ref dynarr_opts_t::data_offset "data_offset" to reserve space for @p ext_t.
+@skip dynarr_t
+@until );
+
+Initialize extended header:
+@skip dynarr_get_ext_header
+@until {0};
+
+@n
+
+@subsection cloning ⿻ Clone an existing array
+With @ref dynarr_clone you are able to produce exact copy of an existing array.
+
+@skip cloning
+@skipline dynarr_clone
+
+@n
+
+
+@subsection handle_alloc_error ❌ Handle allocation error
+Default implementation uses heap as allocation memory source.
+Depending on system architecture heap allocation is not fail proof, take it into your considerations.
+@n@n
+
+@paragraph manual_error_resolution ❗Manual error resolution
+
+Check that @p dynarr value is @c NULL, then resolve allocation error.
+If you got none resolution choises, perform gracefull program termination.
+See following example, print error and exit abnormally.
+
+@dontinclude create.c
+@skip default_create
+@skip !dynarr
+@until }
+
+@n
+
+@paragraph asserting ❗ Asserting
+
+Other option is to just use an @c assert.
+If allocation error is unlikely to happen, but you still need to indicate if it occures.
+
+@skip explicit_opts_create
+@skipline assert
+
+Advantage of asserts if that they can be disabled by providing @c -DNDEBUG compilation flag.
+
+@n
+
+===
+
+@section deallocate 🧨 Deallocating Dynarr
+Prevent memory leaks by deallocation resources, when they not needed anymore!
+@n
+
+@dontinclude create.c
+@skipline dynarr_destroy
+
+@attention Always remember to deallocate @p dynarr created with @ref dynarr_create or @ref dynarr_clone !
+
+*/
+
+/**
+@example create.c
+
+@par Dynarr creation process
+
+@author Evgeni Semenov
+*/
+
+/**
+@example input_strings.c
+
+@par Reading and sorting strings.
+
+User prompted to enter strings until @c CTRL+D is pressed.
+Strings are delimited by newline or space,
+inserted into a @c dynarr_t in lexicographical ascending order.
+At the end of the input, program will print contents of the @c dynarr_t.
+
+@author Evgeni Semenov
+*/

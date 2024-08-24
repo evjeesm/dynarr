@@ -10,6 +10,7 @@
 !docs
 !doxyconf
 !header.html
+!*.dox
 
 !src
 !tests
