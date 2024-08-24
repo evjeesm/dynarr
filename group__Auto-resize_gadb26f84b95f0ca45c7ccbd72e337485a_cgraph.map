@@ -1,11 +1,17 @@
 <map id="make_space_at" name="make_space_at">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,128,81"/>
-<area shape="rect" id="Node000002" href="$group__Dynarr__API.html#ga93c32dd116523090126d427cce08e114" title=" " alt="" coords="176,5,268,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,53,168,33,170,38,107,58"/>
-<area shape="rect" id="Node000003" href="$group__Dynarr__API.html#gaf5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="316,56,413,81"/>
-<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="128,66,302,66,302,71,128,71"/>
-<area shape="rect" id="Node000004" href="$dynarr_8c.html#a73f42f3f25cd0920d8039d63ea31be07" title=" " alt="" coords="461,81,605,107"/>
-<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="128,73,316,90,447,93,447,98,316,95,128,79"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="260,28,316,49,314,54,258,33"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="414,73,448,78,447,84,413,79"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,128,105"/>
+<area shape="rect" id="Node000002" href="$group__Dynarr__API.html#ga93c32dd116523090126d427cce08e114" title=" " alt="" coords="209,55,301,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,82,194,73,195,78,129,87"/>
+<area shape="rect" id="Node000003" href="$group__Dynarr__API.html#gaf5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="381,5,479,31"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="88,77,128,57,175,39,225,28,276,21,367,15,367,21,276,27,226,34,177,45,130,62,91,82"/>
+<area shape="rect" id="Node000004" href="$dynarr_8c.html#a73f42f3f25cd0920d8039d63ea31be07" title=" " alt="" coords="527,56,671,81"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="128,93,287,97,383,95,478,89,528,81,529,87,479,94,383,100,287,102,128,99"/>
+<area shape="rect" id="Node000007" href="/home/runner/work/dynarr/dynarr/vector/vector.tag$group__Vector__API.html#gaae93d7f0c056c1d11d3232a7a7aa5e09" title=" " alt="" coords="176,156,333,181"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="100,103,211,148,209,153,98,108"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="300,52,370,32,371,37,301,57"/>
+<area shape="rect" id="Node000006" href="/home/runner/work/dynarr/dynarr/vector/vector.tag$group__Vector__API.html#ga9437d9506a3b2799f595c88b82f160b3" title=" " alt="" coords="385,55,475,80"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="301,65,371,65,371,70,301,70"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="474,28,543,49,542,55,472,33"/>
+<area shape="rect" id="Node000005" href="/home/runner/work/dynarr/dynarr/vector/vector.tag$group__Vector__API.html#gafc2e34dbacffe6480af8681fbf46e808" title=" " alt="" coords="719,56,889,81"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="671,66,705,66,705,71,671,71"/>
 </map>

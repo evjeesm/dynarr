@@ -112,13 +112,13 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a> Generic dynamic array for C. <br  />
  Is an extension over <a href="https://github.com/evjeesm/vector">vector</a>.</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md1"></a>
 Implementation details</h1>
 <p>Keeps containing data sequential, tracks amount of stored elements and grows/shrinks on demand. <br  />
  Resize functionality is parametrized for flexability. <br  />
  Has variety of common array operation, like append, insert, search, etc ... Vector API can seamlessly operate on <code>dynarr_t *</code>. <br  />
  Supports farther extension.</p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md2"></a>
 Supported platforms</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -129,12 +129,12 @@ Supported platforms</h1>
 <td class="markdownTableBodyNone">Windows   </td><td class="markdownTableBodyNone"><img src="https://github.com/evjeesm/dynarr/actions/workflows/windows.yml/badge.svg" alt="check-windows" style="pointer-events: none;" class="inline"/>   </td><td class="markdownTableBodyNone"><a href="https://codecov.io/github/evjeesm/dynarr"><img src="https://codecov.io/github/evjeesm/dynarr/graph/badge.svg?flag=windows" alt="codecov" style="pointer-events: none;" class="inline"/></a>   </td></tr>
 </table>
 <p><a href="https://evjeesm.github.io/dynarr">See Full Documentation</a></p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Memory layout</h1>
 <p><img src="imgs/dynarr-scheme.svg" alt="dynarr-scheme" style="pointer-events: none;" class="inline"/> </p>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Dependencies</h1>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Build System</h2>
 <ul>
 <li>gcc</li>
@@ -148,7 +148,7 @@ Build System</h2>
 <li>valgrind - for memory leak checks</li>
 <li>lcov - for code coverage analizing</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Libraries</h2>
 <ul>
 <li>stdlib</li>
@@ -157,12 +157,12 @@ Libraries</h2>
 <li>sys/types</li>
 <li>math</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Subprojects:</h2>
 <ul>
 <li><a href="https://github.com/evjeesm/vector">vector</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Build Process</h1>
 <ul>
 <li>Install <b>Build System</b> dependencies:<ul>
@@ -198,32 +198,32 @@ Build Process</h1>
  Procede to installation: <div class="fragment"><div class="line">make install</div>
 </div><!-- fragment --></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Usage</h1>
 <p>Link against <code>libdynarr_static.a</code> or <code>libdynarr.so</code> on <b>linux</b>. <br  />
  If you on <b>Windows</b> platform link to <code>libdynarr_static.dll</code>.</p>
 <p>Requires standard math library, so remember to provide <code>-lm</code>. <br  />
  Requires linking with vector's libraries.</p>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Minimal Example</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dynarr_8h.html">dynarr.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    <a class="code hl_typedef" href="dynarr_8h.html#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a> *dynarr = <a class="code hl_define" href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a>(.element_size = <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line">    dynarr_t *dynarr = <a class="code hl_define" href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a>(.element_size = <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
 <div class="line">    <span class="keywordtype">int</span> a = 69;</div>
 <div class="line">    <a class="code hl_function" href="group__Dynarr__API.html#ga1e7f043863514d809cd6446053f6dc47">dynarr_append</a>(&amp;dynarr, &amp;a);</div>
-<div class="line">    <a class="code hl_function" href="group__Dynarr__API.html#ga1e7f043863514d809cd6446053f6dc47">dynarr_append</a>(&amp;dynarr, TMP_REF(<span class="keywordtype">int</span>, 42));</div>
+<div class="line">    <a class="code hl_function" href="group__Dynarr__API.html#ga1e7f043863514d809cd6446053f6dc47">dynarr_append</a>(&amp;dynarr, <a class="code hl_defineRef" href="https://evjeesm.github.io/vector/vector_8h.html#ad92ce696967261588cab3848dfe73c02">TMP_REF</a>(<span class="keywordtype">int</span>, 42));</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="group__Dynarr__API.html#ga7ca5c94e8e78fae1860791386fa56ea6">dynarr_last</a>(dynarr, &amp;a); <span class="comment">// a = 42</span></div>
 <div class="line">    <a class="code hl_function" href="group__Dynarr__API.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a>(dynarr);</div>
 <div class="line">}</div>
 <div class="ttc" id="adynarr_8h_html"><div class="ttname"><a href="dynarr_8h.html">dynarr.h</a></div><div class="ttdoc">Describes dynarr public interface.</div></div>
-<div class="ttc" id="adynarr_8h_html_a5c6295b8f25a95bf17f26bff03bb9553"><div class="ttname"><a href="dynarr_8h.html#a5c6295b8f25a95bf17f26bff03bb9553">dynarr_t</a></div><div class="ttdeci">struct vector_t dynarr_t</div><div class="ttdoc">This is the main dynarr type.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00019">dynarr.h:19</a></div></div>
 <div class="ttc" id="agroup__Dynarr__API_html_ga1d05157f1911b8d089e57ca0696be01f"><div class="ttname"><a href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a></div><div class="ttdeci">#define dynarr_create(...)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00075">dynarr.h:75</a></div></div>
 <div class="ttc" id="agroup__Dynarr__API_html_ga1e7f043863514d809cd6446053f6dc47"><div class="ttname"><a href="group__Dynarr__API.html#ga1e7f043863514d809cd6446053f6dc47">dynarr_append</a></div><div class="ttdeci">dynarr_status_t dynarr_append(dynarr_t **const dynarr, const void *const value)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00237">dynarr.c:237</a></div></div>
 <div class="ttc" id="agroup__Dynarr__API_html_ga7ca5c94e8e78fae1860791386fa56ea6"><div class="ttname"><a href="group__Dynarr__API.html#ga7ca5c94e8e78fae1860791386fa56ea6">dynarr_last</a></div><div class="ttdeci">void * dynarr_last(const dynarr_t *const dynarr)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00202">dynarr.c:202</a></div></div>
 <div class="ttc" id="agroup__Dynarr__API_html_gaebbaac3879771d77aa20068a26952197"><div class="ttname"><a href="group__Dynarr__API.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a></div><div class="ttdeci">void dynarr_destroy(dynarr_t *const dynarr)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00134">dynarr.c:134</a></div></div>
+<div class="ttc" id="avector_8h_html_ad92ce696967261588cab3848dfe73c02"><div class="ttname"><a href="https://evjeesm.github.io/vector/vector_8h.html#ad92ce696967261588cab3848dfe73c02">TMP_REF</a></div><div class="ttdeci">#define TMP_REF(type, value)</div></div>
 </div><!-- fragment --> </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"/>
 </div><!-- contents -->
