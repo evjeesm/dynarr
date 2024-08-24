@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['usage_0',['Usage',['../index.html#autotoc_md9',1,'']]]
+  ['options_0',['options',['../Guide.html#custom_opts',1,'⚙️ With custom options'],['../Guide.html#def_create',1,'⚙️ With default options']]]
 ];

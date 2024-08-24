@@ -660,6 +660,10 @@
       <arglist></arglist>
     </member>
   </compound>
+  <compound kind="struct">
+    <name>name_t</name>
+    <filename>structname__t.html</filename>
+  </compound>
   <compound kind="group">
     <name>Auto-resize</name>
     <title>Auto-resize</title>
@@ -928,6 +932,22 @@
       <anchor>ga8246d131a58a23f4d434775bd02bccb3</anchor>
       <arglist>(dynarr_t *const dynarr, const transform_t func, void *const param)</arglist>
     </member>
+  </compound>
+  <compound kind="page">
+    <name>Guide</name>
+    <title>📘 Guide</title>
+    <filename>Guide.html</filename>
+    <docanchor file="Guide.html" title="🔨 Creating Dynarr">create</docanchor>
+    <docanchor file="Guide.html" title="🏭 Invoking dynarr_create">dynarr_create_section</docanchor>
+    <docanchor file="Guide.html" title="⚙️ With default options">def_create</docanchor>
+    <docanchor file="Guide.html" title="⚙️ With custom options">custom_opts</docanchor>
+    <docanchor file="Guide.html" title="⚙️ Without macro wrapper">wthout_macro_wrapper</docanchor>
+    <docanchor file="Guide.html" title="⚙️ Allocate extended header">extended_header</docanchor>
+    <docanchor file="Guide.html" title="⿻ Clone an existing array">cloning</docanchor>
+    <docanchor file="Guide.html" title="❌ Handle allocation error">handle_alloc_error</docanchor>
+    <docanchor file="Guide.html" title="❗Manual error resolution">manual_error_resolution</docanchor>
+    <docanchor file="Guide.html" title="❗ Asserting">asserting</docanchor>
+    <docanchor file="Guide.html" title="🧨 Deallocating Dynarr">deallocate</docanchor>
   </compound>
   <compound kind="page">
     <name>index</name>

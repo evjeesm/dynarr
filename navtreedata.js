@@ -37,6 +37,14 @@ var NAVTREE =
     [ "Usage", "index.html#autotoc_md9", [
       [ "Minimal Example", "index.html#autotoc_md10", null ]
     ] ],
+    [ "📘 Guide", "Guide.html", [
+      [ "🔨 Creating Dynarr", "Guide.html#create", [
+        [ "🏭 Invoking dynarr_create", "Guide.html#dynarr_create_section", null ],
+        [ "⿻ Clone an existing array", "Guide.html#cloning", null ],
+        [ "❌ Handle allocation error", "Guide.html#handle_alloc_error", null ]
+      ] ],
+      [ "🧨 Deallocating Dynarr", "Guide.html#deallocate", null ]
+    ] ],
     [ "Topics", "topics.html", "topics" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
@@ -56,13 +64,14 @@ var NAVTREE =
         [ "Enumerator", "globals_eval.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
-    ] ]
+    ] ],
+    [ "Examples", "examples.html", "examples" ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"Guide.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

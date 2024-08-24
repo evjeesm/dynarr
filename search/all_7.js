@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['layout_0',['Memory layout',['../index.html#autotoc_md3',1,'']]],
-  ['libraries_1',['Libraries',['../index.html#autotoc_md6',1,'']]]
+  ['handle_20allocation_20error_0',['❌ Handle allocation error',['../Guide.html#handle_alloc_error',1,'']]],
+  ['header_1',['⚙️ Allocate extended header',['../Guide.html#extended_header',1,'']]]
 ];
