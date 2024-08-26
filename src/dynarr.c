@@ -94,10 +94,11 @@ dynarr_t *dynarr_create_(const dynarr_opts_t *const opts)
     const size_t next_shrink_at = floor(grow_at * opts->shrink_threshold);
     assert(next_shrink_at <= grow_at);
 
-    dynarr_t *dynarr = vector_create(
-        .data_offset = sizeof(dynarr_header_t) + opts->data_offset,
+    dynarr_t *dynarr = vector_create (
         .element_size = opts->element_size,
-        .alloc_param = opts->alloc_param,
+        .initial_cap = opts->initial_cap,
+        .ext_header_size = sizeof(dynarr_header_t) + opts->ext_header_size,
+        .alloc_opts = opts->alloc_opts,
     );
 
     if (NULL == dynarr) return NULL;
@@ -541,12 +542,13 @@ static dynarr_opts_t get_opts(const dynarr_t *const dynarr)
 {
     const dynarr_header_t *header = get_dynarr_header(dynarr);
     return (dynarr_opts_t) {
-        .data_offset = vector_data_offset(dynarr),
         .element_size = vector_element_size(dynarr),
         .initial_cap = dynarr_initial_capacity(dynarr),
         .grow_factor = header->grow_factor,
         .grow_threshold = header->grow_threshold,
         .shrink_threshold = header->shrink_threshold,
+        .ext_header_size = vector_data_offset(dynarr),
+        .alloc_opts = 0, /** FIXME: how to get alloc opts? */
     };
 }
 

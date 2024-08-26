@@ -23,13 +23,13 @@ typedef struct vector_t dynarr_t;
 */
 typedef struct dynarr_opts_t
 {
-    size_t data_offset;     /**< @see vector_opts_t::data_offset */
-    size_t element_size;    /**< @see vector_opts_t::element_size */
-    size_t initial_cap;     /**< @see vector_opts_t::initial_cap */
-    float grow_factor;      /**< @brief Multiplier that is applied to dynarr capactity on resize. */
-    float grow_threshold;   /**< @brief Fraction of the capacity need to be used to trigger growing. */
-    float shrink_threshold; /**< @brief Fraction of the capacity in use at which srink will be performed. */
-    void *alloc_param;      /**< @see vector_opts_t::alloc_param */
+    size_t element_size;        /**< @see vector_opts_t::element_size */
+    size_t initial_cap;         /**< @see vector_opts_t::initial_cap */
+    float grow_factor;          /**< @brief Multiplier that is applied to dynarr capactity on resize. */
+    float grow_threshold;       /**< @brief Fraction of the capacity need to be used to trigger growing. */
+    float shrink_threshold;     /**< @brief Fraction of the capacity in use at which srink will be performed. */
+    size_t ext_header_size;     /**< @see vector_opts_t::ext_header_size */
+    alloc_opts_t *alloc_opts;   /**< @see vector_opts_t::alloc_opts_t    */
 }
 dynarr_opts_t;
 
