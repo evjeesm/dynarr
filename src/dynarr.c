@@ -541,6 +541,7 @@ int dynarr_transform(dynarr_t *const dynarr,
 static dynarr_opts_t get_opts(const dynarr_t *const dynarr)
 {
     const dynarr_header_t *header = get_dynarr_header(dynarr);
+    alloc_opts_t alloc_opts = vector_alloc_opts(dynarr); 
     return (dynarr_opts_t) {
         .element_size = vector_element_size(dynarr),
         .initial_cap = dynarr_initial_capacity(dynarr),
@@ -548,7 +549,7 @@ static dynarr_opts_t get_opts(const dynarr_t *const dynarr)
         .grow_threshold = header->grow_threshold,
         .shrink_threshold = header->shrink_threshold,
         .ext_header_size = vector_data_offset(dynarr),
-        .alloc_opts = 0, /** FIXME: how to get alloc opts? */
+        .alloc_opts = &alloc_opts,
     };
 }
 
