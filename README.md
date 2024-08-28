@@ -10,7 +10,7 @@ and grows/shrinks on demand.
 Resize functionality is parametrized for flexability.  
 Has variety of common array operation, like append, insert, search, etc ...
 Vector API can seamlessly operate on `dynarr_t *`.  
-Supports farther extension.
+Supports further extension.
 
 ## Supported platforms
 

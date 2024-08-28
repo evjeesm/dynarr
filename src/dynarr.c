@@ -11,7 +11,6 @@
 #include <string.h> /* memcpy, memset */
 #include <math.h>   /* ceil, floor */
 #include <stdio.h>  /* fprintf */
-#include <stdlib.h> /* abort */
 
 /**
 * Describes header that will be concatenated after @ref vector_t.
