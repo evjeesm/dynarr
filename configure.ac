@@ -3,7 +3,7 @@
 
 AC_PREREQ([2.69])
 AC_CONFIG_MACRO_DIRS([m4])
-AC_INIT([Dynamic Array], [0.0.1], [https://github.com/evjeesm])
+AC_INIT([Dynarr], [0.0.1], [https://github.com/evjeesm])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_SUBDIRS(vector)
 

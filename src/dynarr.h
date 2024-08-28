@@ -23,13 +23,13 @@ typedef struct vector_t dynarr_t;
 */
 typedef struct dynarr_opts_t
 {
+    alloc_opts_t alloc_opts;    /**< @see vector_opts_t::alloc_opts_t    */
+    size_t ext_header_size;     /**< @see vector_opts_t::ext_header_size */
     size_t element_size;        /**< @see vector_opts_t::element_size */
     size_t initial_cap;         /**< @see vector_opts_t::initial_cap */
     float grow_factor;          /**< @brief Multiplier that is applied to dynarr capactity on resize. */
     float grow_threshold;       /**< @brief Fraction of the capacity need to be used to trigger growing. */
     float shrink_threshold;     /**< @brief Fraction of the capacity in use at which srink will be performed. */
-    size_t ext_header_size;     /**< @see vector_opts_t::ext_header_size */
-    alloc_opts_t *alloc_opts;   /**< @see vector_opts_t::alloc_opts_t    */
 }
 dynarr_opts_t;
 
@@ -54,17 +54,17 @@ typedef enum dynarr_status_t
 dynarr_status_t;
 
 /**
-* Represents dynarr default create values.
+* Represents dynarrs default create values.
 */
 #define DYNARR_DEFAULT_ARGS \
-    .initial_cap = 10, \
+    VECTOR_DEFAULT_ARGS, \
     .shrink_threshold = 0.25f, \
     .grow_threshold = 0.75f, \
     .grow_factor = 1.5f
 
 /**
 * @addtogroup Dynarr_API Dynarr API
-* @brief Main dynarr methods. 
+* @brief Main dynarr methods.
 * @ref Callbacks @{ */
 
 /**

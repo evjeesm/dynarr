@@ -15,12 +15,14 @@
 
 /**
 * Describes header that will be concatenated after @ref vector_t.
-* @warning Size for the header has to be reserved via vector_t::data_offset on vector creation.
+* @warning Size for the header has to be reserved via vector_t::ext_header_size on vector creation.
 *
 * @see vector_get_ext_header
+* @see get_dynarr_header
 */
 typedef struct dynarr_header_t
 {
+    size_t ext_header_size; /**< @brief Size of further extended header (after dynarr) */
     size_t size;            /**< @brief Tracked amount of stored elements. */
     size_t initial_cap;     /**< @brief Amount of elements preallocated,@n (dynarr won't shrink below that amount). */
     float grow_factor;      /**< @brief @copybrief dynarr_opts_t::grow_factor    */
@@ -37,7 +39,7 @@ dynarr_header_t;
 /**
 * Sometimes its necessary to reproduce dynarr options.
 */
-static dynarr_opts_t   get_opts(const dynarr_t *const dynarr);
+static dynarr_opts_t get_opts(const dynarr_t *const dynarr);
 
 /**
 * Access a vector structure where @ref dynarr_header_t is located.
@@ -105,11 +107,12 @@ dynarr_t *dynarr_create_(const dynarr_opts_t *const opts)
 
     dynarr_header_t *header = get_dynarr_header(dynarr);
     *header = (dynarr_header_t){
+        .ext_header_size = opts->ext_header_size,
         .size = 0,
-        opts->initial_cap,
-        opts->grow_factor,
-        opts->grow_threshold,
-        opts->shrink_threshold
+        .initial_cap = opts->initial_cap,
+        .grow_factor = opts->grow_factor,
+        .grow_threshold = opts->grow_threshold,
+        .shrink_threshold = opts->shrink_threshold
     };
 
     return dynarr;
@@ -119,8 +122,7 @@ dynarr_t *dynarr_create_(const dynarr_opts_t *const opts)
 void* dynarr_get_ext_header(const dynarr_t *const dynarr)
 {
     assert(dynarr);
-    assert((vector_data_offset(dynarr) > sizeof(dynarr_header_t)) && "extension header was not alloc'd.");
-
+    assert((0 < get_dynarr_header(dynarr)->ext_header_size) && "extension header was not alloc'd.");
     return (char*) vector_get_ext_header(dynarr) + sizeof(dynarr_header_t);
 }
 
@@ -541,15 +543,14 @@ int dynarr_transform(dynarr_t *const dynarr,
 static dynarr_opts_t get_opts(const dynarr_t *const dynarr)
 {
     const dynarr_header_t *header = get_dynarr_header(dynarr);
-    alloc_opts_t alloc_opts = vector_alloc_opts(dynarr); 
     return (dynarr_opts_t) {
         .element_size = vector_element_size(dynarr),
         .initial_cap = dynarr_initial_capacity(dynarr),
+        .alloc_opts = vector_alloc_opts(dynarr),
+        .ext_header_size = header->ext_header_size,
         .grow_factor = header->grow_factor,
         .grow_threshold = header->grow_threshold,
         .shrink_threshold = header->shrink_threshold,
-        .ext_header_size = vector_data_offset(dynarr),
-        .alloc_opts = &alloc_opts,
     };
 }
 
