@@ -73,7 +73,7 @@ dynarr_status_t;
 
 /**
 * @brief   Dynarr constructor.
-* @details Wrapper over @ref dynarr_crate_ .
+* @details Wrapper over @ref dynarr_create_ .
 *          Provides default values.
 *
 * @see vector_create
@@ -368,7 +368,7 @@ dynarr_status_t dynarr_remove(dynarr_t **const dynarr, const size_t index);
 * @brief   Removes range of elements from a dynarr.
 * @details Element range at given @p index, @p amount elements long
 *          will be removed by shifting all elements from that @p index
-*          backwards by @amount and subtracting that @p amount from size.
+*          backwards by @p amount and subtracting that @p amount from size.
 *          @note operation wont fail if index exceeds size.
 *
 * @param[in,out] dynarr Reference to a dynarr pointer.
@@ -411,8 +411,8 @@ dynarr_status_t dynarr_remove_if(dynarr_t **const dynarr,
 * @param[in] first  First sorted array.
 * @param[in] second Second sorted array.
 * @param[in] cmp    Callback for element comparison.
-* @param     param  Parameter that wll be passed to a @cmp callback.
-* @returs New dynarr with merged data or @c NULL on failure.
+* @param     param  Parameter that wll be passed to a @p cmp callback.
+* @returns New dynarr with merged data or @c NULL on failure.
 */
 dynarr_t *dynarr_binary_merge(const dynarr_t *const first,
         const dynarr_t *const second,
@@ -427,6 +427,7 @@ dynarr_t *dynarr_binary_merge(const dynarr_t *const first,
 * @param[in,out] dynarr Reference to a dynarr pointer.
 * @param[in]     index  Designating index of ranges first element.
 * @param[in]     amount Length of the range to spread value on.
+* @param[in]     value  Value to be spread inserted.
 * @returns Status of the operation:
 *          [#DYNARR_SUCCESS | #DYNARR_GROW_ERROR]
 */
@@ -461,9 +462,11 @@ size_t dynarr_binary_find_insert_place(const dynarr_t *const dynarr,
 *          (Allocation may fail, so returning operation status)
 *
 * @param[in,out] dynarr Reference to a dynarr pointer.
-* @param[in] value      Value for new element to be inserted.
-* @param[in] cmp        Compare callback.
-* @param     param      Parameter that will be passed to callback.
+* @param[in]     value  Value for new element to be inserted.
+* @param[in]     cmp    Compare callback.
+* @param         param  Parameter that will be passed to callback.
+* @param[out]    index  Optional. Index of new element will be stored at this address.
+*                       If @c NULL provided, then function will ignore it.
 * @returns Status of the operation:
 *          [#DYNARR_SUCCESS | #DYNARR_GROW_ERROR]
 */
@@ -476,7 +479,8 @@ dynarr_status_t dynarr_binary_insert(dynarr_t **const dynarr,
 
 /**
 * @brief   Binary unique insert.
-* @details Same as @ref dynarr_binary_insert except ignores duplicated.
+* @details Same as @ref dynarr_binary_insert except ignores duplicated values.
+* @see dynarr_binary_insert
 */
 dynarr_status_t dynarr_binary_insert_uniq(dynarr_t **const dynarr,
         const void *const value,
@@ -486,7 +490,18 @@ dynarr_status_t dynarr_binary_insert_uniq(dynarr_t **const dynarr,
 
 
 /**
-* @brief   Similar to insert except it stores no data, leaving slot in undefined state.
+* @brief   Reserve space for an element in sorted dynarr.
+* @details Similar to insert except it stores no data, leaving slot in undefined state.
+*          Usefull when element is too large and needs to be constructed in-place,
+*          or when exact contents of an element yet unspecified.
+*
+* @param[in,out] dynarr Reference to a dynarr pointer.
+* @param[in]     value  Referenced value for comparison.
+* @param[in]     cmp    Compare callback.
+* @param         param  Parameter that will be passed to callback.
+* @param[out]    index  Index of new element will be stored at this address.
+* @returns Status of the operation:
+*          [#DYNARR_SUCCESS | #DYNARR_GROW_ERROR]
 */
 dynarr_status_t dynarr_binary_reserve(dynarr_t **const dynarr,
         const void *const value,

@@ -11,6 +11,7 @@
 !doxyconf
 !header.html
 !*.dox
+!*.css
 
 !src
 !tests
