@@ -1,5 +1,5 @@
 @media (prefers-color-scheme: dark) {
-    html:not(.light-mode) p > img.inline[src$=\.svg] {
+    html:not(.dark-mode) p > img.inline[src$=\.svg] {
         filter: invert(93%) hue-rotate(180deg)
     }
 }
