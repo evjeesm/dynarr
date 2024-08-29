@@ -66,7 +66,7 @@ var sectionId = 'dynsection-1';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="group__Dynarr__API.html#ga3ff11107726213a640d814b63cb123b2" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="group__Properties.html#ga3ff11107726213a640d814b63cb123b2" target="_top" xlink:title="Access current capacity of the dynarr.">
 <polygon fill="white" stroke="#666666" points="194.5,-169 99.5,-169 99.5,-150 194.5,-150 194.5,-169"/>
 <text text-anchor="middle" x="147" y="-157" font-family="Mononoki" font-size="10.00">dynarr_capacity</text>
 </a>
@@ -84,7 +84,7 @@ var sectionId = 'dynsection-1';
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="group__Dynarr__API.html#ga745bff084f68eec950fa9ea0b42fb4e7" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="group__Properties.html#ga745bff084f68eec950fa9ea0b42fb4e7" target="_top" xlink:title="Access initial capacity property.">
 <polygon fill="white" stroke="#666666" points="211,-132 83,-132 83,-113 211,-113 211,-132"/>
 <text text-anchor="middle" x="147" y="-120" font-family="Mononoki" font-size="10.00">dynarr_initial_capacity</text>
 </a>
@@ -120,7 +120,7 @@ var sectionId = 'dynsection-1';
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="group__Dynarr__API.html#gaf5c43e2644d185b9b01065af34ed6e29" target="_top" xlink:title=" ">
+<g id="a_Node000007"><a xlink:href="group__Properties.html#gaf5c43e2644d185b9b01065af34ed6e29" target="_top" xlink:title="Access size property of a dynarr.">
 <polygon fill="white" stroke="#666666" points="183.5,-56 110.5,-56 110.5,-37 183.5,-37 183.5,-56"/>
 <text text-anchor="middle" x="147" y="-44" font-family="Mononoki" font-size="10.00">dynarr_size</text>
 </a>

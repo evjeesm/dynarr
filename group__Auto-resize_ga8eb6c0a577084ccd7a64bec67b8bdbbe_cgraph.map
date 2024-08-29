@@ -1,12 +1,12 @@
 <map id="shrink" name="shrink">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,105,68,131"/>
-<area shape="rect" id="Node000002" href="$group__Dynarr__API.html#ga3ff11107726213a640d814b63cb123b2" title=" " alt="" coords="138,5,265,31"/>
+<area shape="rect" id="Node000002" href="$group__Properties.html#ga3ff11107726213a640d814b63cb123b2" title="Access current capacity of the dynarr." alt="" coords="138,5,265,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="46,103,74,72,115,40,127,33,130,38,117,44,78,75,50,107"/>
-<area shape="rect" id="Node000004" href="$group__Dynarr__API.html#ga745bff084f68eec950fa9ea0b42fb4e7" title=" " alt="" coords="116,55,287,80"/>
+<area shape="rect" id="Node000004" href="$group__Properties.html#ga745bff084f68eec950fa9ea0b42fb4e7" title="Access initial capacity property." alt="" coords="116,55,287,80"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="67,106,146,82,147,87,69,111"/>
 <area shape="rect" id="Node000005" href="$dynarr_8c.html#a73f42f3f25cd0920d8039d63ea31be07" title=" " alt="" coords="335,105,479,131"/>
 <area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="68,115,321,115,321,121,68,121"/>
-<area shape="rect" id="Node000007" href="$group__Dynarr__API.html#gaf5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="153,156,250,181"/>
+<area shape="rect" id="Node000007" href="$group__Properties.html#gaf5c43e2644d185b9b01065af34ed6e29" title="Access size property of a dynarr." alt="" coords="153,156,250,181"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="69,125,147,149,146,154,67,130"/>
 <area shape="rect" id="Node000008" href="/home/runner/work/dynarr/dynarr/vector/vector.tag$group__Vector__API.html#ga6e5077303af4dfe720af5a0608553922" title=" " alt="" coords="147,205,256,231"/>
 <area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="50,129,78,161,117,192,135,200,133,205,115,196,74,164,46,133"/>

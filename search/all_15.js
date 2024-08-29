@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['❌_20handle_20allocation_20error_0',['❌ Handle allocation error',['../Guide.html#handle_alloc_error',1,'']]]
+  ['⬆️_20extending_20a_20dynarr_0',['⬆️ Extending a dynarr',['../Guide.html#dynarr_extend',1,'']]]
 ];

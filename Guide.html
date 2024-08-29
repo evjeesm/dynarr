@@ -19,6 +19,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="themed-imgs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
@@ -111,46 +112,35 @@ $(function(){initNavTree('Guide.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#create">🔨 Creating Dynarr</a><ul><li class="level2"><a href="#dynarr_create_section">🏭 Invoking dynarr_create</a><ul><ul><li class="level4"><a href="#def_create">⚙️ With default options</a></li>
-<li class="level4"><a href="#custom_opts">⚙️ With custom options</a></li>
-<li class="level4"><a href="#wthout_macro_wrapper">⚙️ Without macro wrapper</a></li>
-<li class="level4"><a href="#extended_header">⚙️ Allocate extended header</a></li>
-</ul>
-</ul>
-</li>
+<ul><li class="level1"><a href="#create">🔨 Creating Dynarr</a><ul><li class="level2"><a href="#def_create">⚙️ With default options</a></li>
+<li class="level2"><a href="#custom_opts">⚙️ With custom options</a></li>
+<li class="level2"><a href="#wthout_macro_wrapper">⚙️ Without macro wrapper</a></li>
+<li class="level2"><a href="#extended_header">⚙️ Allocate extended header</a></li>
 <li class="level2"><a href="#cloning">⿻ Clone an existing array</a></li>
-<li class="level2"><a href="#handle_alloc_error">❌ Handle allocation error</a><ul><ul><li class="level4"><a href="#manual_error_resolution">❗Manual error resolution</a></li>
-<li class="level4"><a href="#asserting">❗ Asserting</a></li>
-</ul>
-</ul>
-</li>
+<li class="level2"><a href="#handle_alloc_error">❌ Error handling</a></li>
+<li class="level2"><a href="#deallocate">🧨 Deallocating Dynarr</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#deallocate">🧨 Deallocating Dynarr</a></li>
+<li class="level1"><a href="#dynarr_extend">⬆️ Extending a dynarr</a></li>
 </ul>
 </div>
 <div class="textblock"><h1><a class="anchor" id="create"></a>
 🔨 Creating Dynarr</h1>
 <p>In this section we'll discuss creation of the dynamic array. <br  />
  Based on <a class="el" href="create_8c-example.html">Example file</a>.</p>
-<h2><a class="anchor" id="dynarr_create_section"></a>
-🏭 Invoking dynarr_create</h2>
-<p>A standard way to create <code>dynarr_t</code> is to call a macro wrapper <a class="el" href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a>, it passes default option values, so you dont have to provide them yourself.</p>
-<p><br  />
- </p>
-<h4><a class="anchor" id="def_create"></a>
-⚙️ With default options</h4>
- <div class="fragment"><div class="line">    dynarr_t *dynarr = <a class="code hl_define" href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a>(.element_size = <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="ttc" id="agroup__Dynarr__API_html_ga1d05157f1911b8d089e57ca0696be01f"><div class="ttname"><a href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a></div><div class="ttdeci">#define dynarr_create(...)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00075">dynarr.h:75</a></div></div>
+<h2><a class="anchor" id="def_create"></a>
+⚙️ With default options</h2>
+<p>A standard way to create <code>dynarr_t</code> is to call a macro wrapper <a class="el" href="group__Lifetime.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a>, it passes default option values, so you dont have to provide them yourself.</p>
+ <div class="fragment"><div class="line">    dynarr_t *dynarr = <a class="code hl_define" href="group__Lifetime.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a>(.element_size = <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="ttc" id="agroup__Lifetime_html_ga1d05157f1911b8d089e57ca0696be01f"><div class="ttname"><a href="group__Lifetime.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a></div><div class="ttdeci">#define dynarr_create(...)</div><div class="ttdoc">Dynarr constructor.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00081">dynarr.h:81</a></div></div>
 </div><!-- fragment --><ul>
 <li><a class="el" href="structdynarr__opts__t.html#a61aa2f610ed5a0202bd558522d04c7d9">element_size</a> is the only mandatory explicit option. </li>
 <li>Full list of default options: <a class="el" href="dynarr_8h.html#a7506aa30c586258bba10244e55492795">DYNARR_DEFAULT_ARGS</a> <br  />
-<br  />
  </li>
 </ul>
-<h4><a class="anchor" id="custom_opts"></a>
-⚙️ With custom options</h4>
-<div class="fragment"><div class="line">    dynarr_t *dynarr = <a class="code hl_define" href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a></div>
+<h2><a class="anchor" id="custom_opts"></a>
+⚙️ With custom options</h2>
+<div class="fragment"><div class="line">    dynarr_t *dynarr = <a class="code hl_define" href="group__Lifetime.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a></div>
 <div class="line">        (</div>
 <div class="line">            .element_size = <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>),</div>
 <div class="line">            .initial_cap = 100,</div>
@@ -158,23 +148,18 @@ $(function(){initNavTree('Guide.html',''); initResizable(true); });
 <div class="line">            .grow_threshold = 0.8,</div>
 <div class="line">            .shrink_threshold = 0.2</div>
 <div class="line">        );</div>
-</div><!-- fragment --><ul>
-<li><a class="el" href="structdynarr__opts__t.html#a6478b70c526a7158e1feefe1a3c34ea7">data_offset</a> option omitted. </li>
-<li><a class="el" href="structdynarr__opts__t.html#a52f2a199347e0b6eac57f14fac69abd9">alloc_param</a> option omitted. <br  />
-<br  />
- </li>
-</ul>
-<h4><a class="anchor" id="wthout_macro_wrapper"></a>
-⚙️ Without macro wrapper</h4>
-<p>You can avoid macro wrapper with default values if you know what you are doing. <br  />
-Just create <a class="el" href="structdynarr__opts__t.html">opts</a> on stack and pass by reference into a <a class="el" href="group__Dynarr__API.html#ga99f1163f1932f71f0229a7340df68efb">dynarr_create_</a> function directly:</p>
- <div class="fragment"><div class="line">    explicit_opts_create();</div>
-<div class="line">    dynarr_t *dynarr = <a class="code hl_define" href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a>(.element_size = <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
 </div><!-- fragment --><p><br  />
  </p>
-<h4><a class="anchor" id="extended_header"></a>
-⚙️ Allocate extended header</h4>
-<p>This is important for derived classes that what to include their data <br  />
+<h2><a class="anchor" id="wthout_macro_wrapper"></a>
+⚙️ Without macro wrapper</h2>
+<p>You can avoid macro wrapper with default values if you know what you are doing. <br  />
+ Just create <a class="el" href="structdynarr__opts__t.html">opts</a> on stack and pass by reference into a <a class="el" href="group__Lifetime.html#ga99f1163f1932f71f0229a7340df68efb">dynarr_create_</a> function directly:  </p><div class="fragment"><div class="line">    explicit_opts_create();</div>
+<div class="line">    dynarr_t *dynarr = <a class="code hl_define" href="group__Lifetime.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a>(.element_size = <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+</div><!-- fragment --><p><br  />
+ </p>
+<h2><a class="anchor" id="extended_header"></a>
+⚙️ Allocate extended header</h2>
+<p>This is important for derived classes that need to include their data <br  />
  in a memory allocated by underlying <a class="elRef" href="https://evjeesm.github.io/vector/vector_8h.html">vector</a>.</p>
 <p>Define a structure <code>ext_t</code> that will be peallocated right after <a class="el" href="structdynarr__header__t.html">dynarr_header_t</a> :  </p><div class="fragment"><div class="line">    <span class="keyword">typedef</span> <span class="keyword">struct</span></div>
 <div class="line">    {</div>
@@ -184,30 +169,26 @@ Just create <a class="el" href="structdynarr__opts__t.html">opts</a> on stack an
 <div class="line">        <span class="comment">// ...</span></div>
 <div class="line">    }</div>
 <div class="line">    ext_t;</div>
-</div><!-- fragment --><p> Create dynarr specifying <a class="el" href="structdynarr__opts__t.html#a6478b70c526a7158e1feefe1a3c34ea7">data_offset</a> to reserve space for <code>ext_t</code>. </p><div class="fragment"><div class="line">    dynarr_t *dynarr = <a class="code hl_define" href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a></div>
+</div><!-- fragment --><p> Create dynarr specifying <a class="el" href="structdynarr__opts__t.html#accd8a3e669a744e366b212579e0566ec">dynarr_opts_t::ext_header_size</a> to reserve space for <code>ext_t</code>. </p><div class="fragment"><div class="line">    dynarr_t *dynarr = <a class="code hl_define" href="group__Lifetime.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a></div>
 <div class="line">        (</div>
 <div class="line">            .data_offset = <span class="keyword">sizeof</span>(ext_t),</div>
 <div class="line">            .element_size = <span class="keyword">sizeof</span>(<span class="keywordtype">long</span>)</div>
 <div class="line">        );</div>
-</div><!-- fragment --><p> Initialize extended header: </p><div class="fragment"><div class="line">    ext_t *header = <a class="code hl_function" href="group__Dynarr__API.html#ga3acd4a1beb0e42a412b0482ddb6b9820">dynarr_get_ext_header</a>(dynarr);</div>
+</div><!-- fragment --><p> Initialize extended header: </p><div class="fragment"><div class="line">    ext_t *header = <a class="code hl_function" href="group__Extension.html#ga3acd4a1beb0e42a412b0482ddb6b9820">dynarr_get_ext_header</a>(dynarr);</div>
 <div class="line">    *header = (ext_t) {0};</div>
-<div class="ttc" id="agroup__Dynarr__API_html_ga3acd4a1beb0e42a412b0482ddb6b9820"><div class="ttname"><a href="group__Dynarr__API.html#ga3acd4a1beb0e42a412b0482ddb6b9820">dynarr_get_ext_header</a></div><div class="ttdeci">void * dynarr_get_ext_header(const dynarr_t *const dynarr)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00118">dynarr.c:118</a></div></div>
-</div><!-- fragment --><p> <br  />
+<div class="ttc" id="agroup__Extension_html_ga3acd4a1beb0e42a412b0482ddb6b9820"><div class="ttname"><a href="group__Extension.html#ga3acd4a1beb0e42a412b0482ddb6b9820">dynarr_get_ext_header</a></div><div class="ttdeci">void * dynarr_get_ext_header(const dynarr_t *const dynarr)</div><div class="ttdoc">Retrieve a location of extended header.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00121">dynarr.c:121</a></div></div>
+</div><!-- fragment --><p><br  />
  </p>
 <h2><a class="anchor" id="cloning"></a>
 ⿻ Clone an existing array</h2>
-<p>With <a class="el" href="group__Dynarr__API.html#ga42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a> you are able to produce exact copy of an existing array.</p>
-<div class="fragment"><div class="line">    dynarr_t *clone = <a class="code hl_function" href="group__Dynarr__API.html#ga42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a>(dynarr);</div>
-<div class="ttc" id="agroup__Dynarr__API_html_ga42427bb2220a4e0bf86a08717719a6a3"><div class="ttname"><a href="group__Dynarr__API.html#ga42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a></div><div class="ttdeci">dynarr_t * dynarr_clone(const dynarr_t *const dynarr)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00127">dynarr.c:127</a></div></div>
-</div><!-- fragment --><p> <br  />
-</p>
-<h2><a class="anchor" id="handle_alloc_error"></a>
-❌ Handle allocation error</h2>
-<p>Default implementation uses heap as allocation memory source. Depending on system architecture heap allocation is not fail proof, take it into your considerations. <br  />
-<br  />
+<p>With <a class="el" href="group__Lifetime.html#ga42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a> you are able to produce exact copy of an existing array.</p>
+<div class="fragment"><div class="line">    dynarr_t *clone = <a class="code hl_function" href="group__Lifetime.html#ga42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a>(dynarr);</div>
+<div class="ttc" id="agroup__Lifetime_html_ga42427bb2220a4e0bf86a08717719a6a3"><div class="ttname"><a href="group__Lifetime.html#ga42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a></div><div class="ttdeci">dynarr_t * dynarr_clone(const dynarr_t *const dynarr)</div><div class="ttdoc">Duplicate a dynarr.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00129">dynarr.c:129</a></div></div>
+</div><!-- fragment --><p><br  />
  </p>
-<h4><a class="anchor" id="manual_error_resolution"></a>
-❗Manual error resolution</h4>
+<h2><a class="anchor" id="handle_alloc_error"></a>
+❌ Error handling</h2>
+<p>Default implementation uses heap as allocation memory source. Depending on system architecture heap allocation is not fail proof, take it into your considerations.</p>
 <p>Check that <code>dynarr</code> value is <code>NULL</code>, then resolve allocation error. If you got none resolution choises, perform gracefull program termination. See following example, print error and exit abnormally.</p>
  <div class="fragment"><div class="line">    <span class="keywordflow">if</span> (!dynarr)</div>
 <div class="line">    {</div>
@@ -215,20 +196,23 @@ Just create <a class="el" href="structdynarr__opts__t.html">opts</a> on stack an
 <div class="line">        abort();</div>
 <div class="line">    }</div>
 </div><!-- fragment --><p> <br  />
- </p>
-<h4><a class="anchor" id="asserting"></a>
-❗ Asserting</h4>
-<p>Other option is to just use an <code>assert</code>. If allocation error is unlikely to happen, but you still need to indicate if it occures.</p>
+ Other option is to just use an <code>assert</code>. If allocation error is unlikely to happen, but you still need to indicate if it occures.</p>
 <div class="fragment"><div class="line">    assert(dynarr &amp;&amp; <span class="stringliteral">&quot;Buy more RAM!&quot;</span>);</div>
 </div><!-- fragment --><p> Advantage of asserts if that they can be disabled by providing <code>-DNDEBUG</code> compilation flag.</p>
 <p><br  />
- </p><hr  />
-<h1><a class="anchor" id="deallocate"></a>
-🧨 Deallocating Dynarr</h1>
+ </p>
+<h2><a class="anchor" id="deallocate"></a>
+🧨 Deallocating Dynarr</h2>
 <p>Prevent memory leaks by deallocation resources, when they not needed anymore! <br  />
-  </p><div class="fragment"><div class="line">    <a class="code hl_function" href="group__Dynarr__API.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a>(dynarr);</div>
-<div class="ttc" id="agroup__Dynarr__API_html_gaebbaac3879771d77aa20068a26952197"><div class="ttname"><a href="group__Dynarr__API.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a></div><div class="ttdeci">void dynarr_destroy(dynarr_t *const dynarr)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00134">dynarr.c:134</a></div></div>
-</div><!-- fragment --> <dl class="section attention"><dt>Attention</dt><dd>Always remember to deallocate <code>dynarr</code> created with <a class="el" href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a> or <a class="el" href="group__Dynarr__API.html#ga42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a> ! </dd></dl>
+  </p><div class="fragment"><div class="line">    <a class="code hl_function" href="group__Lifetime.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a>(dynarr);</div>
+<div class="ttc" id="agroup__Lifetime_html_gaebbaac3879771d77aa20068a26952197"><div class="ttname"><a href="group__Lifetime.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a></div><div class="ttdeci">void dynarr_destroy(dynarr_t *const dynarr)</div><div class="ttdoc">Deallocates a dynamic array.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00136">dynarr.c:136</a></div></div>
+</div><!-- fragment --> <dl class="section attention"><dt>Attention</dt><dd>Always remember to deallocate <code>dynarr</code> created with <a class="el" href="group__Lifetime.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a> or <a class="el" href="group__Lifetime.html#ga42427bb2220a4e0bf86a08717719a6a3">dynarr_clone</a> !</dd></dl>
+<p><br  />
+ </p><hr  />
+<h1><a class="anchor" id="dynarr_extend"></a>
+⬆️ Extending a dynarr</h1>
+<dl class="section user"><dt>Follow same guidelines as for the Vector</dt><dd><a href="https://evjeesm.github.io/vector/Guide.html#extend">Extending a vector</a> <br  />
+ </dd></dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

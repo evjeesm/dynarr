@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['resize_0',['Auto-resize',['../group__Auto-resize.html',1,'']]]
+  ['elements_0',['Elements',['../group__Elements.html',1,'']]],
+  ['extension_1',['Extension',['../group__Extension.html',1,'']]]
 ];

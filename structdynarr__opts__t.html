@@ -19,6 +19,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="themed-imgs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
@@ -120,8 +121,10 @@ $(function(){initNavTree('structdynarr__opts__t.html',''); initResizable(true); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a6478b70c526a7158e1feefe1a3c34ea7" id="r_a6478b70c526a7158e1feefe1a3c34ea7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6478b70c526a7158e1feefe1a3c34ea7">data_offset</a></td></tr>
-<tr class="separator:a6478b70c526a7158e1feefe1a3c34ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a903024469b0c0ae20eabecd622dfee92" id="r_a903024469b0c0ae20eabecd622dfee92"><td class="memItemLeft" align="right" valign="top">alloc_opts_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a903024469b0c0ae20eabecd622dfee92">alloc_opts</a></td></tr>
+<tr class="separator:a903024469b0c0ae20eabecd622dfee92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accd8a3e669a744e366b212579e0566ec" id="r_accd8a3e669a744e366b212579e0566ec"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accd8a3e669a744e366b212579e0566ec">ext_header_size</a></td></tr>
+<tr class="separator:accd8a3e669a744e366b212579e0566ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61aa2f610ed5a0202bd558522d04c7d9" id="r_a61aa2f610ed5a0202bd558522d04c7d9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61aa2f610ed5a0202bd558522d04c7d9">element_size</a></td></tr>
 <tr class="separator:a61aa2f610ed5a0202bd558522d04c7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6f8e73f613df4b4adb4f5162a301f47" id="r_ac6f8e73f613df4b4adb4f5162a301f47"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6f8e73f613df4b4adb4f5162a301f47">initial_cap</a></td></tr>
@@ -135,8 +138,6 @@ Data Fields</h2></td></tr>
 <tr class="memitem:ab6ce4f5254ac3e20dc17c1648cb0605e" id="r_ab6ce4f5254ac3e20dc17c1648cb0605e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6ce4f5254ac3e20dc17c1648cb0605e">shrink_threshold</a></td></tr>
 <tr class="memdesc:ab6ce4f5254ac3e20dc17c1648cb0605e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fraction of the capacity in use at which srink will be performed.  <br /></td></tr>
 <tr class="separator:ab6ce4f5254ac3e20dc17c1648cb0605e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52f2a199347e0b6eac57f14fac69abd9" id="r_a52f2a199347e0b6eac57f14fac69abd9"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52f2a199347e0b6eac57f14fac69abd9">alloc_param</a></td></tr>
-<tr class="separator:a52f2a199347e0b6eac57f14fac69abd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Dynarr creating options. </p>
@@ -145,20 +146,38 @@ Data Fields</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="dynarr_8h_source.html#l00024">24</a> of file <a class="el" href="dynarr_8h_source.html">dynarr.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a6478b70c526a7158e1feefe1a3c34ea7" name="a6478b70c526a7158e1feefe1a3c34ea7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6478b70c526a7158e1feefe1a3c34ea7">&#9670;&#160;</a></span>data_offset</h2>
+<a id="a903024469b0c0ae20eabecd622dfee92" name="a903024469b0c0ae20eabecd622dfee92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a903024469b0c0ae20eabecd622dfee92">&#9670;&#160;</a></span>alloc_opts</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t dynarr_opts_t::data_offset</td>
+          <td class="memname">alloc_opts_t dynarr_opts_t::alloc_opts</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd><a class="elRef" href="https://evjeesm.github.io/vector/structvector__opts__t.html#a5e3487546230439b703036a86b7eace1">vector_opts_t::data_offset</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>vector_opts_t::alloc_opts_t <br  />
+ </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="dynarr_8h_source.html#l00026">26</a> of file <a class="el" href="dynarr_8h_source.html">dynarr.h</a>.</p>
+
+</div>
+</div>
+<a id="accd8a3e669a744e366b212579e0566ec" name="accd8a3e669a744e366b212579e0566ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accd8a3e669a744e366b212579e0566ec">&#9670;&#160;</a></span>ext_header_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t dynarr_opts_t::ext_header_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd>vector_opts_t::ext_header_size </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="dynarr_8h_source.html#l00027">27</a> of file <a class="el" href="dynarr_8h_source.html">dynarr.h</a>.</p>
 
 </div>
 </div>
@@ -177,7 +196,7 @@ Data Fields</h2></td></tr>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="create_8c-example.html#a4">create.c</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8h_source.html#l00027">27</a> of file <a class="el" href="dynarr_8h_source.html">dynarr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8h_source.html#l00028">28</a> of file <a class="el" href="dynarr_8h_source.html">dynarr.h</a>.</p>
 
 </div>
 </div>
@@ -194,7 +213,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="elRef" href="https://evjeesm.github.io/vector/structvector__opts__t.html#a3bcfe6caf89c0029a925d0be842abc23">vector_opts_t::initial_cap</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8h_source.html#l00028">28</a> of file <a class="el" href="dynarr_8h_source.html">dynarr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8h_source.html#l00029">29</a> of file <a class="el" href="dynarr_8h_source.html">dynarr.h</a>.</p>
 
 </div>
 </div>
@@ -212,7 +231,7 @@ Data Fields</h2></td></tr>
 
 <p>Multiplier that is applied to dynarr capactity on resize. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8h_source.html#l00029">29</a> of file <a class="el" href="dynarr_8h_source.html">dynarr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8h_source.html#l00030">30</a> of file <a class="el" href="dynarr_8h_source.html">dynarr.h</a>.</p>
 
 </div>
 </div>
@@ -230,7 +249,7 @@ Data Fields</h2></td></tr>
 
 <p>Fraction of the capacity need to be used to trigger growing. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8h_source.html#l00030">30</a> of file <a class="el" href="dynarr_8h_source.html">dynarr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8h_source.html#l00031">31</a> of file <a class="el" href="dynarr_8h_source.html">dynarr.h</a>.</p>
 
 </div>
 </div>
@@ -247,23 +266,6 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fraction of the capacity in use at which srink will be performed. </p>
-
-<p class="definition">Definition at line <a class="el" href="dynarr_8h_source.html#l00031">31</a> of file <a class="el" href="dynarr_8h_source.html">dynarr.h</a>.</p>
-
-</div>
-</div>
-<a id="a52f2a199347e0b6eac57f14fac69abd9" name="a52f2a199347e0b6eac57f14fac69abd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52f2a199347e0b6eac57f14fac69abd9">&#9670;&#160;</a></span>alloc_param</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void* dynarr_opts_t::alloc_param</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd><a class="elRef" href="https://evjeesm.github.io/vector/structvector__opts__t.html#ad79692b43e6ce7a17529a35a18d32da2">vector_opts_t::alloc_param</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="dynarr_8h_source.html#l00032">32</a> of file <a class="el" href="dynarr_8h_source.html">dynarr.h</a>.</p>
 

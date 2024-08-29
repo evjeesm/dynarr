@@ -19,6 +19,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="themed-imgs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
@@ -115,6 +116,9 @@ $(function(){initNavTree('structdynarr__header__t.html',''); initResizable(true)
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
+<tr class="memitem:aa55d1acaf573a4d52eb2b3eff7b54351" id="r_aa55d1acaf573a4d52eb2b3eff7b54351"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa55d1acaf573a4d52eb2b3eff7b54351">ext_header_size</a></td></tr>
+<tr class="memdesc:aa55d1acaf573a4d52eb2b3eff7b54351"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of further extended header (after dynarr)  <br /></td></tr>
+<tr class="separator:aa55d1acaf573a4d52eb2b3eff7b54351"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9032f10d549397f65978b97d1b6de673" id="r_a9032f10d549397f65978b97d1b6de673"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9032f10d549397f65978b97d1b6de673">size</a></td></tr>
 <tr class="memdesc:a9032f10d549397f65978b97d1b6de673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tracked amount of stored elements.  <br /></td></tr>
 <tr class="separator:a9032f10d549397f65978b97d1b6de673"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,11 +139,31 @@ Data Fields</h2></td></tr>
 <tr class="separator:a9ac26b188c46aab2c31a7f10680f0a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Describes header that will be concatenated after <a class="elRef" href="https://evjeesm.github.io/vector/structvector__t.html">vector_t</a>. </p><dl class="section warning"><dt>Warning</dt><dd>Size for the header has to be reserved via <a class="elRef" href="https://evjeesm.github.io/vector/structvector__t.html#ab0fb2acbeb3bf70cb7dc348958b76990">vector_t::data_offset</a> on vector creation.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="elRef" href="https://evjeesm.github.io/vector/group__Vector__API.html#gafc2e34dbacffe6480af8681fbf46e808">vector_get_ext_header</a> </dd></dl>
+<div class="textblock"><p>Describes header that will be concatenated after <a class="elRef" href="https://evjeesm.github.io/vector/structvector__t.html">vector_t</a>. </p><dl class="section warning"><dt>Warning</dt><dd>Size for the header has to be reserved via vector_t::ext_header_size on vector creation.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="elRef" href="https://evjeesm.github.io/vector/group__Vector__API.html#gafc2e34dbacffe6480af8681fbf46e808">vector_get_ext_header</a> </dd>
+<dd>
+<a class="el" href="dynarr_8c.html#a73f42f3f25cd0920d8039d63ea31be07">get_dynarr_header</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00022">22</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
+<a id="aa55d1acaf573a4d52eb2b3eff7b54351" name="aa55d1acaf573a4d52eb2b3eff7b54351"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa55d1acaf573a4d52eb2b3eff7b54351">&#9670;&#160;</a></span>ext_header_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t dynarr_header_t::ext_header_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Size of further extended header (after dynarr) </p>
+
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00024">24</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+
+</div>
+</div>
 <a id="a9032f10d549397f65978b97d1b6de673" name="a9032f10d549397f65978b97d1b6de673"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9032f10d549397f65978b97d1b6de673">&#9670;&#160;</a></span>size</h2>
 
@@ -154,7 +178,7 @@ Data Fields</h2></td></tr>
 
 <p>Tracked amount of stored elements. </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00024">24</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00025">25</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 
 </div>
 </div>
@@ -173,7 +197,7 @@ Data Fields</h2></td></tr>
 <p>Amount of elements preallocated,<br  />
  (dynarr won't shrink below that amount). </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00025">25</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00026">26</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 
 </div>
 </div>
@@ -192,7 +216,7 @@ Data Fields</h2></td></tr>
 <p>Multiplier that is applied to dynarr capactity on resize.    <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00026">26</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00027">27</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 
 </div>
 </div>
@@ -211,7 +235,7 @@ Data Fields</h2></td></tr>
 <p>Fraction of the capacity need to be used to trigger growing.    <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00027">27</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00028">28</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 
 </div>
 </div>
@@ -229,7 +253,7 @@ Data Fields</h2></td></tr>
 
 <p>Fraction of the capacity in use at which srink will be performed.    </p>
 
-<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00028">28</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dynarr_8c_source.html#l00029">29</a> of file <a class="el" href="dynarr_8c_source.html">dynarr.c</a>.</p>
 
 </div>
 </div>

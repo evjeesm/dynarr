@@ -1,8 +1,8 @@
 <map id="free_space_at" name="free_space_at">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,80,119,105"/>
-<area shape="rect" id="Node000002" href="$group__Dynarr__API.html#ga93c32dd116523090126d427cce08e114" title=" " alt="" coords="199,55,291,80"/>
+<area shape="rect" id="Node000002" href="$group__Elements.html#ga93c32dd116523090126d427cce08e114" title="Returns pointer for the element at index." alt="" coords="199,55,291,80"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,82,185,73,186,78,119,87"/>
-<area shape="rect" id="Node000003" href="$group__Dynarr__API.html#gaf5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="372,5,469,31"/>
+<area shape="rect" id="Node000003" href="$group__Properties.html#gaf5c43e2644d185b9b01065af34ed6e29" title="Access size property of a dynarr." alt="" coords="372,5,469,31"/>
 <area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="83,77,120,57,166,39,216,28,266,21,358,15,358,20,267,26,217,33,167,45,123,62,85,82"/>
 <area shape="rect" id="Node000004" href="$dynarr_8c.html#a73f42f3f25cd0920d8039d63ea31be07" title=" " alt="" coords="517,56,661,81"/>
 <area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="119,93,277,97,373,95,469,89,519,81,520,87,470,94,373,100,277,102,119,98"/>

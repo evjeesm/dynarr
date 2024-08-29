@@ -1,7 +1,7 @@
 var indexSectionsWithContent =
 {
-  0: "abcdefghilmnoprstuvw⚙❌❗⿻🏭📘🔨🧨",
-  1: "dnv",
+  0: "abcdefghilmoprstuvw⚙❌⬆⿻📘🔨🧨",
+  1: "dv",
   2: "dv",
   3: "bcdfgmsv",
   4: "acdegims",
@@ -9,7 +9,7 @@ var indexSectionsWithContent =
   6: "d",
   7: "d",
   8: "d",
-  9: "acdruv",
+  9: "acdelprsuv",
   10: "dg📘"
 };
 

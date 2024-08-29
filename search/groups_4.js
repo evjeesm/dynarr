@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['utilities_0',['Utilities',['https://evjeesm.github.io/vector/group__Utilities.html',1,'']]]
+  ['lifetime_0',['Lifetime',['../group__Lifetime.html',1,'']]]
 ];

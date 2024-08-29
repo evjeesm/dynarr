@@ -1,8 +1,8 @@
 <map id="grow" name="grow">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,80,60,105"/>
-<area shape="rect" id="Node000002" href="$group__Dynarr__API.html#ga3ff11107726213a640d814b63cb123b2" title=" " alt="" coords="108,5,235,31"/>
+<area shape="rect" id="Node000002" href="$group__Properties.html#ga3ff11107726213a640d814b63cb123b2" title="Access current capacity of the dynarr." alt="" coords="108,5,235,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="49,78,107,40,119,34,121,39,109,44,52,82"/>
-<area shape="rect" id="Node000004" href="$group__Dynarr__API.html#gaf5c43e2644d185b9b01065af34ed6e29" title=" " alt="" coords="123,55,220,80"/>
+<area shape="rect" id="Node000004" href="$group__Properties.html#gaf5c43e2644d185b9b01065af34ed6e29" title="Access size property of a dynarr." alt="" coords="123,55,220,80"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="60,85,108,76,109,81,61,90"/>
 <area shape="rect" id="Node000005" href="$dynarr_8c.html#a73f42f3f25cd0920d8039d63ea31be07" title=" " alt="" coords="283,80,427,105"/>
 <area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="60,90,269,90,269,95,60,95"/>

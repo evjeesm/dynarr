@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['❗_20asserting_0',['❗ Asserting',['../Guide.html#asserting',1,'']]],
-  ['❗manual_20error_20resolution_1',['❗Manual error resolution',['../Guide.html#manual_error_resolution',1,'']]]
+  ['⿻_20clone_20an_20existing_20array_0',['⿻ Clone an existing array',['../Guide.html#cloning',1,'']]]
 ];

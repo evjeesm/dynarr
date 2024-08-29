@@ -66,7 +66,7 @@ var sectionId = 'dynsection-3';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="group__Dynarr__API.html#ga93c32dd116523090126d427cce08e114" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="group__Elements.html#ga93c32dd116523090126d427cce08e114" target="_top" xlink:title="Returns pointer for the element at index.">
 <polygon fill="white" stroke="#666666" points="221.5,-95 152.5,-95 152.5,-76 221.5,-76 221.5,-95"/>
 <text text-anchor="middle" x="187" y="-83" font-family="Mononoki" font-size="10.00">dynarr_get</text>
 </a>
@@ -84,7 +84,7 @@ var sectionId = 'dynsection-3';
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="group__Dynarr__API.html#gaf5c43e2644d185b9b01065af34ed6e29" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="group__Properties.html#gaf5c43e2644d185b9b01065af34ed6e29" target="_top" xlink:title="Access size property of a dynarr.">
 <polygon fill="white" stroke="#666666" points="355,-132 282,-132 282,-113 355,-113 355,-132"/>
 <text text-anchor="middle" x="318.5" y="-120" font-family="Mononoki" font-size="10.00">dynarr_size</text>
 </a>

@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="group__Dynarr__API.html#ga3ff11107726213a640d814b63cb123b2" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="group__Properties.html#ga3ff11107726213a640d814b63cb123b2" target="_top" xlink:title="Access current capacity of the dynarr.">
 <polygon fill="white" stroke="#666666" points="172,-132 77,-132 77,-113 172,-113 172,-132"/>
 <text text-anchor="middle" x="124.5" y="-120" font-family="Mononoki" font-size="10.00">dynarr_capacity</text>
 </a>
@@ -48,7 +48,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="group__Dynarr__API.html#gaf5c43e2644d185b9b01065af34ed6e29" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="group__Properties.html#gaf5c43e2644d185b9b01065af34ed6e29" target="_top" xlink:title="Access size property of a dynarr.">
 <polygon fill="white" stroke="#666666" points="161,-95 88,-95 88,-76 161,-76 161,-95"/>
 <text text-anchor="middle" x="124.5" y="-83" font-family="Mononoki" font-size="10.00">dynarr_size</text>
 </a>

@@ -19,6 +19,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="themed-imgs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
@@ -118,13 +119,11 @@ $(function(){initNavTree('input__strings_8c_source.html',''); initResizable(true
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define _STR(x) #x</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define STR(x) _STR(x)</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="structname__t.html">    9</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>name</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">typedef</span> <span class="keyword">struct </span>name</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">char</span> data[MAX_NAME_LEN + 1];</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
-</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><a class="code hl_struct" href="structname__t.html">name_t</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>name_t;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">static</span> <span class="keywordtype">int</span> print_name(<span class="keyword">const</span> <span class="keywordtype">void</span> *<span class="keyword">const</span> element, <span class="keywordtype">void</span> *<span class="keyword">const</span> param);</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
@@ -132,10 +131,10 @@ $(function(){initNavTree('input__strings_8c_source.html',''); initResizable(true
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    dynarr_t        *dynarr;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_enumeration" href="dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a> status     = <a class="code hl_enumvalue" href="dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695dae2ffc88372b836ecbc0e1eb5743511a4">DYNARR_SUCCESS</a>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_struct" href="structname__t.html">name_t</a>          input_name = {0};</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    name_t          input_name = {0};</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">int</span>             entered    = 0;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    dynarr = <a class="code hl_define" href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a>(.element_size = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structname__t.html">name_t</a>));</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    dynarr = <a class="code hl_define" href="group__Lifetime.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a>(.element_size = <span class="keyword">sizeof</span>(name_t));</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">if</span> (!dynarr)</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    {</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695dac1521b11c91058fcbe8d859d57379dd4">DYNARR_ALLOC_ERROR</a>;</div>
@@ -151,7 +150,7 @@ $(function(){initNavTree('input__strings_8c_source.html',''); initResizable(true
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">if</span> (<span class="charliteral">&#39;\0&#39;</span> != input_name.data[0])</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            status = <a class="code hl_function" href="group__Dynarr__API.html#gad2dd0b992152881697da2073a0c840d7">dynarr_binary_insert</a>(&amp;dynarr,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            status = <a class="code hl_function" href="group__Elements.html#gad2dd0b992152881697da2073a0c840d7">dynarr_binary_insert</a>(&amp;dynarr,</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                    input_name.data,</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                    cmp_lex_asc,</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                    <a class="code hl_defineRef" href="https://evjeesm.github.io/vector/vector_8h.html#ad92ce696967261588cab3848dfe73c02">TMP_REF</a>(<span class="keywordtype">int</span>, MAX_NAME_LEN),</div>
@@ -160,21 +159,21 @@ $(function(){initNavTree('input__strings_8c_source.html',''); initResizable(true
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695dae2ffc88372b836ecbc0e1eb5743511a4">DYNARR_SUCCESS</a> != status)</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <a class="code hl_function" href="group__Dynarr__API.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a>(dynarr);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <a class="code hl_function" href="group__Lifetime.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a>(dynarr);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keywordflow">return</span> status;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">while</span> (entered != EOF);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_function" href="group__Dynarr__API.html#ga2575dd307a95358e074e07c2b9999a9d">dynarr_foreach</a>(dynarr, print_name, NULL);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_function" href="group__Dynarr__API.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a>(dynarr);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_function" href="group__Elements.html#ga2575dd307a95358e074e07c2b9999a9d">dynarr_foreach</a>(dynarr, print_name, NULL);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_function" href="group__Lifetime.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a>(dynarr);</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">return</span> 0; <span class="comment">/* normal exit */</span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">static</span> <span class="keywordtype">int</span> print_name(<span class="keyword">const</span> <span class="keywordtype">void</span> *<span class="keyword">const</span> element, <span class="keywordtype">void</span> *<span class="keyword">const</span> param)</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    (void)param;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, ((<a class="code hl_struct" href="structname__t.html">name_t</a>*)element)-&gt;data);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, ((name_t*)element)-&gt;data);</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
@@ -182,11 +181,10 @@ $(function(){initNavTree('input__strings_8c_source.html',''); initResizable(true
 <div class="ttc" id="adynarr_8h_html_ac2b2261a1330ac45a85883633d6a695d"><div class="ttname"><a href="dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695d">dynarr_status_t</a></div><div class="ttdeci">dynarr_status_t</div><div class="ttdoc">Represents operation error codes.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00042">dynarr.h:43</a></div></div>
 <div class="ttc" id="adynarr_8h_html_ac2b2261a1330ac45a85883633d6a695dac1521b11c91058fcbe8d859d57379dd4"><div class="ttname"><a href="dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695dac1521b11c91058fcbe8d859d57379dd4">DYNARR_ALLOC_ERROR</a></div><div class="ttdeci">@ DYNARR_ALLOC_ERROR</div><div class="ttdoc">Success status inherited from VECTOR_ALLOC_ERROR.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00045">dynarr.h:45</a></div></div>
 <div class="ttc" id="adynarr_8h_html_ac2b2261a1330ac45a85883633d6a695dae2ffc88372b836ecbc0e1eb5743511a4"><div class="ttname"><a href="dynarr_8h.html#ac2b2261a1330ac45a85883633d6a695dae2ffc88372b836ecbc0e1eb5743511a4">DYNARR_SUCCESS</a></div><div class="ttdeci">@ DYNARR_SUCCESS</div><div class="ttdoc">Success status inherited from VECTOR_SUCCESS.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00044">dynarr.h:44</a></div></div>
-<div class="ttc" id="agroup__Dynarr__API_html_ga1d05157f1911b8d089e57ca0696be01f"><div class="ttname"><a href="group__Dynarr__API.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a></div><div class="ttdeci">#define dynarr_create(...)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00075">dynarr.h:75</a></div></div>
-<div class="ttc" id="agroup__Dynarr__API_html_ga2575dd307a95358e074e07c2b9999a9d"><div class="ttname"><a href="group__Dynarr__API.html#ga2575dd307a95358e074e07c2b9999a9d">dynarr_foreach</a></div><div class="ttdeci">int dynarr_foreach(const dynarr_t *const dynarr, const foreach_t func, void *const param)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00504">dynarr.c:504</a></div></div>
-<div class="ttc" id="agroup__Dynarr__API_html_gad2dd0b992152881697da2073a0c840d7"><div class="ttname"><a href="group__Dynarr__API.html#gad2dd0b992152881697da2073a0c840d7">dynarr_binary_insert</a></div><div class="ttdeci">dynarr_status_t dynarr_binary_insert(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *param, size_t *const index)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00321">dynarr.c:321</a></div></div>
-<div class="ttc" id="agroup__Dynarr__API_html_gaebbaac3879771d77aa20068a26952197"><div class="ttname"><a href="group__Dynarr__API.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a></div><div class="ttdeci">void dynarr_destroy(dynarr_t *const dynarr)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00134">dynarr.c:134</a></div></div>
-<div class="ttc" id="astructname__t_html"><div class="ttname"><a href="structname__t.html">name_t</a></div><div class="ttdef"><b>Definition</b> <a href="#l00009">input_strings.c:10</a></div></div>
+<div class="ttc" id="agroup__Elements_html_ga2575dd307a95358e074e07c2b9999a9d"><div class="ttname"><a href="group__Elements.html#ga2575dd307a95358e074e07c2b9999a9d">dynarr_foreach</a></div><div class="ttdeci">int dynarr_foreach(const dynarr_t *const dynarr, const foreach_t func, void *const param)</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00506">dynarr.c:506</a></div></div>
+<div class="ttc" id="agroup__Elements_html_gad2dd0b992152881697da2073a0c840d7"><div class="ttname"><a href="group__Elements.html#gad2dd0b992152881697da2073a0c840d7">dynarr_binary_insert</a></div><div class="ttdeci">dynarr_status_t dynarr_binary_insert(dynarr_t **const dynarr, const void *const value, const compare_t cmp, void *param, size_t *const index)</div><div class="ttdoc">Binary insert.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00323">dynarr.c:323</a></div></div>
+<div class="ttc" id="agroup__Lifetime_html_ga1d05157f1911b8d089e57ca0696be01f"><div class="ttname"><a href="group__Lifetime.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a></div><div class="ttdeci">#define dynarr_create(...)</div><div class="ttdoc">Dynarr constructor.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00081">dynarr.h:81</a></div></div>
+<div class="ttc" id="agroup__Lifetime_html_gaebbaac3879771d77aa20068a26952197"><div class="ttname"><a href="group__Lifetime.html#gaebbaac3879771d77aa20068a26952197">dynarr_destroy</a></div><div class="ttdeci">void dynarr_destroy(dynarr_t *const dynarr)</div><div class="ttdoc">Deallocates a dynamic array.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00136">dynarr.c:136</a></div></div>
 <div class="ttc" id="avector_8h_html_ad92ce696967261588cab3848dfe73c02"><div class="ttname"><a href="https://evjeesm.github.io/vector/vector_8h.html#ad92ce696967261588cab3848dfe73c02">TMP_REF</a></div><div class="ttdeci">#define TMP_REF(type, value)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
