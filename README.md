@@ -102,7 +102,7 @@ Supports further extension.
 ## Usage
 
 Link against `libdynarr_static.a` or `libdynarr.so` on **linux**.  
-If you on **Windows** platform link to `libdynarr_static.dll`.
+If you on **Windows** platform link to `libdynarr_static.lib`.
 
 Requires standard math library, so remember to provide `-lm`.  
 Requires linking with vector's libraries.
