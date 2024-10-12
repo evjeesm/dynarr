@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Vector__API.html#ga7243756372efd57714853efaf7521358" xlink:title=" ">
+<g id="a_Node000002"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Lifetime.html#ga7243756372efd57714853efaf7521358" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="195,-19 116,-19 116,0 195,0 195,-19"/>
 <text text-anchor="middle" x="155.5" y="-7" font-family="Mononoki" font-size="10.00">vector_clone</text>
 </a>

@@ -147,7 +147,7 @@ var sectionId = 'dynsection-14';
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Vector__API.html#ga9437d9506a3b2799f595c88b82f160b3" xlink:title=" ">
+<g id="a_Node000006"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Elements.html#ga9437d9506a3b2799f595c88b82f160b3" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="512,-283 444,-283 444,-264 512,-264 512,-283"/>
 <text text-anchor="middle" x="478" y="-271" font-family="Mononoki" font-size="10.00">vector_get</text>
 </a>
@@ -183,7 +183,7 @@ var sectionId = 'dynsection-14';
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Vector__API.html#gafc2e34dbacffe6480af8681fbf46e808" xlink:title=" ">
+<g id="a_Node000005"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Extension.html#gafc2e34dbacffe6480af8681fbf46e808" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="850,-150 722,-150 722,-131 850,-131 850,-150"/>
 <text text-anchor="middle" x="786" y="-138" font-family="Mononoki" font-size="10.00">vector_get_ext_header</text>
 </a>
@@ -228,7 +228,7 @@ var sectionId = 'dynsection-14';
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Vector__API.html#gaae93d7f0c056c1d11d3232a7a7aa5e09" xlink:title=" ">
+<g id="a_Node000008"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Properties.html#gaae93d7f0c056c1d11d3232a7a7aa5e09" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="378,-207 260,-207 260,-188 378,-188 378,-207"/>
 <text text-anchor="middle" x="319" y="-195" font-family="Mononoki" font-size="10.00">vector_element_size</text>
 </a>
@@ -300,7 +300,7 @@ var sectionId = 'dynsection-14';
 <!-- Node13 -->
 <g id="Node000013" class="node">
 <title>Node13</title>
-<g id="a_Node000013"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Vector__API.html#ga6e5077303af4dfe720af5a0608553922" xlink:title=" ">
+<g id="a_Node000013"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Lifetime.html#ga6e5077303af4dfe720af5a0608553922" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="519,-56 437,-56 437,-37 519,-37 519,-56"/>
 <text text-anchor="middle" x="478" y="-44" font-family="Mononoki" font-size="10.00">vector_resize</text>
 </a>
@@ -318,7 +318,7 @@ var sectionId = 'dynsection-14';
 <!-- Node11 -->
 <g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_Node000011"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Vector__API.html#gab24bd801f91d4ae1ac79b54430b0409f" xlink:title=" ">
+<g id="a_Node000011"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Properties.html#gab24bd801f91d4ae1ac79b54430b0409f" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="679,-19 585,-19 585,0 679,0 679,-19"/>
 <text text-anchor="middle" x="632" y="-7" font-family="Mononoki" font-size="10.00">vector_capacity</text>
 </a>

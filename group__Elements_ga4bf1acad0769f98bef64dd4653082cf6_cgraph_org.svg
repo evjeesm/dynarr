@@ -75,7 +75,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Vector__API.html#gaae3cfb2691a50da87169b5e057169782" xlink:title=" ">
+<g id="a_Node000006"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Searches.html#gaae3cfb2691a50da87169b5e057169782" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="439,-37.5 332,-37.5 332,-7.5 439,-7.5 439,-37.5"/>
 <text text-anchor="start" x="340" y="-25.5" font-family="Mononoki" font-size="10.00">vector_binary_find</text>
 <text text-anchor="middle" x="385.5" y="-14.5" font-family="Mononoki" font-size="10.00">_index</text>
@@ -112,7 +112,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Vector__API.html#gafc2e34dbacffe6480af8681fbf46e808" xlink:title=" ">
+<g id="a_Node000005"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Extension.html#gafc2e34dbacffe6480af8681fbf46e808" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="1172,-189 1044,-189 1044,-170 1172,-170 1172,-189"/>
 <text text-anchor="middle" x="1108" y="-177" font-family="Mononoki" font-size="10.00">vector_get_ext_header</text>
 </a>
@@ -231,7 +231,7 @@
 <!-- Node11 -->
 <g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_Node000011"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Vector__API.html#ga9437d9506a3b2799f595c88b82f160b3" xlink:title=" ">
+<g id="a_Node000011"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Elements.html#ga9437d9506a3b2799f595c88b82f160b3" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="850.5,-379 782.5,-379 782.5,-360 850.5,-360 850.5,-379"/>
 <text text-anchor="middle" x="816.5" y="-367" font-family="Mononoki" font-size="10.00">vector_get</text>
 </a>
@@ -321,7 +321,7 @@
 <!-- Node14 -->
 <g id="Node000014" class="node">
 <title>Node14</title>
-<g id="a_Node000014"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Vector__API.html#gab3a5e466261d31ee9edd77a5eb280030" xlink:title=" ">
+<g id="a_Node000014"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Elements.html#gab3a5e466261d31ee9edd77a5eb280030" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="708,-151 640,-151 640,-132 708,-132 708,-151"/>
 <text text-anchor="middle" x="674" y="-139" font-family="Mononoki" font-size="10.00">vector_set</text>
 </a>
@@ -375,7 +375,7 @@
 <!-- Node18 -->
 <g id="Node000018" class="node">
 <title>Node18</title>
-<g id="a_Node000018"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Vector__API.html#ga6e5077303af4dfe720af5a0608553922" xlink:title=" ">
+<g id="a_Node000018"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Lifetime.html#ga6e5077303af4dfe720af5a0608553922" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="857.5,-56 775.5,-56 775.5,-37 857.5,-37 857.5,-56"/>
 <text text-anchor="middle" x="816.5" y="-44" font-family="Mononoki" font-size="10.00">vector_resize</text>
 </a>
@@ -393,7 +393,7 @@
 <!-- Node17 -->
 <g id="Node000017" class="node">
 <title>Node17</title>
-<g id="a_Node000017"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Vector__API.html#gab24bd801f91d4ae1ac79b54430b0409f" xlink:title=" ">
+<g id="a_Node000017"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Properties.html#gab24bd801f91d4ae1ac79b54430b0409f" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="1001,-19 907,-19 907,0 1001,0 1001,-19"/>
 <text text-anchor="middle" x="954" y="-7" font-family="Mononoki" font-size="10.00">vector_capacity</text>
 </a>
@@ -438,7 +438,7 @@
 <!-- Node20 -->
 <g id="Node000020" class="node">
 <title>Node20</title>
-<g id="a_Node000020"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Vector__API.html#gaae93d7f0c056c1d11d3232a7a7aa5e09" xlink:title=" ">
+<g id="a_Node000020"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Properties.html#gaae93d7f0c056c1d11d3232a7a7aa5e09" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="733,-227 615,-227 615,-208 733,-208 733,-227"/>
 <text text-anchor="middle" x="674" y="-215" font-family="Mononoki" font-size="10.00">vector_element_size</text>
 </a>

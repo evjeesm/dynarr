@@ -1,5 +1,18 @@
 var group__Elements =
 [
+    [ "vector_data", "https://evjeesm.github.io/vector/group__Elements.html#gac4d24b2cc8c8c44d36107b9a0fffea35", null ],
+    [ "vector_get", "https://evjeesm.github.io/vector/group__Elements.html#ga9437d9506a3b2799f595c88b82f160b3", null ],
+    [ "vector_set", "https://evjeesm.github.io/vector/group__Elements.html#gab3a5e466261d31ee9edd77a5eb280030", null ],
+    [ "vector_set_zero", "https://evjeesm.github.io/vector/group__Elements.html#gaf3eaea4a3a47741f46eae9ae6e984ef2", null ],
+    [ "vector_copy", "https://evjeesm.github.io/vector/group__Elements.html#gabf21611afbbdda61da4ffa361fc783dc", null ],
+    [ "vector_move", "https://evjeesm.github.io/vector/group__Elements.html#gaa94c547c9488b4f9dce5eb01067c2ae1", null ],
+    [ "vector_part_copy", "https://evjeesm.github.io/vector/group__Elements.html#ga39836c927f0e0fc79dbf39728972d08e", null ],
+    [ "vector_spread", "https://evjeesm.github.io/vector/group__Elements.html#ga6312527827ba72441feeef4fc4047f94", null ],
+    [ "vector_shift", "https://evjeesm.github.io/vector/group__Elements.html#ga1f4cbce56499e81a048ac6454cd5bb69", null ],
+    [ "vector_swap", "https://evjeesm.github.io/vector/group__Elements.html#gaf395f309bc15469998a8c14fc925b5b6", null ],
+    [ "vector_foreach", "https://evjeesm.github.io/vector/group__Elements.html#ga988880baa4fe32fb6d4299daf1a29a1f", null ],
+    [ "vector_aggregate", "https://evjeesm.github.io/vector/group__Elements.html#ga1a193e06f6700de896628631b8569740", null ],
+    [ "vector_transform", "https://evjeesm.github.io/vector/group__Elements.html#ga176c007bd441e4469a28ba47ca952dfb", null ],
     [ "dynarr_clear", "group__Elements.html#gafde94d3d24d33d8e81c3943db38a6327", null ],
     [ "dynarr_get", "group__Elements.html#ga93c32dd116523090126d427cce08e114", null ],
     [ "dynarr_set", "group__Elements.html#ga30d508a9f387e2227dd0d72a8bfd2a39", null ],

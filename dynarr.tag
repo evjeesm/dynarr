@@ -966,11 +966,11 @@
     <docanchor file="Guide.html" title="🔨 Creating Dynarr">create</docanchor>
     <docanchor file="Guide.html" title="⚙️ With default options">def_create</docanchor>
     <docanchor file="Guide.html" title="⚙️ With custom options">custom_opts</docanchor>
-    <docanchor file="Guide.html" title="⚙️ Without macro wrapper">wthout_macro_wrapper</docanchor>
-    <docanchor file="Guide.html" title="⚙️ Allocate extended header">extended_header</docanchor>
     <docanchor file="Guide.html" title="⿻ Clone an existing array">cloning</docanchor>
-    <docanchor file="Guide.html" title="❌ Error handling">handle_alloc_error</docanchor>
     <docanchor file="Guide.html" title="🧨 Deallocating Dynarr">deallocate</docanchor>
+    <docanchor file="Guide.html" title="⚙️ Allocate extended header">extended_header</docanchor>
+    <docanchor file="Guide.html" title="⚙️ Without macro wrapper">wthout_macro_wrapper</docanchor>
+    <docanchor file="Guide.html" title="❌ Error handling">handle_alloc_error</docanchor>
     <docanchor file="Guide.html" title="⬆️ Extending a dynarr">dynarr_extend</docanchor>
   </compound>
   <compound kind="page">

@@ -41,11 +41,11 @@ var NAVTREE =
       [ "🔨 Creating Dynarr", "Guide.html#create", [
         [ "⚙️ With default options", "Guide.html#def_create", null ],
         [ "⚙️ With custom options", "Guide.html#custom_opts", null ],
-        [ "⚙️ Without macro wrapper", "Guide.html#wthout_macro_wrapper", null ],
-        [ "⚙️ Allocate extended header", "Guide.html#extended_header", null ],
         [ "⿻ Clone an existing array", "Guide.html#cloning", null ],
-        [ "❌ Error handling", "Guide.html#handle_alloc_error", null ],
-        [ "🧨 Deallocating Dynarr", "Guide.html#deallocate", null ]
+        [ "🧨 Deallocating Dynarr", "Guide.html#deallocate", null ],
+        [ "⚙️ Allocate extended header", "Guide.html#extended_header", null ],
+        [ "⚙️ Without macro wrapper", "Guide.html#wthout_macro_wrapper", null ],
+        [ "❌ Error handling", "Guide.html#handle_alloc_error", null ]
       ] ],
       [ "⬆️ Extending a dynarr", "Guide.html#dynarr_extend", null ]
     ] ],

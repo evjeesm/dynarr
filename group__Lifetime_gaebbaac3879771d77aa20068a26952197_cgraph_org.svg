@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Vector__API.html#gae0c0da17ad9469e47ef376a82b6493f3" xlink:title=" ">
+<g id="a_Node000002"><a target="_parent" xlink:href="https://evjeesm.github.io/vector/group__Lifetime.html#gae0c0da17ad9469e47ef376a82b6493f3" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="215,-19 126,-19 126,0 215,0 215,-19"/>
 <text text-anchor="middle" x="170.5" y="-7" font-family="Mononoki" font-size="10.00">vector_destroy</text>
 </a>
