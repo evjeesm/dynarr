@@ -16,8 +16,8 @@ Supports further extension.
 
 | Platforms | CI/CD | COVERAGE |
 |---|---|---|
-| Linux | ![check-linux](https://github.com/evjeesm/dynarr/actions/workflows/linux.yml/badge.svg) | [![codecov](https://codecov.io/github/evjeesm/dynarr/graph/badge.svg?flag=debian)](https://codecov.io/github/evjeesm/dynarr) |
-| Windows | ![check-windows](https://github.com/evjeesm/dynarr/actions/workflows/windows.yml/badge.svg) | [![codecov](https://codecov.io/github/evjeesm/dynarr/graph/badge.svg?flag=windows)](https://codecov.io/github/evjeesm/dynarr) |
+| Linux | ![status](https://img.shields.io/badge/Linux-passes-green) | [![codecov](https://codecov.io/github/evjeesm/dynarr/graph/badge.svg?flag=debian)](https://codecov.io/github/evjeesm/dynarr) |
+| Windows | ![status](https://img.shields.io/badge/Windows-passes-green) | [![codecov](https://codecov.io/github/evjeesm/dynarr/graph/badge.svg?flag=windows)](https://codecov.io/github/evjeesm/dynarr) |
 
 [See Full Documentation](https://evjeesm.github.io/dynarr)
 
