@@ -1,6 +1,6 @@
 [submodule "vector"]
 	path = vector
-	url = git@github.com:evjeesm/vector
+	url = https://github.com/evjeesm/vector
 	branch = main
 [submodule "docs/doxygen-awesome-css"]
 	path = docs/doxygen-awesome-css
