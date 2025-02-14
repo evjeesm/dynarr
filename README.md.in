@@ -1,5 +1,7 @@
 # Dynarr
 
+![dynarr-logo](imgs/logo.svg)  
+
 Generic dynamic array for C.  
 Is an extension over [vector](https://github.com/evjeesm/vector).
 

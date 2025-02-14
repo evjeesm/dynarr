@@ -10,8 +10,9 @@
 !docs
 !doxyconf
 !header.html
-!*.dox
-!*.css
+!docs/*.dox
+!docs/*.css
+!docs/*.md
 
 !src
 !tests
