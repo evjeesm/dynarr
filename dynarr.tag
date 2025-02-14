@@ -974,9 +974,14 @@
     <docanchor file="Guide.html" title="⬆️ Extending a dynarr">dynarr_extend</docanchor>
   </compound>
   <compound kind="page">
+    <name>Readme</name>
+    <title>Readme</title>
+    <filename>Readme.html</filename>
+  </compound>
+  <compound kind="page">
     <name>index</name>
     <title>Dynarr</title>
     <filename>index.html</filename>
-    <docanchor file="index.html">md_README</docanchor>
+    <docanchor file="index.html">md_docs_2mainpage</docanchor>
   </compound>
 </tagfile>

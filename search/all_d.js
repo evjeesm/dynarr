@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['resize_0',['Auto-resize',['../group__Auto-resize.html',1,'']]]
+  ['readme_0',['Readme',['../Readme.html',1,'']]],
+  ['resize_1',['Auto-resize',['../group__Auto-resize.html',1,'']]]
 ];
