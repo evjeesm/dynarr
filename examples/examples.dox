@@ -35,6 +35,8 @@ Based on @ref create.c "Example file".
 Just create @ref dynarr_opts_t "opts" on stack
 and pass by reference into a @ref dynarr_create_ function directly:
 @dontinclude create.c
+@skip main
+@skip }
 @skip cloning
 @skipline opts
 @skipline dynarr_t

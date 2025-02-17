@@ -64,7 +64,7 @@ void extended_header(void)
 
     dynarr_t *dynarr = dynarr_create
         (
-            .data_offset = sizeof(ext_t),
+            .ext_header_size = sizeof(ext_t),
             .element_size = sizeof(long)
         );
 
