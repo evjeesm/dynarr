@@ -1,5 +1,6 @@
 # Dynarr
 
+-- TEST -- 
 ![dynarr-logo](imgs/logo.svg)  
 
 Generic dynamic array for C.  
