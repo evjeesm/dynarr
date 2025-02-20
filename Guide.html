@@ -155,8 +155,11 @@ $(function(){initNavTree('Guide.html',''); initResizable(true); });
 <h2><a class="anchor" id="wthout_macro_wrapper"></a>
 ⚙️ Without macro wrapper</h2>
 <p>You can avoid macro wrapper with default values if you know what you are doing. <br  />
- Just create <a class="el" href="structdynarr__opts__t.html">opts</a> on stack and pass by reference into a <a class="el" href="group__Lifetime.html#ga99f1163f1932f71f0229a7340df68efb">dynarr_create_</a> function directly:  </p><div class="fragment"><div class="line">    explicit_opts_create();</div>
-<div class="line">    dynarr_t *dynarr = <a class="code hl_define" href="group__Lifetime.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a>(.element_size = <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+ Just create <a class="el" href="structdynarr__opts__t.html">opts</a> on stack and pass by reference into a <a class="el" href="group__Lifetime.html#ga99f1163f1932f71f0229a7340df68efb">dynarr_create_</a> function directly:  </p><div class="fragment"><div class="line">    <a class="code hl_struct" href="structdynarr__opts__t.html">dynarr_opts_t</a> opts = {.<a class="code hl_variable" href="structdynarr__opts__t.html#a61aa2f610ed5a0202bd558522d04c7d9">element_size</a> = <span class="keyword">sizeof</span>(int)};</div>
+<div class="ttc" id="astructdynarr__opts__t_html"><div class="ttname"><a href="structdynarr__opts__t.html">dynarr_opts_t</a></div><div class="ttdoc">Dynarr creating options.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00024">dynarr.h:25</a></div></div>
+<div class="ttc" id="astructdynarr__opts__t_html_a61aa2f610ed5a0202bd558522d04c7d9"><div class="ttname"><a href="structdynarr__opts__t.html#a61aa2f610ed5a0202bd558522d04c7d9">dynarr_opts_t::element_size</a></div><div class="ttdeci">size_t element_size</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8h_source.html#l00028">dynarr.h:28</a></div></div>
+<div class="line">    dynarr_t *dynarr = <a class="code hl_function" href="group__Lifetime.html#ga99f1163f1932f71f0229a7340df68efb">dynarr_create_</a>(&amp;opts);</div>
+<div class="ttc" id="agroup__Lifetime_html_ga99f1163f1932f71f0229a7340df68efb"><div class="ttname"><a href="group__Lifetime.html#ga99f1163f1932f71f0229a7340df68efb">dynarr_create_</a></div><div class="ttdeci">dynarr_t * dynarr_create_(const dynarr_opts_t *const opts)</div><div class="ttdoc">Constructor of the dynamic array.</div><div class="ttdef"><b>Definition</b> <a href="dynarr_8c_source.html#l00089">dynarr.c:89</a></div></div>
 </div><!-- fragment --><p><br  />
  </p>
 <h2><a class="anchor" id="extended_header"></a>
@@ -173,7 +176,7 @@ $(function(){initNavTree('Guide.html',''); initResizable(true); });
 <div class="line">    ext_t;</div>
 </div><!-- fragment --><p> Create dynarr specifying <a class="el" href="structdynarr__opts__t.html#accd8a3e669a744e366b212579e0566ec">dynarr_opts_t::ext_header_size</a> to reserve space for <code>ext_t</code>. </p><div class="fragment"><div class="line">    dynarr_t *dynarr = <a class="code hl_define" href="group__Lifetime.html#ga1d05157f1911b8d089e57ca0696be01f">dynarr_create</a></div>
 <div class="line">        (</div>
-<div class="line">            .data_offset = <span class="keyword">sizeof</span>(ext_t),</div>
+<div class="line">            .ext_header_size = <span class="keyword">sizeof</span>(ext_t),</div>
 <div class="line">            .element_size = <span class="keyword">sizeof</span>(<span class="keywordtype">long</span>)</div>
 <div class="line">        );</div>
 </div><!-- fragment --><p> Initialize extended header: </p><div class="fragment"><div class="line">    ext_t *header = <a class="code hl_function" href="group__Extension.html#ga3acd4a1beb0e42a412b0482ddb6b9820">dynarr_get_ext_header</a>(dynarr);</div>
