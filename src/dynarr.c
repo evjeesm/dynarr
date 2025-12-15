@@ -509,7 +509,11 @@ int dynarr_foreach(const dynarr_t *const dynarr,
 {
     assert(dynarr);
     assert(func);
-    return vector_foreach(dynarr, dynarr_size(dynarr), func, param);
+
+    const size_t size = dynarr_size(dynarr);
+    if (size == 0) return DYNARR_SUCCESS;
+
+    return vector_foreach(dynarr, size, func, param);
 }
 
 
@@ -521,7 +525,10 @@ int dynarr_aggregate(const dynarr_t *const dynarr,
     assert(dynarr);
     assert(func);
 
-    return vector_aggregate(dynarr, dynarr_size(dynarr), func, acc, param);
+    const size_t size = dynarr_size(dynarr);
+    if (size == 0) return DYNARR_SUCCESS;
+
+    return vector_aggregate(dynarr, size, func, acc, param);
 }
 
 
